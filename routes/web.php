@@ -53,6 +53,8 @@ use App\Http\Controllers\LodgetraineeController;
 
 
 use App\Http\Controllers\AssetController;
+use App\Http\Controllers\updateAssetController;
+
 use App\Http\Controllers\AssetCateController;
 
 use App\Http\Controllers\ClassgController;
@@ -62,7 +64,7 @@ use App\Http\Controllers\AssigneeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SupplyController;
 
-
+use App\Http\Controllers\ReassignController;
 
 use App\Http\Controllers\RelationController;
 use App\Http\Controllers\DesignationController;
@@ -86,10 +88,16 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('/addAsset', [AssetCateController::class]);
 
 Route::resource('/addAsset', AssetCateController::class);
+Route::resource('/reassign-asset',ReassignController::class);
+Route::get('/indexf', [ReassignController::class, 'indexf'])->name('indexf');
 
-Route::get('/getEmployees/{id}', [AssetController::class, 'getEmployees']);
+
+Route::get('/getSubcategory/{id}', [AssetController::class, 'getSubcategory']);
+Route::get('/getAll/{id}', [ReassignController::class, 'getAll']);
+
+Route::get('/getSubcategor/{id}', [AssetController::class, 'getSubcategor']);
 Route::get('/getD/{p}', [AssetController::class,'getD']);
-
+Route::get('/test', [AssetController::class, 'test'])->name('test');
 
 // website routes
  Route::resource('/', websiteController::class);
@@ -188,6 +196,14 @@ Route::post('/search-trainee', [LodgetraineeController::class, 'researcht'])->na
 
 Route::resource('/asset',AssetController::class);
 Route::get('/editAsset/{x}', [AssetController::class, 'editAsset'])->name('editAsset');
+Route::get('/editasset/{x}',[AssetController::class, 'editasset'])->name('editasset');
+
+Route::resource('/asset-update',updateAssetController::class);
+
+ Route::get('/asset-destroy/{x}', [AssetController::class, 'destroy'])->name('destroy');
+  Route::get('/asset-edit/{x}', [AssetController::class, 'edit'])->name('asset-edit');
+
+// Route::get('/New-Agent-show/{x}', [AgentController::class, 'show'])->name('New-Agent-show');
 Route::get('/getB/{p}', [AssetController::class,'getB']);
 
 Route::get('/getC/{p}', [AssetController::class,'getC']);

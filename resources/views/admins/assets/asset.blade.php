@@ -36,6 +36,10 @@
               <li class="breadcrumb-item active"><a href="{{ route('addAsset.index') }}" class="btn btn-primary" >
               <i class="fas fa-plus"></i>Asset
             </a></li>
+
+             <li class="breadcrumb-item active"><a href="{{ route('reassign-asset.index') }}" class="btn btn-success" >
+              <i class="fas fa-plus"></i>Reassign asset
+            </a></li>
             </ol>
             @endif
           </div>
@@ -141,24 +145,29 @@
    <td>{{ $data->status }}</td>
                     <td>
 
-     <form method="GET" id="post_form" role="form" class="registration-form" action="{{ route('trainee.show',$data->id) }}" enctype="multipart/form-data">
 
+     <a role="button" class="btnn btn-success" href="/destroyf/{{$data->id}} " onclick="return confirm('Are you sure? You want to delete {{ $data->tour_name}}','Inclusive')">History</a>
+  @if(Auth::user()->role =='Admin')                 
+
+
+    <form method="GET" id="post_form" role="form" class="registration-form" action="{{ route('test') }}" enctype="multipart/form-data">
       @csrf
              <input type="hidden" name="user_id" value="PUT">
-             <input type="hidden" name="classgf" id="classgf" value="{{ $data->class }}">
+             <input type="hidden" name="asset_id" id="asset_id" value="{{ $data->id }}">
 <input type="hidden" name="sessionf" id="sessionf" value="{{ $data->session }}">
-
 <input type="hidden" name="searchf" id="searchf" value="{{ $search }}">
 
 
-<button type="submit" role="button"><i class="fa fa-bars"></i></button>
+<button type="submit" role="button"><i class="fa fa-edit"></i></button>
 </form>
 
-  @if(Auth::user()->role =='Admin')
-                      <a role="button" href="{{ route('editTrainee',$data->id) }}"><i class="fa fa-edit"></i></a> 
-                      @endif
-                     
-                      <a role="button" class="btnn btn-success" href="/destroyf/{{$data->id}} " onclick="return confirm('Are you sure? You want to delete {{ $data->tour_name}}','Inclusive')">History</i></a>
+
+
+
+
+                          <a role="button" class="" href="/asset-destroy/{{$data->id}} " onclick="return confirm('Are you sure? You want to delete {{ $data->tour_name}}','Inclusive')"><i class="fa fa-trash red"></i></a>
+                      @endif                   
+                 
 
                     </td>
                   </tr>

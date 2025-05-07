@@ -13,7 +13,7 @@ use App\Models\student;
 
 use App\Models\designation;
 use App\Models\classg;
-use App\Models\session;
+use App\Models\sessiom;
 
 // use App\Models\category;
 
@@ -21,6 +21,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreassetRequest;
 use App\Http\Requests\UpdateassetRequest;
 use DB;
+use Illuminate\Support\Facades\Storage;
 
 class AssetController extends Controller
 {
@@ -31,33 +32,22 @@ class AssetController extends Controller
      */
     public function index()
     {
-
-        
-
          $search="iflag";
-         $assets = asset::get();
+         $assets = asset::join('categories','assets.category','categories.id')
+        ->select('assets.*','categories.category')
+        ->where('assets.status','!=','deleted')
+        ->orderBy('assets.id','desc')->get();
+
           $categories = category::get();
-      
-  //$classes = classg::where('class',request('classg'))
-          //->get();
-         $sessions = session::where('class_name',request('classg'))
+         $sessions = sessiom::where('class_name',request('classg'))
                ->get();
-          //dd($assets);
+
+               //dd($sessions);
              return view('admins.assets.asset',compact('assets','categories','sessions','search'));
-    
-
-//  // Fetch departments
-//          $departments['data'] = category::orderby("category","asc")
-//               ->select('id','category')
-//               ->get();
-
-// //dd( $departments['data']);
-//          // Load index view
-//         //  return view('index')->with("departments",$departments);
-
-//              return view('admins.index',compact('departments'));
-
     }
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -81,7 +71,7 @@ class AssetController extends Controller
 
 
 
- public function getEmployees($departmentid=0){
+ public function getSubcategory($departmentid=0){
 
 //dd($departmentid);
          // Fetch Employees by Departmentid
@@ -89,17 +79,29 @@ class AssetController extends Controller
               ->select('category_id','subcategory')
               ->where('category_id',$departmentid)
               ->get();
+         return response()->json($empData);
+
+    }
 
 
+     public function getSubcategor($id){
+//dd($departmentid);
+         // Fetch Employees by Departmentid
+         $empData['data'] = subcategory::orderby("subcategory","asc")
+              ->select('category_id','subcategory')
+              ->where('category_id',$id)
+              ->get();
 //dd( $empData['data']);
          return response()->json($empData);
 
     }
 
+
+
  public function research(request $request)
     {
      //dd('search');
-     
+
      $search="sflag";
 
          $datas = student::where('class',request('classg'))
@@ -152,10 +154,10 @@ class AssetController extends Controller
     public function store(Request $request)
     {
 
-        //dd(request('assign_date'));
-              
+       // dd(request('subcategory'));
+
           $asset =  asset::UpdateOrCreate(
-            [  
+            [
                   'asset_name'=>request('asset_name'),
                   'category'=>request('category'),
                    'subcategory'=>request('subcategory'),
@@ -170,10 +172,10 @@ class AssetController extends Controller
                  'assign_date'=>request('assign_date'),
                  'location'=>request('location'),
                  'owned_by'=>request('owned_by'),
-              
+
                  'assigned_to'=>request('assigned_to'),
 
-   'supply'=>request('supply'),
+                  'supply'=>request('supply'),
                  'bprice'=>request('bprice'),
                  'warranty'=>request('warranty'),
 
@@ -199,17 +201,17 @@ class AssetController extends Controller
                      //upload the image
                      $path = $attached->storeAs('public/photos/', $imageToStore);
 
-       
+
            // $id = attachment::where('destination_id', '=', $program->id)
            //  ->where('type', $type)
            //  ->get()->first();
-     
-     //dd($imageToStore);      
+
+     //dd($imageToStore);
 //dd(request('attachment'));
 
           if(request('attachment') !=null)
             {
-      //dd('printintcxx');   
+      //dd('printintcxx');
 
              $toupdate = asset::where('id',$asset->id)
             // ->where('type', $type)
@@ -217,7 +219,7 @@ class AssetController extends Controller
             'photo'=>$imageToStore
            ]);
 
-//dd('printin bnmn');   
+//dd('printin bnmn');
 
            }else
            {
@@ -227,13 +229,13 @@ class AssetController extends Controller
               //   'attachment'=>$imageToStore,
               //   'type'=> $type
               //   ]
-              //   );   
+              //   );
 
-              dd('no photo');      
+              dd('no photo');
          }
         }
       }
-       
+
    return redirect()->route('addAsset.index')->with('success','Assed recorded successfuly');
 
     }
@@ -244,9 +246,30 @@ class AssetController extends Controller
      * @param  \App\Models\asset  $asset
      * @return \Illuminate\Http\Response
      */
-    public function show(asset $asset,$id)
+    public function show()
     {
-        dd('Show');
+     //dd('print');
+        $id=4;
+
+ $lodges = lodge::where('status','Active')
+         ->orderBy('lodge_name', 'asc')->get();
+         $designations = designation::orderBy('designation', 'asc')->get();
+
+        // $asset = asset::where('id',$id)->first();
+          $asset = asset::join('categories','assets.category','categories.id')
+        ->select('assets.*','categories.category')
+        ->where('assets.id',$id)
+        ->orderBy('assets.id','desc')->first();
+ //dd($asset);
+
+    $categories = category::get();
+
+  // Fetch departments
+          $departments['data'] = category::orderby("category","asc")
+              ->select('id','category')
+               ->get();
+             return view('admins.assets.asset-edit',compact('departments','categories','asset'));
+
     }
 
     /**
@@ -255,10 +278,74 @@ class AssetController extends Controller
      * @param  \App\Models\asset  $asset
      * @return \Illuminate\Http\Response
      */
-    public function edit(asset $asset)
+    public function edit($id)
     {
-        //
+
+        $lodges = lodge::where('status','Active')
+         ->orderBy('lodge_name', 'asc')->get();
+         $designations = designation::orderBy('designation', 'asc')->get();
+
+        // $asset = asset::where('id',$id)->first();
+          $asset = asset::join('categories','assets.category','categories.id')
+        ->select('assets.*','categories.category')
+        ->where('assets.id',$id)
+        ->orderBy('assets.id','desc')->first();
+ //dd($asset);
+
+    $categories = category::get();
+
+  // Fetch departments
+          $departments['data'] = category::orderby("category","asc")
+              ->select('id','category')
+               ->get();
+
+                          return view('admins.assets.asset-edit',compact('departments','categories','asset'));
     }
+
+
+public function editasset($id)
+    {
+
+        $lodges = lodge::where('status','Active')
+         ->orderBy('lodge_name', 'asc')->get();
+         $designations = designation::orderBy('designation', 'asc')->get();
+
+         $asset = asset::where('id',$id)->first();
+
+             return view('admins.employee.edit-employee',compact('lodges','designations','employee'));
+     }
+
+
+public function test()
+    {
+
+  //dd('print');
+        $id=request('asset_id');
+
+
+ $lodges = lodge::where('status','Active')
+         ->orderBy('lodge_name', 'asc')->get();
+         $designations = designation::orderBy('designation', 'asc')->get();
+
+        // $asset = asset::where('id',$id)->first();
+          $assetx = asset::join('categories','assets.category','categories.id')
+        ->select('assets.*','categories.category')
+        ->where('assets.id',$id)
+        ->orderBy('assets.id','desc')->first();
+
+          $asset = asset::where('id',9)->first();
+
+ //dd(request('asset_id'));
+
+    $categories = category::get();
+
+  // Fetch departments
+          $departments['data'] = category::orderby("category","asc")
+              ->select('id','category')
+               ->get();
+                //dd($asset);
+             return view('admins.assets.asset-edit',compact('departments','categories','asset'));
+     }
 
     /**
      * Update the specified resource in storage.
@@ -267,9 +354,78 @@ class AssetController extends Controller
      * @param  \App\Models\asset  $asset
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateassetRequest $request, asset $asset)
+    public function update($id)
     {
-        //
+
+//dd($id);
+
+       $asset = asset::where('id',$id)->first();
+          $assetUpdate =  student::UpdateOrCreate(
+            [   'id'=>$id],
+            [
+
+                'asset_name'=>request('asset_name'),
+                  'category'=>request('category'),
+                   'subcategory'=>request('subcategory'),
+                  'serial_no'=>request('serial_no'),
+
+                 'model'=>request('model'),
+                 'tag_no'=>request('tag_no'),
+                 'barcode'=>request('barcode'),
+                   'mac_address'=>request('mac_address'),
+                 'assign_date'=>request('assign_date'),
+                 'location'=>request('location'),
+                 'owned_by'=>request('owned_by'),
+
+                 'assigned_to'=>request('assigned_to'),
+
+                  'supply'=>request('supply'),
+                 'bprice'=>request('bprice'),
+                 'warranty'=>request('warranty'),
+
+                 'status'=>request('status'),
+                'user_id'=>auth()->id()
+
+            ]);
+
+
+//dd(request('attachment'));
+
+
+   if(request('attachment')){
+                $attach = request('attachment');
+                foreach($attach as $attached){
+
+                     // Get filename with extension
+                     $fileNameWithExt = $attached->getClientOriginalName();
+                     // Just Filename
+                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                     // Get just Extension
+                     $extension = $attached->getClientOriginalExtension();
+                     //Filename to store
+                     $imageToStore = $filename.'_'.time().'.'.$extension;
+                     //upload the image
+                     $path = $attached->storeAs('public/photos/', $imageToStore);
+
+          if(request('attachment') !=null)
+            {
+
+ Storage::disk('local')->delete('public/photos/'.$asset->photo);
+
+
+    //  dd('printintcxx');
+
+             $toupdate = asset::where('id',$assetUpdate->id)
+            // ->where('type', $type)
+             ->update([
+            'photo'=>$imageToStore
+           ]);
+           }
+        }
+      }
+
+   return redirect()->route('asset.index')->with('success','Created successfuly');
+
     }
 
     /**
@@ -278,8 +434,18 @@ class AssetController extends Controller
      * @param  \App\Models\asset  $asset
      * @return \Illuminate\Http\Response
      */
-    public function destroy(asset $asset)
+    public function destroy($id)
     {
-        //
+
+        $delete = asset::where('id',$id)->first();
+      //dd($delete);
+        if($delete->delete()){
+             DB::statement("delete from assets where id=$id");
+            return redirect()->route('asset.index')->with('info','Asset deleted successfully');
+        }
+        else{
+            return redirect()->route('asset.index')->with('error','Employee not exists');
+        }
+
     }
 }

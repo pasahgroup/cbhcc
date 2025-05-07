@@ -10,12 +10,14 @@ class location extends Model
     use HasFactory;
     protected $fillable = [
         'location_name',
+        'location_type',
         'country',
         'region',
         'district',
         'ward_town',
         'lat',
         'long',
+        'lodge_id',
         'user_id'
     ];
 }

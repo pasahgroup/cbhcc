@@ -67,7 +67,7 @@
 
                                <div class="form-group col-md-4 col-sm-6">
                                     <label>Location</label>
-                                <select class="form-control" name="location" id="location">
+                                <select class="form-control" name="location" id="location" required>
                                      <option>{{$employee->location}}</option>
                                      <option value='0'>-- Select lodge --</option>
                                      @foreach ($lodges as $lodge)

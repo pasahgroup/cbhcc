@@ -13,7 +13,7 @@ class CreateSessionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sessions', function (Blueprint $table) {
+        Schema::create('sessioms', function (Blueprint $table) {
           $table->bigIncrements('id');
             $table->string('class_name')->nullable();
              $table->string('session')->nullable();
@@ -28,6 +28,6 @@ class CreateSessionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('sessioms');
     }
 }

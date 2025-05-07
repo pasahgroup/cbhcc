@@ -187,7 +187,7 @@
                
                 Dashboard             
 
-
+<!-- 
    <li class="nav-item">
             <a href="#" class="nav-link">
            <i class="nav-icon fas fa-users"></i>
@@ -205,7 +205,7 @@
               </li>
          
             </ul>
-          </li>
+          </li> -->
                 
              </p>
             </a>
@@ -234,7 +234,7 @@
           </li>
 
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
            <i class="nav-icon fas fa-users"></i>
               <p>
@@ -251,7 +251,7 @@
               </li>
          
             </ul>
-          </li>
+          </li> -->
 
                 
           <li class="nav-item">
@@ -262,17 +262,18 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/trainee" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Trainee</p>
-                </a>
-              </li>       
+            <ul class="nav nav-treeview">                  
                         <li class="nav-item">
                 <a href="/asset" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Asset list</p>
+                </a>
+              </li>  
+                      <li class="nav-item">
+                <!-- <a href="/reassign-asset" class="nav-link"> -->
+                   <a href="/indexf" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Assign Asset</p>
                 </a>
               </li>    
                         

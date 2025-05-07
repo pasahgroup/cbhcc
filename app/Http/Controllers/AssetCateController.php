@@ -46,7 +46,7 @@ class AssetCateController extends Controller
   //              ->get();
   //         //dd($assets);
   //            return view('admins.assets.asset',compact('assets','categories','sessions','datas','search'));
-    
+
 
   // Fetch departments
           $departments['data'] = category::orderby("category","asc")
@@ -61,7 +61,7 @@ class AssetCateController extends Controller
               // $categories['data'] = category::orderby("category","asc")
               // ->select('id','category')
               //  ->get();
-   
+
 
    // dd($categories['data']);
              return view('admins.assets.add-asset',compact('departments','categories'));
@@ -110,7 +110,7 @@ class AssetCateController extends Controller
  public function research(request $request)
     {
      //dd('search');
-     
+
      $search="sflag";
 
          $datas = student::where('class',request('classg'))

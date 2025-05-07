@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\lodge;
+use App\Models\location;
+
 use App\Http\Requests\StorelodgeRequest;
 use App\Http\Requests\UpdatelodgeRequest;
 use Illuminate\Http\Request;
@@ -53,6 +55,14 @@ public function addlodge(){
          'gm_contact'=>request('gm_contact'), 
         'gm_email'=>request('gm_email'),
          'status'=>request('status')            
+           ]);
+
+         $location = location::UpdateOrCreate([
+        'location_name'=>request('lodge_name'),
+        'location_type'=>"Lodge",
+        'lodge_id'=>$lodge->id,
+        'user_id'=>auth()->id()
+
            ]);
                   
            return redirect()->back()->with('success','Lodge recorded successfully');
@@ -110,8 +120,18 @@ public function addlodge(){
         'gm_email'=>request('gm_email'),
            'status'=>request('status')    
         ]);
+ 
+   $location = location::where('lodge_id',$id)
+               ->update([
+               'location_name'=>request('lodge_name'),
+        'location_type'=>"Lodge",
+        // 'lodge_id'=>$lodge->id,
+        'user_id'=>auth()->id()    
+        ]);
+
     return redirect()->route('lodge.index')->with('success','Lodge created successfully');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -121,6 +141,13 @@ public function addlodge(){
      */
      public function destroy($id)
     {
+     
+
+ $delete = location::where('lodge_id',$id)->first();
+        if($delete->delete()){
+           // return redirect()->route('lodge.index')->with('success','Lodge removed successfully');
+        } 
+        
      $delete = lodge::where('id',$id)->first();
         if($delete->delete()){
             return redirect()->route('lodge.index')->with('success','Lodge removed successfully');
@@ -128,5 +155,8 @@ public function addlodge(){
         else{
             return redirect()->route('lodge.index')->with('error','Lodge not exists');
         }
+
+
+       
     }
 }

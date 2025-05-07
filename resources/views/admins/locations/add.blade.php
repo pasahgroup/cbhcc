@@ -51,9 +51,10 @@
                 </div>
                 <div class="form-group row">
           <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-3">
-              <div>
-                 <button type="submit" class="btn float-right btn-primary">Save</button>
-              </div>
+             
+                           <a  href="/locations" role="button" class="previous btn-previous"><i class="fas fa-angle-double-left"></i></a>
+                                      <button type="submit" class="btn float-right btn-primary">Save</button>
+             
                   </div>
                 </div>
 
