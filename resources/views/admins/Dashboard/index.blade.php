@@ -45,6 +45,17 @@
           </div>
         </div>
 
+<div class="card-header">
+         
+          <div class="card-tools">
+             <a href="/lodge" class="btn btn-success" >
+              <i class="fas fa-plus"></i> Assets Registered(<b class="red">{{$lodges}}</b>)
+            </a>
+            
+            
+          </div>
+        </div>
+
         
         <div class="card">
             <div class="card-body">
