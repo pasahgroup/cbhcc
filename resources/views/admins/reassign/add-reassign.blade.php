@@ -1,13 +1,142 @@
 
+
   @extends('admins.layouts.Apps.app')
   @section('contents')
 
    <script type="text/javascript" src="../js/jquery360.min.js"></script>
  <link rel="stylesheet" href="../../css/mformf.css">
 
-<!------ Include the above in your HEAD tag ---------->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
- 
+<style>
+  body {
+    font-family: "Calibri Light", Calibri, sans-serif;
+    background-color: #f8f9fa;
+  }
+
+  .form-container {
+    max-width: 1000px;
+    margin: 3rem auto;
+    background-color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  h3 {
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #4f46e5;
+    text-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+  }
+
+  label {
+    font-weight: 500;
+    color: #333;
+    font-size: 13px;
+  }
+
+  .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 0.75rem;
+    font-size: 15px;
+    padding: 0.75rem;
+    font-family: "Calibri Light", Calibri, sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-control:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
+    border: none;
+    padding: 0.85rem 2rem;
+    border-radius: 2rem;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+    font-family: "Calibri Light", Calibri, sans-serif;
+    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
+    background-color: #5b69ff;
+  }
+
+  .btn-previous {
+    background-color: #6c757d;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Calibri Light", Calibri, sans-serif;
+  }
+
+  .btn-previous:hover {
+    background-color: #5a6268;
+  }
+
+  .input-error {
+    border-color: #dc3545 !important;
+    background-color: #fff4f4;
+  }
+
+  /* Hide all fieldsets except the first */
+  fieldset {
+    display: none;
+  }
+
+  fieldset.active {
+    display: block;
+  }
+</style>
+
+<div class="d-flex justify-content-center mt-2">
+  <div style="width: 50%;">
+
+    @if (session('success'))
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" class="fw-bold">&times;</span>
+        </button>
+      </div>
+    @endif
+
+    @if (session('error'))
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('error') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" class="fw-bold">&times;</span>
+        </button>
+      </div>
+    @endif
+
+    @if (session('duplicate'))
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ session('duplicate') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" class="fw-bold">&times;</span>
+        </button>
+      </div>
+    @endif
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-1">
@@ -19,7 +148,7 @@
                            @csrf                     
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>Asset assignment form</h3>
+                                <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>ASSET REASIGNMENT FORM</h3>
                                 
                             </div>
                         </div>
@@ -72,10 +201,10 @@
                                 </div>
                              
                                 <div class="form-group col-md-4 col-sm-6">
-                                    <label>Serial no g</label>
+                                    <label>Serial no</label>
                                     <input type="text" class="form-control" name="serial_no"  id="serial_no" readonly>
                                 </div>
-
+<!--
                                   <div class="form-group col-md-4 col-sm-6">
                                     <label>Barcode</label>
                                     <input type="text" class="form-control" name="barcode" id="barcode" readonly>
@@ -95,7 +224,7 @@
                                     <label>Tagged no</label>
                                     <input type="text" class="form-control" name="tag_no" id="tag_no" readonly>
                                 </div>
-
+-->
 <div class="form-group col-md-4 col-sm-4">
                                     <label>Location</label>
                                     <input type="text" class="form-control" name="location"  id="location" readonly>
@@ -113,8 +242,12 @@
 
 
                                  <div class="form-group col-md-4 col-sm-4">
-                                         <label>Supply</label>
-                                        <select class="form-control" name="supply" id="supply" readonly>                                         
+                                          <label>Supplier</label>
+                                        <select class="form-control" name="supply" id="supply">
+                                            <option>Benson & Company</option>
+                                              <option>Sound & vision</option>
+                                                <option>Teacher technology</option>
+                                                 <option>Conny Electronics</option>                                     
 
                                         </select>
                                     </div>
@@ -136,13 +269,13 @@
                                 </div>
 
                                  <div class="form-group col-md-4 col-sm-4">
-                                         <label>Bought_By</label>
-                                        <select class="form-control" name="owned_by" id="owned_by" readonly>
-                                            <option>Sound vision</option>
-                                              <option>Supply1</option>
-                                                 <option>Supply2</option>
-                                                 <option>Supply3</option>
-                                                 <option>None</option>
+                                        <label>Bought_By</label>
+                                        <select class="form-control" name="owned_by" id="owned_by">
+                                             <option></option>
+                                            <option>R & M Tanzania Specialist</option>
+                                              <option>Manyara Best View Lodge</option>
+                                                 <option>Ahadi Lodge</option>
+                                                 <option>Wildlife Residence Lodge</option>
                                         </select>
                                     </div>
 
@@ -185,10 +318,6 @@
         </div>
         <br>
     </div>
-
-
-
-
 
 
 
@@ -350,14 +479,6 @@ var imgUrl=window.location.origin+"/storage/photos/"+photos;
 
 
 
-
-
-
-
-
-
-
-
     <script type="text/javascript">        
         $(document).ready(function () {
     $('.registration-form fieldset:first-child').fadeIn('slow');
@@ -411,6 +532,11 @@ var imgUrl=window.location.origin+"/storage/photos/"+photos;
    
 });
     </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="../../img_library/scripts.js" type="text/javascript"></script>
       @endsection

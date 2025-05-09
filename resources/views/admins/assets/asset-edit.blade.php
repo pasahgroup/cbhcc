@@ -1,355 +1,267 @@
+@extends('admins.layouts.Apps.app')
+@section('contents')
 
-  @extends('admins.layouts.Apps.app')
-  @section('contents')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-   <script type="text/javascript" src="../js/jquery360.min.js"></script>
- <link rel="stylesheet" href="../../css/mformf.css">
+<style>
+  body {
+    font-family: 'Calibri Light', Calibri, sans-serif;
+    background-color: #f8f9fa;
+  }
 
-   <script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/jquery311.min.js"></script>
+  .form-container {
+    max-width: 1000px; /* Increased width */
+    margin: 3rem auto;
+    background-color: #fff;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  }
 
-<!------ Include the above in your HEAD tag ---------->
+  h3 {
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #4f46e5;
+    text-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+    text-align: left;
+  }
 
- 
-    <div class="container">
+  label {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-control {
+    border-radius: 0.75rem;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    font-family: 'Calibri Light', Calibri, sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+  }
+
+  .form-control:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+    outline: none;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
+    border: none;
+    padding: 0.85rem 2rem;
+    border-radius: 2rem;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+    font-family: 'Calibri Light', Calibri, sans-serif;
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+    min-width: 120px;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(90deg, #3730a3 0%, #0891b2 100%);
+    transform: translateY(-3px);
+  }
+
+  .btn-previous {
+    background-color: #6c757d;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Calibri Light', Calibri, sans-serif;
+    min-width: 120px;
+  }
+
+  .btn-previous:hover {
+    background-color: #5a6268;
+  }
+
+  .img-placeholder {
+    background-color: #f1f1f1;
+    min-height: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #ccc;
+    margin-top: 10px;
+    color: #aaa;
+  }
+
+  .img-placeholder img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 10px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 991px) {
+    .form-container {
+      padding: 1.5rem 2rem;
+      margin: 2rem 1rem;
+      max-width: 100%;
+    }
+  }
+</style>
+
+<div class="content-wrapper">
+  <section class="form-container">
+    <div class="form-container">
+      <form method="post" action="{{ route('asset.update', $asset->id) }}" enctype="multipart/form-data" class="registration-form">
+        @csrf
+        <input type="hidden" name="_method" value="PUT">
+
+        <h3><i class="fa fa-calendar-check-o"></i> ASSET UPDATING FORM</h3>
+
         <div class="row">
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-11 form-box">
-                <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('asset.update',$asset->id) }}" enctype="multipart/form-data">
-
-                    <fieldset>
-                           @csrf
-                            <input type="hidden" name="_method" value="PUT">                     
-                        <div class="form-top">
-                            <div class="form-top-left">
-                                <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>Asset updating form</h3>
-                                
-                            </div>
-                        </div>
-                        <div class="form-bottom">
-                            <div class="row">
-
-                                <div class="form-group col-md-4 col-sm-6">
-                                    <label>Asset name</label>
-                                    <input type="text" class="form-control" name="asset_name" value="{{$asset->asset_name}}">
-                                </div>
-                             
-                                <div class="form-group col-md-4 col-sm-6" >
-                                    <label>Category</label>
-                                <select class="form-control" name="category" id="category" required>  
-  <option value="{{$asset->id}}">{{$asset->category}}</option>
-                                     @foreach ($categories as $category) 
-  <option value="{{$category->id}}">{{$category->category}}</option>
- @endforeach 
-                                             
-
-                                </select>
-                            </div>
-                            
-                                 <div class="form-group col-md-4 col-sm-6">
-                                    <label>Subcategory</label>                                    
-                                <select class="form-control" name="subcategory" id="subcategory" required>
-                                    
-                                     <option>{{$asset->subcategory}}</option>
-                                       <option value='0'>-- Select subcategory --</option>
-                              </select>
-                            </div>
-                            </div>
-
-
-
-                               <div class="row">
-
-                                <div class="form-group col-md-4 col-sm-6">
-                                    <label>Model</label>
-                                    <input type="text" class="form-control" name="model" value="{{$asset->model}}">
-                                </div>
-                             
-                                <div class="form-group col-md-4 col-sm-6">
-                                    <label>Serial no</label>
-                                    <input type="text" class="form-control" name="serial_no" value="{{$asset->serial_no}}">
-                                </div>
-
-                                  <div class="form-group col-md-4 col-sm-6">
-                                    <label>Barcode</label>
-                                    <input type="text" class="form-control" name="barcode" value="{{$asset->barcode}}">
-                                </div>
-                            </div>
-
-
-
-                           <div class="row">                             
-                               <div class="form-group col-md-8 col-sm-8">
-                                    <label>Mac Address</label>
-                                    <input type="text" class="form-control" name="mac_address" value="{{$asset->mac_address}}">
-                                </div>
-
-                              
-<div class="form-group col-md-4 col-sm-4">
-                                    <label>Tagged no</label>
-                                    <input type="text" class="form-control" name="tag_no" value="{{$asset->tag_no}}">
-                                </div>
-
-                             </div>
-
-
-                              <div class="row">                         
-                               
-                             <div class="form-group col-md-8 col-sm-8">
-                                         <label>Supply</label>
-                                        <select class="form-control" name="supply" id="supply">
-                                            <option>{{$asset->supply}}</option>
-
-                                            <option>Benson</option>
-                                              <option>Sound vision</option>
-                                                <option>Teacher technology</option>
-                                                 <option>None</option>  
-                                        </select>
-                                    </div>
-
-
-                                      <div class="form-group col-md-4 col-sm-6">
-                                    <label>Bought price</label>
-                                    <input type="number" class="form-control" name="bprice" value="{{$asset->bprice}}">
-                                </div>
-                             </div>
-
-
-
-    <div class="row">                             
-                               <div class="form-group col-md-4 col-sm-6">
-                                    <label>Warranty Year</label>
-                                       <input type="number" class="form-control" name="warranty" min="0" max="10" maxlength="2" onKeyPress="if(this.value.length==2) return false;" value="{{$asset->warranty}}">
-                                </div>
-
-                                 <div class="form-group col-md-4 col-sm-4">
-                                         <label>Bought_By</label>
-                                        <select class="form-control" name="owned_by" id="owned_by">
-                                             <option>{{$asset->owned_by}}</option>
-                                            <option>Sound vision</option>
-                                              <option>Supply1</option>
-                                                 <option>Supply2</option>
-                                                 <option>Supply3</option>
-                                                 <option>None</option>
-                                        </select>
-                                    </div>
-
-
-                                     <div class="form-group col-md-4 col-sm-4">
-                                         <label>Status</label>
-                                        <select class="form-control" name="status" id="status">
-                                                   <option>{{$asset->status}}</option>                                         
-                                                <option>Inuse</option>
-                                                 <option>Inactive</option>
-                                                 <option>Store</option>
-                                                 <option>Disposed</option>
-                                                  <option>Lost</option>
-                                                  <option>Stolen</option>
-                                                  <option>Maintenance</option>
-  
-                                        </select>
-                                    </div>
-
-                             </div>
-
-
-
-                           <a  href="/asset" role="button" class="previous btn-previous"><i class="fas fa-angle-double-left"></i></a>
-                          <button type="button" class="btn btn-next float-right">Next</button>
-                        </div>
-                    </fieldset>
-                  
-
-
-                    <fieldset>
-                        <div class="form-top">
-                            <div class="form-top-left">
-                                <h3><span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>Other Information</h3>
-                             
-                            </div>
-                        </div>
-
-                        <div class="form-bottom">
-
- <div class="row">
-                      
-
-                                 <div class="form-group col-md-4 col-sm-4">
-                                         <label>Location</label>
-                                        <select class="form-control" name="location" id="location" required>                                         
-      
-               <option>{{$asset->location}}</option> 
-                                            <option>Best view</option>
-                                              <option>Ahadi lodge</option>
-                                                <option>Store-MBVL</option>
-                                        </select>
-                                    </div>
-
-<div class="form-group col-md-3 col-sm-3">
-                                         <label>Assigned Date</label>
-                                       <input type="date" name="assign_date" class="form-email form-control" value="{{$asset->assign_date}}">
-                                    </div>
-
-                                    <div class="form-group col-md-5 col-sm-5">
-                                         <label>Assigned to</label>
-                                        <select class="form-control" name="assigned_to" id="assigned_to">                                           
-                                           <option>{{$asset->assigned_to}}</option> 
-                                            <option>Wawa</option>
-                                              <option>Diana</option>
-                                         
-                                        </select>
-                                    </div> 
-                                
-                            </div>
-
-
-
-                            <div class="row">
-  <div class="col-lg-6 col-md-12 col-sm-12">
-                                    <x-label for="password_confirmation" :value="__('Photo')" />
-                                    <div class="form-group">
-                                    <input type="file" name="attachment[]" onChange="displayImage(this)" id="attachment" accept="image/*" class="" style="display:block;">
-                                   
-                                </div>
-          
-            <span class="img-div float-right">
-              <div class="text-center img-placeholder"  onClick="triggerClick()">               
-              </div>
-              <img src="{{ URL::asset('/storage/photos/'.$asset->photo) }}" onClick="triggerClick()" id="profileDisplay">
-            </span>
-            </div>
-
-             <!-- 
-               <div class="form-group col-md-4 col-sm-4">
-                                         <label>Lodge</label>
-                                        <select class="form-control" name="lodge_name">
-                 
-                                        </select>
-             </div> -->
-            </div>
-
-                
-
-                            <button type="button" class="previous btn-previous">Previous</button>
-                            <button type="submit" class="submit float-right">Update</button>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+          <div class="form-group col-md-4">
+            <label for="asset_name">Asset Name</label>
+            <input type="text" id="asset_name" class="form-control" name="asset_name" value="{{ $asset->asset_name }}">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="category">Category</label>
+            <select id="category" class="form-control" name="category">
+              <option value="{{ $asset->id }}">{{ $asset->category }}</option>
+              @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->category }}</option>
+              @endforeach
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="subcategory">Subcategory</label>
+            <select id="subcategory" class="form-control" name="subcategory">
+              <option>{{ $asset->subcategory }}</option>
+              <option value="0">-- Select subcategory --</option>
+            </select>
+          </div>
         </div>
-        <br>
+
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="model">Model</label>
+            <input type="text" id="model" class="form-control" name="model" value="{{ $asset->model }}">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="serial_no">Serial No</label>
+            <input type="text" id="serial_no" class="form-control" name="serial_no" value="{{ $asset->serial_no }}">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-8">
+            <label for="supply">Supplier</label>
+            <select id="supply" class="form-control" name="supply">
+              <option>{{ $asset->supply }}</option>
+              <option>Benson & Company</option>
+              <option>Sound & vision</option>
+              <option>Conny Electronics</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="bprice">Bought Price</label>
+            <input type="number" id="bprice" class="form-control" name="bprice" value="{{ $asset->bprice }}">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="warranty">Warranty (Years)</label>
+            <input type="number" id="warranty" class="form-control" name="warranty" min="0" max="10" maxlength="2" value="{{ $asset->warranty }}">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="owned_by">Bought By</label>
+            <select id="owned_by" class="form-control" name="owned_by">
+              <option>{{ $asset->owned_by }}</option>
+              <option>R & M Tanzania Specialist</option>
+              <option>Manayara Best View Lodge</option>
+              <option>Wildlife Residence Lodge</option>
+              <option>Ahadi Lodge</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="status">Status</label>
+            <select id="status" class="form-control" name="status">
+              <option>{{ $asset->status }}</option>
+              <option>In use</option>
+              <option>In active</option>
+              <option>Brand New</option>
+              <option>Need repair</option>
+              <option>Lost</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="location">Location</label>
+            <select id="location" class="form-control" name="location">
+              <option>{{ $asset->location }}</option>
+              <option>Best view</option>
+              <option>Ahadi lodge</option>
+              <option>Store-MBVL</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="assign_date">Assigned Date</label>
+            <input type="date" id="assign_date" class="form-control" name="assign_date" value="{{ $asset->assign_date }}">
+          </div>
+          <div class="form-group col-md-5">
+            <label for="assignee_name">Assigned To</label>
+            <input type="text" id="assignee_name" class="form-control" name="assignee_name" value="{{ $asset->assignee_name }}">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="attachment">Photo</label>
+     <input type="file" name="attachment[]" onChange="displayImage(this)" id="attachment" accept="image/*" class="form-control">
+          @if($asset->photo)
+          <div class="img-placeholder mt-2">
+            <img src="{{ URL::asset('/storage/photos/'.$asset->photo) }}" alt="Current Photo">
+          </div>
+          @endif
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+          <a href="/asset" class="btn-previous"><i class="fas fa-times"></i> Cancel</a>
+          <button type="submit" class="btn-gradient">Update</button>
+        </div>
+      </form>
     </div>
+  </section>
+</div>
+<script type="text/javascript">
+  function triggerClick() {
+    document.querySelector('#attachment').click();
+  }
 
-
-
-
-    <script type='text/javascript'>
-    $(document).ready(function(){
-
-        // Department Change
-        $('#category').change(function(){
-
-             // Department id
-             var id = $(this).val();
-
-             // Empty the dropdown
-             $('#subcategory').find('option').not(':first').remove();
-
-// alert(id);
-             // AJAX request 
-             $.ajax({
-                   type: 'get',
-                 url: 'getSubcategor/'+id,
-              
-                 dataType: 'json',
-                 success: function(response){
-
-                     var len = 0;
-                     if(response['data'] != null){
-                          len = response['data'].length;
-                     }
-//alert(len);
-
-                     if(len > 0){
-                          // Read data and create <option >
-                          for(var i=0; i<len; i++){
-
-                               var id = response['data'][i].category_id;
-                               var name = response['data'][i].subcategory;
-
-                               var option = "<option value='"+name+"'>"+name+"</option>";
-
-                               $("#subcategory").append(option); 
-                          }
-                     }
-
-                 }
-             });
-        });
-    });
-    </script>
-
-
-
-
-
-
-
-
-
-    <script type="text/javascript">        
-        $(document).ready(function () {
-    $('.registration-form fieldset:first-child').fadeIn('slow');
-
-    $('.registration-form input[type="text"]').on('focus', function () {
-        $(this).removeClass('input-error');
-    });
-
-    // next step
-    $('.registration-form .btn-next').on('click', function () {
-        var parent_fieldset = $(this).parents('fieldset');
-        var next_step = true;
-        parent_fieldset.find('input[required],input[type="emailx"]').each(function () {
-                 if ($(this).val() == "" || $(this).val() == "0") {
-                $(this).addClass('input-error');
-                next_step = false;
-            } else {
-                $(this).removeClass('input-error');
-            }
-        });
-
-        if (next_step) {
-            parent_fieldset.fadeOut(400, function () {
-                $(this).next().fadeIn();
-            });
-        }
-
-    });
-
-    // previous step
-    $('.registration-form .btn-previous').on('click', function () {
-        $(this).parents('fieldset').fadeOut(400, function () {
-            $(this).prev().fadeIn();
-        });
-    });
-
-    // submit
-    $('.registration-form').on('submit', function (e) {
-
-        $(this).find('input[required],input[type="emailx"]').each(function () {
-                if ($(this).val() == "" || $(this).val() == "0") {
-                e.preventDefault();
-                $(this).addClass('input-error');
-            } else {
-                $(this).removeClass('input-error');
-            }
-        });
-
-    });
-   
-});
-    </script>
-
-    <script src="../../img_library/scripts.js" type="text/javascript"></script>
-      @endsection
+  function displayImage(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        document.querySelector('#profileDisplay').setAttribute('src', e.target.result);
+        document.querySelector('#profileDisplay').style.display = 'block';
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+<script src="../../img_library/scripts.js" type="text/javascript"></script>
+@endsection
