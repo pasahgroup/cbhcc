@@ -62,10 +62,8 @@ class AssetCateController extends Controller
               // ->select('id','category')
               //  ->get();
 
-
    // dd($categories['data']);
              return view('admins.assets.add-asset',compact('departments','categories'));
-
 }
 
     /**

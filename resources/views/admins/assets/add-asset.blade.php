@@ -34,8 +34,8 @@
   .form-control {
     border: 1px solid #ced4da;
     border-radius: 0.75rem;
-    font-size: 15px;
-    padding: 0.75rem;
+    /*font-size: 15px;
+    padding: 0.75rem;*/
     font-family: "Calibri Light", Calibri, sans-serif;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
@@ -46,7 +46,7 @@
   }
 
   .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 
   .btn-gradient {
@@ -73,7 +73,7 @@
   .btn-previous {
     background-color: #6c757d;
     border: none;
-    padding: 0.75rem 1.5rem;
+    padding: 0.85rem 1.5rem;
     border-radius: 2rem;
     color: white;
     font-weight: 600;
@@ -160,16 +160,14 @@
               </select>
             </div>
            <div class="col-md-4 col-sm-6">
-              <label>Sub category</label>
-               <select class="form-control" name="sub_category" id="sub_category" required>
-             <option></option>
-                <option>{{$selected_class ?? ''}}</option>
-                @foreach ($categories as $session)
-               <option value="{{$category->id}}">{{$session->session}}</option>
-                @endforeach
-              </select>
+                                    <label>Subcategory</label>
+                                <select class="form-control" name="subcategory" id="subcategory" required="required">
+                                     <option value='0'>-- Select subcategory --</option>
+                              </select>
+                            </div>
+
             </div>
-          </div>
+          
 
           <div class="form-group row">
             <div class="col-md-4 col-sm-6">
@@ -291,6 +289,53 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
+
+
+
+    <script type='text/javascript'>
+    $(document).ready(function(){
+
+        // Department Change
+        $('#category').change(function(){
+
+             // Department id
+             var id = $(this).val();
+
+             // Empty the dropdown
+             $('#subcategory').find('option').not(':first').remove();
+//alert(id);
+             // AJAX request
+             $.ajax({
+                 url: 'getSubcategory/'+id,
+                 type: 'get',
+                 dataType: 'json',
+                 success: function(response){
+
+                     var len = 0;
+                     if(response['data'] != null){
+                          len = response['data'].length;
+                     }
+
+//alert(len);
+                     if(len > 0){
+                          // Read data and create <option >
+                          for(var i=0; i<len; i++){
+
+                               var id = response['data'][i].category_id;
+                               var name = response['data'][i].subcategory;
+
+                               var option = "<option value='"+name+"'>"+name+"</option>";
+
+                               $("#subcategory").append(option);
+                          }
+                     }
+
+                 }
+             });
+        });
+    });
+    </script>
+
 <script>
   function triggerClick() {
     document.querySelector('#attachment').click();
@@ -352,4 +397,5 @@
     });
   });
 </script>
+
 @endsection
