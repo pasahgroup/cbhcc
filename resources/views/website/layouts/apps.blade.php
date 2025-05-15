@@ -189,8 +189,6 @@
                                
 
 
-
-
                                 <li><a href="#">Services</a>
                                     <ul class="dropdown">
                                          <li><a href="/whatWeOfferClient">Palatial Tour Services</a></li>
