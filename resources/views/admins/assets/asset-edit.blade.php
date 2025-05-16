@@ -152,19 +152,19 @@
             </select>
           </div>
         </div>
-
+<!--
         <div class="row">
           <div class="form-group col-md-4">
             <label for="model">Model</label>
             <input type="text" id="model" class="form-control" name="model" value="{{ $asset->model }}">
-          </div>
+          </div> -->
           <div class="form-group col-md-4">
             <label for="serial_no">Serial No</label>
             <input type="text" id="serial_no" class="form-control" name="serial_no" value="{{ $asset->serial_no }}">
           </div>
         </div>
 
-        <div class="row">
+       <!-- <div class="row">
           <div class="form-group col-md-8">
             <label for="supply">Supplier</label>
             <select id="supply" class="form-control" name="supply">
@@ -194,7 +194,7 @@
               <option>Wildlife Residence Lodge</option>
               <option>Ahadi Lodge</option>
             </select>
-          </div>
+          </div>-->
           <div class="form-group col-md-4">
             <label for="status">Status</label>
             <select id="status" class="form-control" name="status">
