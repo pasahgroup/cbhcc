@@ -67,7 +67,9 @@ Route::resource('/aboutus',AboutusController::class);
   Route::get('/project-destroy/{x}', [ProjectController::class, 'destroy'])->name('destroy');
   Route::get('/subproject-destroy/{x}', [SubprojectController::class, 'destroy'])->name('destroy');
 
-    Route::get('/activity-destroy/{x}', [ActivityController::class, 'destroy'])->name('destroy');
+ Route::get('/activity-destroy/{x}', [ActivityController::class, 'destroy'])->name('destroy');
+
+ Route::get('/bank-destroy/{x}', [BankController::class, 'destroy'])->name('destroy');
 
 //Route::get('/bank1',[BankController::class,'emailSendF'])->name('email-send');
 

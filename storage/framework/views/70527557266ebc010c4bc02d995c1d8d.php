@@ -396,9 +396,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/designation" class="nav-link">
+              <a href="/bank" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>DataTables</p>
+                <p>Banks</p>
               </a>
             </li>
             <li class="nav-item">

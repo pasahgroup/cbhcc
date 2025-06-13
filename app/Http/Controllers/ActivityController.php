@@ -67,10 +67,9 @@ class ActivityController extends Controller
      */
     public function update(Request $request,$id)
     {
-
-        $project = project::where('id',$id)->first();        
+        $project = activity::where('id',$id)->first();      
       
-  $project_nameUpdate = project::where('id',$id)
+  $project_nameUpdate = activity::where('id',$id)
              ->update([
                'activity_name'=>request('activity_name'),
         'activity_level'=>request('activity_level'),      
@@ -79,7 +78,7 @@ class ActivityController extends Controller
         ]);
 
 // dd('print');
-        return redirect('/project');
+        return redirect('/activity');
     }
 
     /**

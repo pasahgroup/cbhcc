@@ -1,5 +1,5 @@
-@extends('spa.app')
-@section('contents')
+
+<?php $__env->startSection('contents'); ?>
 
 <style>
   body {
@@ -102,68 +102,90 @@
 <div class="d-flex justify-content-center mt-2">
   <div style="width: 50%;">
 
-    @if (session('success'))
+    <?php if(session('success')): ?>
       <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
+        <?php echo e(session('success')); ?>
+
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true" class="fw-bold">&times;</span>
         </button>
       </div>
-    @endif
+    <?php endif; ?>
 
-    @if (session('error'))
+    <?php if(session('error')): ?>
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ session('error') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true" class="fw-bold">&times;</span>
-        </button>
-      </div>
-    @endif
+        <?php echo e(session('error')); ?>
 
-    @if (session('duplicate'))
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        {{ session('duplicate') }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true" class="fw-bold">&times;</span>
         </button>
       </div>
-    @endif
+    <?php endif; ?>
+
+    <?php if(session('duplicate')): ?>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <?php echo e(session('duplicate')); ?>
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" class="fw-bold">&times;</span>
+        </button>
+      </div>
+    <?php endif; ?>
 
   </div>
 </div>
 
 <div class="form-container">
     <div class="col-md-12">
-   <form method="POST" id="post_form" role="form" class="registration-form" action="{{ route('activity.update',$activity->id) }}" enctype="multipart/form-data">
-        @csrf
+   <form method="POST" id="post_form" role="form" class="registration-form" action="<?php echo e(route('bank.update',$banks->id)); ?>" enctype="multipart/form-data">
+        <?php echo csrf_field(); ?>
  <input type="hidden" name="_method" value="PUT">
 
-        <h3><i class="fa fa-calendar-check-o"></i>ACTIVITY UPDATING FORM</h3>
+        <h3><i class="fa fa-calendar-check-o"></i>BANKS REGISTRATION FORM</h3>
         <fieldset class="active">
             <div class="form-group row">        
-           <div class="col-md-6 col-sm-12">
-        <label>Activity name</label>
+           <div class="col-md-4 col-sm-6">
+        <label>Bank name</label>
 
-        <input type="text" name="activity_name" placeholder="enter your activity name" id="activity_name" class="form-control"  value="{{$activity->activity_name}}" maxlength="64" required>
+        <input type="text" name="bank_name" id="bank_name" class="form-control" maxlength="64" value="<?php echo e($banks->bank_name); ?>" required>
 
+  </div>
+   
+      <div class="col-md-2 col-sm-6">
+         <label>Swift code</label>
+         <input type="text" name="swift_code" id="swift_code" class="form-control" maxlength="64" value="<?php echo e($banks->swift_code); ?>" required>   
+  </div>
+
+
+      <div class="col-md-6 col-sm-12">
+         <label>Bank holder name</label>
+         <input type="text" name="bank_holder_name" id="bank_holder_name" class="form-control" maxlength="64" value="<?php echo e($banks->bank_holder_name); ?>" required>   
+  </div>
+  </div>
+
+  <div class="form-group row">
+      <div class="col-md-6 col-sm-12">
+         <label>Bank account number</label>
+         <input type="text" name="bank_account_no" id="bank_account_no" class="form-control" maxlength="64" value="<?php echo e($banks->bank_account_no); ?>" required>   
+  </div>
+ 
+     <div class="col-md-6 col-sm-12">
+         <label>Currency</label>
+        <input type="text" name="currency" id="currency" class="form-control" maxlength="64" value="<?php echo e($banks->currency); ?>" required>   
+  </div>
+  </div>
+
+
+  <div class="form-group row">
+      <div class="col-md-6 col-sm-12">
+         <label>Country</label>
+         <input type="text" name="country" id="country" class="form-control" maxlength="64" value="<?php echo e($banks->country); ?>" required>   
   </div>
  
       <div class="col-md-6 col-sm-12">
-         <label>Activity level</label>
-         <input type="text" name="activity_level" id="activity_level" class="form-control" value="{{$activity->activity_level}}" required>   
-  </div>
-
-      <div class="col-md-6 col-sm-12">
-         <label>Activity percent</label>
-         <input type="text" name="activity_percent" id="activity_percent" class="form-control" value="{{$activity->activity_percent}}" required>   
-  </div>
-  
-
-      <div class="col-md-6 col-sm-12">
         <label>Status</label>
-
          <select class="form-control" aria-label="Default select example" name="status" id="status">
-          <option value="{{$activity->status}}">{{$activity->status}}</option>
+          <option selected><?php echo e($banks->status); ?></option>
   <option value="0"></option>
 <option value="Active">Active</option>
 <option value="Inactive">Inactive</option>
@@ -173,7 +195,7 @@
 
  <hr>
           <div class="d-flex justify-content-between mt-3">
-             <a href="/activity" role="button" class="btn-previous">Back</a>
+             <a href="/bank" role="button" class="btn-previous">Exit</a>
             <button type="submit" class="btn-gradient">Update</button>
           </div>
         </fieldset>
@@ -304,4 +326,5 @@
     });
   });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('spa.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\cbhcc\resources\views/admin/bank/editbank.blade.php ENDPATH**/ ?>

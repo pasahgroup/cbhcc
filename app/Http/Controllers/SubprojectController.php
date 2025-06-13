@@ -76,8 +76,6 @@ class SubprojectController extends Controller
      */
     public function update(Request $request,$id)
     {
-        //$subproject = subproject::where('id',$id)->first();        
-      
   $subproject_nameUpdate = subproject::where('id',$id)
              ->update([
                 'sub_project_name'=>request('sub_project_name'),

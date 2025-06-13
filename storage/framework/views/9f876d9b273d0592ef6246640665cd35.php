@@ -139,8 +139,7 @@
     <div class="col-md-12">
    <form method="POST" id="post_form" role="form" class="registration-form" action="<?php echo e(route('activity.update',$activity->id)); ?>" enctype="multipart/form-data">
         <?php echo csrf_field(); ?>
-
-<input type="hidden" method="_method" value="PUT">
+ <input type="hidden" name="_method" value="PUT">
 
         <h3><i class="fa fa-calendar-check-o"></i>ACTIVITY UPDATING FORM</h3>
         <fieldset class="active">
