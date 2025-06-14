@@ -424,12 +424,12 @@
                 <p>Banks</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="/locations" class="nav-link">
+          <li class="nav-item">
+              <a href="/donor" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>jsGrid</p>
+                <p>Donor</p>
               </a>
-            </li>           
+            </li>          
 
           </ul>
         </li>

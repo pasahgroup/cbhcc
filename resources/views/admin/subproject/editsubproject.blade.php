@@ -1,8 +1,6 @@
 @extends('spa.app')
 @section('contents')
 
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
 <style>
   body {
     font-family: "Calibri Light", Calibri, sans-serif;
@@ -139,7 +137,6 @@
 <form method="POST" id="post_form" role="form" class="registration-form" action="{{ route('subproject.update',$subproject->id) }}" enctype="multipart/form-data">
         @csrf
  <input type="hidden" name="_method" value="PUT">
-
         <h3><i class="fa fa-calendar-check-o"></i>EDIT SUB PROJECT REGISTRATION FORM</h3>
 
         <fieldset class="active">
@@ -184,6 +181,7 @@
         <label>Status</label>
 
          <select class="form-control" aria-label="Default select example" name="status" id="status">
+          <option value="{{$subproject->status}}">{{$subproject->status}}</option>
   <option value="0"></option>
 <option value="Ongoing">Ongoing</option>
 <option value="Upcoming">Upcoming</option>
@@ -211,9 +209,6 @@
     </div>
   </div>
 
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
 
     <script type='text/javascript'>

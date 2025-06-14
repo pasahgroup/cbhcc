@@ -1,7 +1,6 @@
 @extends('spa.app')
 @section('contents')
 
-
 <style>
   body {
     font-family: "Calibri Light", Calibri, sans-serif;
@@ -135,78 +134,83 @@
 
 <div class="form-container">
     <div class="col-md-12">
-<form method="post" id="post_form" role="form" class="registration-form" action="{{ route('subproject.store') }}" enctype="multipart/form-data">
+    <form method="POST" id="post_form" role="form" class="registration-form" action="{{ route('donor.update',$donors->id) }}" enctype="multipart/form-data">
         @csrf
+ <input type="hidden" name="_method" value="PUT">
 
-        <h3><i class="fa fa-calendar-check-o"></i>ADD SUB PROJECT REGISTRATION FORM</h3>
-
+        <h3><i class="fa fa-calendar-check-o"></i>DONOR REGISTRATION FORM</h3>
         <fieldset class="active">
             <div class="form-group row">        
-           <div class="col-md-6 col-sm-12">
-        <label>Sub Project Name</label>
+           <div class="col-md-4 col-sm-6">
+        <label>Donor name</label>
 
-        <input type="text" name="sub_project_name" placeholder="enter your sub project name" id="sub_project_name" class="form-control" maxlength="14" required>
+        <input type="text" name="donor_name" value="{{$donors->donor_name}}" id="donor_name" class="form-control" maxlength="64" required>
 
   </div>
-   </div>
-          
- <div class="form-group row">
+   
+      <div class="col-md-2 col-sm-6">
+         <label>Contact number</label>
+         <input type="text" name="contact_number" value="{{$donors->contact_number}}" id="contact_number" class="form-control" maxlength="32" required>   
+  </div>
+
+
       <div class="col-md-6 col-sm-12">
-        <label>Sub Project code</label>
-        <input type="text" name="sub_project_code" placeholder="enter your sub project code" id="sub_project_code" class="form-control" maxlength="14" required>    
+         <label>Email</label>
+         <input type="email" name="email" value="{{$donors->email}}" id="email" class="form-control" maxlength="64" required>   
   </div>
   </div>
 
+  <div class="form-group row">
+      <div class="col-md-6 col-sm-12">
+         <label>Address</label>
+         <input type="text" name="address" value="{{$donors->address}}" id="address" class="form-control" maxlength="124" required>   
+  </div>
+ 
+  </div>
 
+
+  <div class="form-group row">
+      <div class="col-md-6 col-sm-12">
+         <label>Country</label>
+         <input type="text" name="country" value="{{$donors->country}}" id="country" class="form-control" maxlength="40" required>   
+  </div>
+ 
+      <div class="col-md-6 col-sm-12">
+        <label>Status</label>
+         <select class="form-control" aria-label="Default select example" name="status" id="status">
+          <option value="{{$donors->status}}">{{$donors->status}}</option>
+  <option value="0"></option>
+<option value="Active">Active</option>
+<option value="Inactive">Inactive</option>
+</select>    
+  </div>
+  </div>
 
 
     <div class="form-group row">
-   <div class="col-md-6 col-sm-12">
-        <label>Project name</label>
+                 <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <label for="password_confirmation" :value="('Image')" />
+                                    <div class="form-group">
+                                    <input type="file" name="logo[]" onChange="displayImage(this)" id="logo" accept="image/*" class="" style="display:block;">
 
-      <select class="form-control" aria-label="Default select example" name="project_id" id="project_id">
-  
-  <option value="0"></option>
-@foreach($projects as $project)
-<option value="{{$project->id}}">{{$project->project_name}}</option>
-@endforeach
-</select>
-  
-  </div>
-  </div>
-
-
-  <div class="form-group row">
-      <div class="col-md-6 col-sm-12">
-        <label>level</label>
-        <input type="text" name="level" placeholder="enter your level" id="level" class="form-control" maxlength="14" required>  
-
-  </div>
-  </div>
+                                </div>
+                                </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+            <span class="img-div">
+              <div class="text-center img-placeholder"  onClick="triggerClick()">
+              </div>
+              <img src="{{ URL::asset('/storage/donor_photos/'.$donors->logo) }}" onClick="triggerClick()" id="profileDisplay">
+            </span>
+            </div>
+           </div>
 
 
-  <div class="form-group row">
-   <div class="col-md-6 col-sm-12">
-        <label>Status</label>
-
-         <select class="form-control" aria-label="Default select example" name="status" id="status">
-  <option value="0"></option>
-<option value="Ongoing">Ongoing</option>
-<option value="Upcoming">Upcoming</option>
-<option value="Completed">Completed</option>
-<option value="Suspended">Suspended</option>
-
-</select>  
-  </div>
-  </div>
  <hr>
           <div class="d-flex justify-content-between mt-3">
-             <a href="/subproject" role="button" class="btn-previous">Cancel</a>
-            <button type="submit" class="btn-gradient">Save</button>
+             <a href="/donor" role="button" class="btn-previous">Exit</a>
+            <button type="submit" class="btn-gradient">Update</button>
           </div>
         </fieldset>
-
-          </div>
       </form>
     </div>
   </div>
@@ -334,5 +338,4 @@
     });
   });
 </script>
-
 @endsection

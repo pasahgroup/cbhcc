@@ -1,6 +1,5 @@
-@extends('spa.app')
-@section('contents')
 
+<?php $__env->startSection('contents'); ?>
 
 <style>
   body {
@@ -103,110 +102,116 @@
 <div class="d-flex justify-content-center mt-2">
   <div style="width: 50%;">
 
-    @if (session('success'))
+    <?php if(session('success')): ?>
       <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
+        <?php echo e(session('success')); ?>
+
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true" class="fw-bold">&times;</span>
         </button>
       </div>
-    @endif
+    <?php endif; ?>
 
-    @if (session('error'))
+    <?php if(session('error')): ?>
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ session('error') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true" class="fw-bold">&times;</span>
-        </button>
-      </div>
-    @endif
+        <?php echo e(session('error')); ?>
 
-    @if (session('duplicate'))
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        {{ session('duplicate') }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true" class="fw-bold">&times;</span>
         </button>
       </div>
-    @endif
+    <?php endif; ?>
+
+    <?php if(session('duplicate')): ?>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <?php echo e(session('duplicate')); ?>
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" class="fw-bold">&times;</span>
+        </button>
+      </div>
+    <?php endif; ?>
 
   </div>
 </div>
 
 <div class="form-container">
     <div class="col-md-12">
-<form method="post" id="post_form" role="form" class="registration-form" action="{{ route('subproject.store') }}" enctype="multipart/form-data">
-        @csrf
+<form method="post" id="post_form" role="form" class="registration-form" action="<?php echo e(route('donor.store')); ?>" enctype="multipart/form-data">
+        <?php echo csrf_field(); ?>
 
-        <h3><i class="fa fa-calendar-check-o"></i>ADD SUB PROJECT REGISTRATION FORM</h3>
-
+        <h3><i class="fa fa-calendar-check-o"></i>DONOR REGISTRATION FORM</h3>
         <fieldset class="active">
             <div class="form-group row">        
-           <div class="col-md-6 col-sm-12">
-        <label>Sub Project Name</label>
+           <div class="col-md-4 col-sm-6">
+        <label>Donor name</label>
 
-        <input type="text" name="sub_project_name" placeholder="enter your sub project name" id="sub_project_name" class="form-control" maxlength="14" required>
+        <input type="text" name="donor_name" placeholder="donor name" id="donor_name" class="form-control" maxlength="64" required>
 
   </div>
-   </div>
-          
- <div class="form-group row">
+   
+      <div class="col-md-2 col-sm-6">
+         <label>Contact number</label>
+         <input type="text" name="contact_number" placeholder="contact number" id="contact_number" class="form-control" maxlength="32" required>   
+  </div>
+
+
       <div class="col-md-6 col-sm-12">
-        <label>Sub Project code</label>
-        <input type="text" name="sub_project_code" placeholder="enter your sub project code" id="sub_project_code" class="form-control" maxlength="14" required>    
+         <label>Email</label>
+         <input type="email" name="email" placeholder="email" id="email" class="form-control" maxlength="64" required>   
   </div>
   </div>
 
+  <div class="form-group row">
+      <div class="col-md-6 col-sm-12">
+         <label>Address</label>
+         <input type="text" name="address" placeholder="address" id="address" class="form-control" maxlength="124" required>   
+  </div>
+ 
+  </div>
 
+
+  <div class="form-group row">
+      <div class="col-md-6 col-sm-12">
+         <label>Country</label>
+         <input type="text" name="country" placeholder="country" id="country" class="form-control" maxlength="40" required>   
+  </div>
+ 
+      <div class="col-md-6 col-sm-12">
+        <label>Status</label>
+         <select class="form-control" aria-label="Default select example" name="status" id="status">
+  <option value="0"></option>
+<option value="Active">Active</option>
+<option value="Inactive">Inactive</option>
+</select>    
+  </div>
+  </div>
 
 
     <div class="form-group row">
-   <div class="col-md-6 col-sm-12">
-        <label>Project name</label>
+                 <div class="col-lg-6 col-md-12 col-sm-12">
+                                    <label for="password_confirmation" :value="('Image')" />
+                                    <div class="form-group">
+                                    <input type="file" name="logo[]" onChange="displayImage(this)" id="logo" accept="image/*" class="" style="display:block;" required>
 
-      <select class="form-control" aria-label="Default select example" name="project_id" id="project_id">
-  
-  <option value="0"></option>
-@foreach($projects as $project)
-<option value="{{$project->id}}">{{$project->project_name}}</option>
-@endforeach
-</select>
-  
-  </div>
-  </div>
-
-
-  <div class="form-group row">
-      <div class="col-md-6 col-sm-12">
-        <label>level</label>
-        <input type="text" name="level" placeholder="enter your level" id="level" class="form-control" maxlength="14" required>  
-
-  </div>
-  </div>
+                                </div>
+                                </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+            <span class="img-div">
+              <div class="text-center img-placeholder"  onClick="triggerClick()">
+              </div>
+              <img src="images/no.png" onClick="triggerClick()" id="profileDisplay">
+            </span>
+            </div>
+           </div>
 
 
-  <div class="form-group row">
-   <div class="col-md-6 col-sm-12">
-        <label>Status</label>
-
-         <select class="form-control" aria-label="Default select example" name="status" id="status">
-  <option value="0"></option>
-<option value="Ongoing">Ongoing</option>
-<option value="Upcoming">Upcoming</option>
-<option value="Completed">Completed</option>
-<option value="Suspended">Suspended</option>
-
-</select>  
-  </div>
-  </div>
  <hr>
           <div class="d-flex justify-content-between mt-3">
-             <a href="/subproject" role="button" class="btn-previous">Cancel</a>
+             <a href="/donor" role="button" class="btn-previous">Exit</a>
             <button type="submit" class="btn-gradient">Save</button>
           </div>
         </fieldset>
-
-          </div>
       </form>
     </div>
   </div>
@@ -335,4 +340,5 @@
   });
 </script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('spa.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\cbhcc\resources\views/admin/donor/adddonor.blade.php ENDPATH**/ ?>

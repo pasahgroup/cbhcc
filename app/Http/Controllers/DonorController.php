@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\donor;
-use App\Http\Requests\StoredonorRequest;
-use App\Http\Requests\UpdatedonorRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-
-
-
+use App\Http\Requests\StoreprojectRequest;
+use App\Http\Requests\UpdateprojectRequest;
+use DB;
 
 class DonorController extends Controller
 {
@@ -18,7 +15,8 @@ class DonorController extends Controller
      */
     public function index()
     {
-        // return view('donor.donor');
+    $donors=donor::get();
+    return view('admin.donor.donor',compact('donors'));
     }
 
     /**
@@ -26,12 +24,8 @@ class DonorController extends Controller
      */
     public function create()
     {
-        //
-    }
-
-public function donor()
-    {
-        return view('donor.donor');
+        $donors=donor::get();
+        return view('admin.donor.adddonor',compact('donors'));
     }
 
     /**
@@ -39,7 +33,7 @@ public function donor()
      */
     public function store(Request $request)
     {
-
+      
             if(request('logo')){
                 $attach = request('logo');
                 foreach($attach as $attached){
@@ -58,8 +52,6 @@ public function donor()
 
          }
       }
-//dd($imageToStore);
-
 
         $donors = donor::UpdateOrCreate([
         'donor_name'=>request('donor_name'),
@@ -72,14 +64,13 @@ public function donor()
        'status'=>request('status')
         ]);
 
-    return view('donor.donor');
+      return redirect('/donor');
     }
-
 
     /**
      * Display the specified resource.
      */
-    public function show(donor $donor)
+    public function show(project $project)
     {
         //
     }
@@ -87,24 +78,68 @@ public function donor()
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(donor $donor)
+    public function edit(Request $request,$id)
     {
-        //
+        $donors=donor::where('id',$id)->first();
+        return view('admin.donor.editdonor',compact('donors'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatedonorRequest $request, donor $donor)
+    public function update(Request $request,$id)
     {
-        //
+$donors = donor::where('id',$id)->first();   
+      
+  $donor_nameUpdate = donor::where('id',$id)
+             ->update([
+       'contact_number'=>request('contact_number'),
+        'email'=>request('email'),
+        'address'=>request('address'),
+        'country'=>request('country'),       
+        'status'=>request('status')
+        ]);
+
+
+  if(request('logo')){
+                $attach = request('logo');
+                foreach($attach as $attached){
+                     // Get filename with extension
+                     $fileNameWithExt = $attached->getClientOriginalName();
+                     // Just Filename
+                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                     // Get just Extension
+                     $extension = $attached->getClientOriginalExtension();
+                     //Filename to store
+                     $imageToStore = $filename.'_'.time().'.'.$extension;
+                     //upload the image
+                      //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $imageToStore);
+                    $path = $attached->storeAs('donor_photos/', $imageToStore);
+
+         }
+  $donorUpdate = donor::where('id',$id)
+             ->update([
+            'logo'=>$imageToStore
+        ]);
+        Storage::delete('/donor_photos/'.$donors->logo);
+      }
+
+         return redirect('/donor');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(donor $donor)
+     public function destroy($id)
     {
-        //
+        $delete = donor::where('id',$id)->first();
+        if($delete->delete()){
+             DB::statement("delete from donors where id=$id");
+             
+            return redirect()->route('donor.index')->with('info','Donor deleted successfully');
+        }
+        else{
+            return redirect()->route('donor.index')->with('error','Donor not exists');
+     }
     }
 }

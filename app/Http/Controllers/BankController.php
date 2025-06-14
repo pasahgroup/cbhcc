@@ -84,7 +84,6 @@ class BankController extends Controller
        'status'=>request('status'),     
         ]);
 
-// dd('print');
         return redirect('/bank');
     }
 

@@ -1,6 +1,5 @@
-@extends('spa.app')
-@section('contents')
 
+<?php $__env->startSection('contents'); ?>
 
 <style>
   body {
@@ -103,49 +102,52 @@
 <div class="d-flex justify-content-center mt-2">
   <div style="width: 50%;">
 
-    @if (session('success'))
+    <?php if(session('success')): ?>
       <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
+        <?php echo e(session('success')); ?>
+
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true" class="fw-bold">&times;</span>
         </button>
       </div>
-    @endif
+    <?php endif; ?>
 
-    @if (session('error'))
+    <?php if(session('error')): ?>
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ session('error') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true" class="fw-bold">&times;</span>
-        </button>
-      </div>
-    @endif
+        <?php echo e(session('error')); ?>
 
-    @if (session('duplicate'))
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        {{ session('duplicate') }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true" class="fw-bold">&times;</span>
         </button>
       </div>
-    @endif
+    <?php endif; ?>
+
+    <?php if(session('duplicate')): ?>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <?php echo e(session('duplicate')); ?>
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" class="fw-bold">&times;</span>
+        </button>
+      </div>
+    <?php endif; ?>
 
   </div>
 </div>
 
 <div class="form-container">
     <div class="col-md-12">
-<form method="post" id="post_form" role="form" class="registration-form" action="{{ route('subproject.store') }}" enctype="multipart/form-data">
-        @csrf
-
-        <h3><i class="fa fa-calendar-check-o"></i>ADD SUB PROJECT REGISTRATION FORM</h3>
+<form method="POST" id="post_form" role="form" class="registration-form" action="<?php echo e(route('subproject.update',$subproject->id)); ?>" enctype="multipart/form-data">
+        <?php echo csrf_field(); ?>
+ <input type="hidden" name="_method" value="PUT">
+        <h3><i class="fa fa-calendar-check-o"></i>EDIT SUB PROJECT REGISTRATION FORM</h3>
 
         <fieldset class="active">
             <div class="form-group row">        
            <div class="col-md-6 col-sm-12">
         <label>Sub Project Name</label>
 
-        <input type="text" name="sub_project_name" placeholder="enter your sub project name" id="sub_project_name" class="form-control" maxlength="14" required>
+        <input type="text" name="sub_project_name" id="sub_project_name" class="form-control" maxlength="14" value="<?php echo e($subproject->sub_project_name); ?>" required>
 
   </div>
    </div>
@@ -153,11 +155,9 @@
  <div class="form-group row">
       <div class="col-md-6 col-sm-12">
         <label>Sub Project code</label>
-        <input type="text" name="sub_project_code" placeholder="enter your sub project code" id="sub_project_code" class="form-control" maxlength="14" required>    
+        <input type="text" name="sub_project_code" id="sub_project_code" class="form-control" maxlength="14" value="<?php echo e($subproject->sub_project_code); ?>" required>    
   </div>
   </div>
-
-
 
 
     <div class="form-group row">
@@ -166,50 +166,48 @@
 
       <select class="form-control" aria-label="Default select example" name="project_id" id="project_id">
   
-  <option value="0"></option>
-@foreach($projects as $project)
-<option value="{{$project->id}}">{{$project->project_name}}</option>
-@endforeach
+  <option value="<?php echo e($subproject->project_id); ?>"><?php echo e($subproject->project_id); ?></option>
+
+  
 </select>
   
   </div>
   </div>
 
-
-  <div class="form-group row">
-      <div class="col-md-6 col-sm-12">
-        <label>level</label>
-        <input type="text" name="level" placeholder="enter your level" id="level" class="form-control" maxlength="14" required>  
-
-  </div>
-  </div>
-
-
+  
   <div class="form-group row">
    <div class="col-md-6 col-sm-12">
         <label>Status</label>
 
          <select class="form-control" aria-label="Default select example" name="status" id="status">
+          <option value="<?php echo e($subproject->status); ?>"><?php echo e($subproject->status); ?></option>
   <option value="0"></option>
 <option value="Ongoing">Ongoing</option>
 <option value="Upcoming">Upcoming</option>
 <option value="Completed">Completed</option>
 <option value="Suspended">Suspended</option>
 
-</select>  
+</select>
+  
   </div>
   </div>
+  <div class="form-group row">
+      <div class="col-md-6 col-sm-12">
+        <label>level</label>
+        <input type="text" name="start_date" id="level" class="form-control" maxlength="14" value="<?php echo e($subproject->level); ?>" required>    
+  </div>
+  </div>
+
  <hr>
           <div class="d-flex justify-content-between mt-3">
-             <a href="/subproject" role="button" class="btn-previous">Cancel</a>
-            <button type="submit" class="btn-gradient">Save</button>
+             <a href="/subproject" role="button" class="btn-previous">Back</a>
+            <button type="submit" class="btn-gradient">Update</button>
           </div>
         </fieldset>
-
-          </div>
       </form>
     </div>
   </div>
+
 
 
     <script type='text/javascript'>
@@ -335,4 +333,5 @@
   });
 </script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('spa.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\cbhcc\resources\views/admin/subproject/editsubproject.blade.php ENDPATH**/ ?>

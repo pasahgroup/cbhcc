@@ -70,7 +70,7 @@ Route::resource('/aboutus',AboutusController::class);
  Route::get('/activity-destroy/{x}', [ActivityController::class, 'destroy'])->name('destroy');
 
  Route::get('/bank-destroy/{x}', [BankController::class, 'destroy'])->name('destroy');
-
+ Route::get('/donor-destroy/{x}', [DonorController::class, 'destroy'])->name('destroy');
 //Route::get('/bank1',[BankController::class,'emailSendF'])->name('email-send');
 
 // Route::post('/item',ItemController::class);

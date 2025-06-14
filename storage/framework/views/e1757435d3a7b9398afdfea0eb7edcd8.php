@@ -1,6 +1,7 @@
-@extends('spa.app')
-@section('contents')
 
+<?php $__env->startSection('contents'); ?>
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
   body {
@@ -103,40 +104,43 @@
 <div class="d-flex justify-content-center mt-2">
   <div style="width: 50%;">
 
-    @if (session('success'))
+    <?php if(session('success')): ?>
       <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
+        <?php echo e(session('success')); ?>
+
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true" class="fw-bold">&times;</span>
         </button>
       </div>
-    @endif
+    <?php endif; ?>
 
-    @if (session('error'))
+    <?php if(session('error')): ?>
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ session('error') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true" class="fw-bold">&times;</span>
-        </button>
-      </div>
-    @endif
+        <?php echo e(session('error')); ?>
 
-    @if (session('duplicate'))
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        {{ session('duplicate') }}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true" class="fw-bold">&times;</span>
         </button>
       </div>
-    @endif
+    <?php endif; ?>
+
+    <?php if(session('duplicate')): ?>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <?php echo e(session('duplicate')); ?>
+
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true" class="fw-bold">&times;</span>
+        </button>
+      </div>
+    <?php endif; ?>
 
   </div>
 </div>
 
 <div class="form-container">
     <div class="col-md-12">
-<form method="post" id="post_form" role="form" class="registration-form" action="{{ route('subproject.store') }}" enctype="multipart/form-data">
-        @csrf
+<form method="post" id="post_form" role="form" class="registration-form" action="<?php echo e(route('subproject.store')); ?>" enctype="multipart/form-data">
+        <?php echo csrf_field(); ?>
 
         <h3><i class="fa fa-calendar-check-o"></i>ADD SUB PROJECT REGISTRATION FORM</h3>
 
@@ -160,6 +164,10 @@
 
 
 
+
+
+
+
     <div class="form-group row">
    <div class="col-md-6 col-sm-12">
         <label>Project name</label>
@@ -167,9 +175,9 @@
       <select class="form-control" aria-label="Default select example" name="project_id" id="project_id">
   
   <option value="0"></option>
-@foreach($projects as $project)
-<option value="{{$project->id}}">{{$project->project_name}}</option>
-@endforeach
+<?php $__currentLoopData = $projects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $project): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<option value="<?php echo e($project->id); ?>"><?php echo e($project->project_name); ?></option>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </select>
   
   </div>
@@ -210,6 +218,10 @@
       </form>
     </div>
   </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
 
     <script type='text/javascript'>
@@ -335,4 +347,5 @@
   });
 </script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('spa.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\cbhcc\resources\views/admin/subproject/addsubproject.blade.php ENDPATH**/ ?>

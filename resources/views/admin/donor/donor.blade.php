@@ -1,5 +1,8 @@
+@extends('spa.app')
+@section('contents')
 
-<?php $__env->startSection('contents'); ?>
+<script type="text/javascript" src="../../admins/js/jquery.js"></script>
+<script type="text/javascript" src="../../admins/js/jquery311.min.js"></script>
 
 <style type="text/css">
   body {
@@ -258,13 +261,13 @@
     <div class="container-fluid">
       <div class="row mb-2 align-items-center">
         <div class="col-sm-10">
-          <h4 class="asset">Sub-project list</h4>
+          <h4 class="asset">Donor list</h4>
         </div>
 
         <div class="col-sm-2 d-flex justify-content-end gap-3">     
        
-          <a href="<?php echo e(route('subproject.create')); ?>" class="btn btn-gradient">
-            <i class="fas fa-plus"></i>Subproject
+          <a href="{{ route('donor.create') }}" class="btn btn-gradient">
+            <i class="fas fa-plus"></i>Donor
           </a> 
 
       
@@ -288,27 +291,31 @@
             <thead>
               <tr>
                 <th>ID.</th>
-                <th>Sub Project Name</th>
-                <th>Sub Project Code</th>
-                <th>Project id</th>
-               <th>Status</th>
-                <th>level</th>
+                <th>Donor name</th>
+                <th>Contact number</th>
+              <th>Email</th>
+                   
+              <th>Address</th>
+              <th>Country</th>
+               <th>Logo</th>
+               <th>status</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <?php $__currentLoopData = $subprojects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              @foreach ($donors as $data)
               <tr>
-                <td><?php echo e($data->id); ?></td>
-                <td><?php echo e($data->sub_project_name); ?></td>
-                 <td><?php echo e($data->sub_project_code); ?></td>
-                 <td><?php echo e($data->project_id); ?></td>  
-                 <td><?php echo e($data->status); ?></td>          
-                <td><?php echo e($data->level); ?></td>
-                <td>
-                
-                  <form method="GET" action="<?php echo e(route('subproject.edit',$data->id)); ?>" class="d-inline">
-                    <?php echo csrf_field(); ?>
+                <td>{{ $data->id }}</td>
+                <td>{{ $data->donor_name }}</td>
+                 <td>{{ $data->contact_name }}</td>
+                  <td>{{ $data->email }}</td> 
+                   <td>{{ $data->address }}</td> 
+                    <td>{{ $data->country }}</td> 
+            <td><img src="{{ URL::asset('/storage/donor_photos/'.$data->logo) }}" alt="The Logo"></td>
+                 <td>{{ $data->status }}</td>
+                <td>                
+                  <form method="GET" action="{{ route('donor.edit',$data->id) }}" class="d-inline">
+                    @csrf
                     <input type="hidden" name="user_id" value="PUT">
                     <input type="hidden" name="asset_id" value="#">
                     <input type="hidden" name="sessionf" value="#">
@@ -318,13 +325,13 @@
                     </button>
                   </form>
 
-                  <a href="#" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/subproject-destroy/<?php echo e($data->id); ?>" data-message="Are you sure you want to delete this asset?">
+                  <a href="#" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/donor-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
                     <i class="fa fa-trash"></i> Delete
                   </a> 
 
                 </td>
               </tr>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+              @endforeach
             </tbody>
           </table>
 
@@ -445,6 +452,4 @@
     }
   });
 </script>
-<?php $__env->stopSection(); ?>
-
-<?php echo $__env->make('spa.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\cbhcc\resources\views/admin/subproject/subproject.blade.php ENDPATH**/ ?>
+@endsection
