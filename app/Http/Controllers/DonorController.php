@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreprojectRequest;
 use App\Http\Requests\UpdateprojectRequest;
 use DB;
+use Illuminate\Support\Facades\Storage;
 
 class DonorController extends Controller
 {
@@ -48,7 +49,7 @@ class DonorController extends Controller
                      $imageToStore = $filename.'_'.time().'.'.$extension;
                      //upload the image
                       //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $imageToStore);
-                    $path = $attached->storeAs('donor_photos/', $imageToStore);
+                    $path = $attached->storeAs('public/donor_photos/', $imageToStore);
 
          }
       }
@@ -114,14 +115,14 @@ $donors = donor::where('id',$id)->first();
                      $imageToStore = $filename.'_'.time().'.'.$extension;
                      //upload the image
                       //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $imageToStore);
-                    $path = $attached->storeAs('donor_photos/', $imageToStore);
+                    $path = $attached->storeAs('public/donor_photos/', $imageToStore);
 
          }
   $donorUpdate = donor::where('id',$id)
              ->update([
             'logo'=>$imageToStore
         ]);
-        Storage::delete('/donor_photos/'.$donors->logo);
+        Storage::delete('/public/donor_photos/'.$donors->logo);
       }
 
          return redirect('/donor');

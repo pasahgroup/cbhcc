@@ -19,7 +19,7 @@ use App\Http\Controllers\GrouptourController;
 use App\Http\Controllers\AddonsController;
 use App\Http\Controllers\BuyaddonsController;
 use App\Http\Controllers\addonshowController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\TitleController;
 
 use App\Http\Controllers\PostBodyController;
@@ -137,7 +137,7 @@ Route::resource('/aboutus',AboutusController::class);
  Route::get('/bank-destroy/{x}', [BankController::class, 'destroy'])->name('destroy');
  Route::get('/donor-destroy/{x}', [DonorController::class, 'destroy'])->name('destroy');
 
-
+// End of Controllers
 
 
 
@@ -310,7 +310,7 @@ Route::get('/destroy-contact/{x}', [PostBodyController::class, 'destroyContact']
 Route::resource('/PostCategory', PostController::class);
 
 //Welcome introduction
-Route::get('/aboutus', [PostBodyController::class, 'aboutus'])->name('aboutus');
+// Route::get('/aboutus', [PostBodyController::class, 'aboutus'])->name('aboutus');
 Route::get('/welcomeMessage', [PostBodyController::class, 'welcomeMessage'])->name('welcomeMessage');
 Route::get('/createMessage', [PostBodyController::class, 'createMessage'])->name('createMessage');
 Route::get('/editMessage', [PostBodyController::class, 'editMessage'])->name('editMessage');

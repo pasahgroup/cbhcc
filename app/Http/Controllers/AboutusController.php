@@ -50,7 +50,7 @@ class AboutusController extends Controller
                      $missionphoto = $filename.'_'.time().'.'.$extension;
                      //upload the image
                       //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $missionphoto);
-                    $path = $attached->storeAs('aboutus/', $missionphoto);
+                    $path = $attached->storeAs('public/aboutus/', $missionphoto);
                 }
             }
 
@@ -68,7 +68,7 @@ class AboutusController extends Controller
                      $visionphoto = $filenamev.'_'.time().'.'.$extension;
                      //upload the image
                       //$path = $attachedvattachedv->storeAs('wawa/hh/jkl/donor_photos/', $visionphoto);
-                    $pathv = $attachedv->storeAs('aboutus/', $visionphoto);
+                    $pathv = $attachedv->storeAs('public/aboutus/', $visionphoto);
                 }
             }
 
@@ -133,7 +133,7 @@ class AboutusController extends Controller
                      $missionphoto = $filename.'_'.time().'.'.$extension;
                      //upload the image
                       //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $missionphoto);
-                    $path = $attached->storeAs('aboutus/', $missionphoto);
+                    $path = $attached->storeAs('public/aboutus/', $missionphoto);
                 }
 
              $missionUpdate = aboutus::where('id',$id)
@@ -142,7 +142,7 @@ class AboutusController extends Controller
             'mission_photo'=>$missionphoto
         ]);
 
-        Storage::delete('/aboutus/'.$aboutus->mission_photo);   
+        Storage::delete('/public/aboutus/'.$aboutus->mission_photo);   
             }
 
      if(request('vision_photo')){
@@ -159,7 +159,7 @@ class AboutusController extends Controller
                      $visionphoto = $filenamev.'_'.time().'.'.$extensionv;
                      //upload the image
                       //$path = $attachedvattachedv->storeAs('wawa/hh/jkl/donor_photos/', $visionphoto);
-                    $pathv = $attachedv->storeAs('aboutus/', $visionphoto);
+                    $pathv = $attachedv->storeAs('public/aboutus/', $visionphoto);
                 }
 
                
@@ -169,7 +169,7 @@ class AboutusController extends Controller
              ->update([
             'vision_photo'=>$visionphoto
         ]);
-        Storage::delete('/aboutus/'.$aboutus->vision_photo);
+        Storage::delete('/public/aboutus/'.$aboutus->vision_photo);
 
 }
         return redirect('/aboutus');
@@ -184,8 +184,8 @@ class AboutusController extends Controller
       //dd($delete);
         if($delete->delete()){
              DB::statement("delete from aboutuses where id=$id");
-             Storage::delete('/aboutus/'.$delete->mission_photo);
-             Storage::delete('/aboutus/'.$delete->vision_photo);
+             Storage::delete('/public/aboutus/'.$delete->mission_photo);
+             Storage::delete('/public/aboutus/'.$delete->vision_photo);
 
             return redirect()->route('aboutus.index')->with('info','Aboutus deleted successfully');
         }
