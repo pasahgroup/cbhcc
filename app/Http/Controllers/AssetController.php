@@ -38,10 +38,9 @@ class AssetController extends Controller
         ->where('assets.status','!=','deleted')
         ->orderBy('assets.id','desc')->get();
 
-          $categories = category::get();
+         $categories = category::get();
          $sessions = sessiom::where('class_name',request('classg'))
                ->get();
-
                //dd($sessions);
              return view('admins.assets.asset',compact('assets','categories','sessions','search'));
     }

@@ -46,7 +46,7 @@ use App\Http\Controllers\BankController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
-use App\Http\Controllers\AssetconditionController;
+use App\Http\Controllers\SlidesController;
 
 use App\Http\Controllers\LodgeController;
 use App\Http\Controllers\LodgetraineeController;
@@ -64,13 +64,15 @@ use App\Http\Controllers\AssigneeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SupplyController;
 
-use App\Http\Controllers\ReassignController;
+use App\Http\Controllers\DonorController;
 
-use App\Http\Controllers\RelationController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\SubscribeController;
 
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\Auth\AuthController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -85,7 +87,76 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::resource('/',WebsiteController::class);
+Route::resource('/bank',BankController::class);
+
+Route::get('/bank2', [BankController::class,'index']);
+Route::get('/bank3', [BankController::class, 'index'])->name('bank.bank3');
+
+Route::get('/donate', [WebsiteController::class,'donate']);
+Route::get('/safari', [websiteController::class, 'safari'])->name('donate.safari');
+Route::get('/drisela', [websiteController::class, 'drisela'])->name('donate.drisela');
+Route::get('/form', [WebsiteController::class, 'form']);
+//Route::get('/project', [ProjectController::class, 'index'])->name('project');
+
+
+Route::get('/get_donor', [DonorController::class,'donor']);
+Route::get('/get_slides', [SlidesController::class,'slides']);
+Route::get('/get_contact', [ContactController::class,'contact']);
+
+
+//Route::post('/donor', [DonorController::class,'store']);
+
+Route::resource('/donor',DonorController::class);
+Route::resource('/contact',ContactController::class);
+Route::resource('/project',ProjectController::class);
+Route::resource('/subproject',SubprojectController::class);
+Route::resource('/activity',ActivityController::class);
+
+
+Route::resource('/slides',SlidesController::class);
+// Route::get('/getSlides/{id}', [SlidesController::class, 'getSlides']);
+
+// Route::get('/register_slide', [SlidesController::class, 'getSlides']);
+Route::get('/register_slide', [SlidesController::class,'show'])->name('register_slide');
+Route::get('/edit_slide', [SlidesController::class,'edit'])->name('edit_slide');
+
+Route::get('/getSlides/{id}', [SlidesController::class, 'getSlides']);
+ Route::get('/slide-destroy/{x}', [SlidesController::class, 'destroy'])->name('destroy');
+
+
+Route::get('/get_aboutusw', [WebsiteController::class,'aboutusw']);
+Route::resource('/aboutus',AboutusController::class);
+ 
+  Route::get('/aboutus-destroy/{x}', [AboutusController::class, 'destroy'])->name('destroy');
+  Route::get('/project-destroy/{x}', [ProjectController::class, 'destroy'])->name('destroy');
+  Route::get('/subproject-destroy/{x}', [SubprojectController::class, 'destroy'])->name('destroy');
+
+ Route::get('/activity-destroy/{x}', [ActivityController::class, 'destroy'])->name('destroy');
+
+ Route::get('/bank-destroy/{x}', [BankController::class, 'destroy'])->name('destroy');
+ Route::get('/donor-destroy/{x}', [DonorController::class, 'destroy'])->name('destroy');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Route::resource('/addAsset', [AssetCateController::class]);
+Route::resource('/item',ItemController::class);
+
 
 Route::resource('/addAsset', AssetCateController::class);
 Route::resource('/reassign-asset',ReassignController::class);
@@ -100,7 +171,7 @@ Route::get('/getD/{p}', [AssetController::class,'getD']);
 Route::get('/test', [AssetController::class, 'test'])->name('test');
 
 // website routes
- Route::resource('/', websiteController::class);
+ // Route::resource('/', websiteController::class);
  Route::resource('/home', websiteController::class);
 
 Route::get('/ff', function () {
@@ -190,8 +261,8 @@ Route::resource('/trainee', LodgetraineeController::class);
 Route::get('/editTrainee/{x}', [LodgetraineeController::class, 'editTrainee'])->name('editTrainee');
 Route::post('/search-trainee', [LodgetraineeController::class, 'researcht'])->name('researcht');
 
- Route::get('/search-trainee', [LodgetraineeController::class, 'searcht'])->name('searcht');
-// Route::get('/getA/{p}', [LodgetraineeController::class,'getA']);
+Route::get('/search-trainee', [LodgetraineeController::class, 'searcht'])->name('searcht');
+//Route::get('/getA/{p}', [LodgetraineeController::class,'getA']);
 
 
 Route::resource('/asset',AssetController::class);
