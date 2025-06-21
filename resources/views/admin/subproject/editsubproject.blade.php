@@ -159,17 +159,16 @@
 
     <div class="form-group row">
    <div class="col-md-6 col-sm-12">
-        <label>Project name</label>
+        <label>Project name {{$subproject->project_name}}</label>
 
-      <select class="form-control" aria-label="Default select example" name="project_id" id="project_id">
-  
+    <select class="form-control" aria-label="Default select example" name="project_id" id="project_id">  
   <option value="{{$subproject->project_id}}">{{$subproject->project_id}}</option>
 
-  {{--
+
 @foreach($projects as $project)
 <option value="{{$project->id}}">{{$project->project_name}}</option>
 @endforeach
---}}
+
 </select>
   
   </div>

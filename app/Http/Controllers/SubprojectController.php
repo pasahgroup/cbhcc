@@ -16,8 +16,15 @@ class SubprojectController extends Controller
      */
     public function index()
     {        
-     $subprojects=subproject::get();
-       //dd($subprojects);
+     // $subprojects=subproject::join()
+     // ->get();
+       
+
+     $subprojects = subproject::join('projects','projects.id','subprojects.project_id')
+        ->select('subprojects.*','projects.project_name')
+        ->get();
+
+//dd($subprojects);
         return view('admin.subproject.subproject',compact('subprojects'));    
     }
 
@@ -66,8 +73,10 @@ class SubprojectController extends Controller
     {
         //
         $subproject=subproject::where('id',$id)->first();
+           $projects=project::where('status','Active')
+        ->get();
         //dd($subproject);
-        return view('admin.subproject.editsubproject',compact('subproject'));
+        return view('admin.subproject.editsubproject',compact('subproject','projects'));
     }
 
     /**

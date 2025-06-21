@@ -290,7 +290,7 @@
                 <th>ID.</th>
                 <th>Sub Project Name</th>
                 <th>Sub Project Code</th>
-                <th>Project id</th>
+                <th>Project name</th>
                <th>Status</th>
                 <th>level</th>
                 <th>Action</th>
@@ -302,7 +302,7 @@
                 <td>{{ $data->id }}</td>
                 <td>{{ $data->sub_project_name }}</td>
                  <td>{{ $data->sub_project_code }}</td>
-                 <td>{{ $data->project_id }}</td>  
+                 <td>{{ $data->project_name }}</td>  
                  <td>{{ $data->status }}</td>          
                 <td>{{ $data->level }}</td>
                 <td>
