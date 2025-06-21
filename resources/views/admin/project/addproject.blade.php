@@ -147,9 +147,7 @@
         <input type="text" name="project_name" placeholder="enter your project name" id="project_name" class="form-control" maxlength="14" required>
 
   </div>
-   </div>
-          
- <div class="form-group row">
+
       <div class="col-md-6 col-sm-12">
         <label>Project code</label>
         <input type="text" name="project_code" placeholder="enter your project code" id="project_code" class="form-control" maxlength="14" required>    
@@ -160,8 +158,7 @@
         <label>region</label>
         <input type="text" name="region" placeholder="enter your region" id="region" class="form-control" maxlength="14" required>    
   </div>
-  </div>
-  <div class="form-group row">
+
       <div class="col-md-6 col-sm-12">
         <label>district</label>
         <input type="text" name="district" placeholder="enter your district" id="district" class="form-control" maxlength="14" required>    
@@ -172,9 +169,7 @@
         <label>start_date</label>
         <input type="date" name="start_date" placeholder="enter your start date" id="start_date" class="form-control" maxlength="14" required>    
   </div>
-  </div>
-
-    <div class="form-group row">
+ 
       <div class="col-md-6 col-sm-12">
         <label>Status</label>
 

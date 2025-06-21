@@ -148,9 +148,7 @@
         <input type="text" name="sub_project_name" placeholder="enter your sub project name" id="sub_project_name" class="form-control" maxlength="14" required>
 
   </div>
-   </div>
-          
- <div class="form-group row">
+
       <div class="col-md-6 col-sm-12">
         <label>Sub Project code</label>
         <input type="text" name="sub_project_code" placeholder="enter your sub project code" id="sub_project_code" class="form-control" maxlength="14" required>    
@@ -170,13 +168,9 @@
 @foreach($projects as $project)
 <option value="{{$project->id}}">{{$project->project_name}}</option>
 @endforeach
-</select>
-  
-  </div>
+</select>  
   </div>
 
-
-  <div class="form-group row">
       <div class="col-md-6 col-sm-12">
         <label>level</label>
         <input type="text" name="level" placeholder="enter your level" id="level" class="form-control" maxlength="14" required>  

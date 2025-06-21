@@ -147,9 +147,7 @@
         <input type="text" name="sub_project_name" id="sub_project_name" class="form-control" maxlength="14" value="{{$subproject->sub_project_name}}" required>
 
   </div>
-   </div>
-          
- <div class="form-group row">
+
       <div class="col-md-6 col-sm-12">
         <label>Sub Project code</label>
         <input type="text" name="sub_project_code" id="sub_project_code" class="form-control" maxlength="14" value="{{$subproject->sub_project_code}}" required>    
@@ -159,28 +157,24 @@
 
     <div class="form-group row">
    <div class="col-md-6 col-sm-12">
-        <label>Project name {{$subproject->project_name}}</label>
+        <label>Project name</label>
 
     <select class="form-control" aria-label="Default select example" name="project_id" id="project_id">  
-  <option value="{{$subproject->project_id}}">{{$subproject->project_id}}</option>
+  <option value="{{$subproject->project_id}}" selected>{{$subproject->project_name}}</option>
 
 
 @foreach($projects as $project)
 <option value="{{$project->id}}">{{$project->project_name}}</option>
 @endforeach
 
-</select>
-  
+</select>  
   </div>
-  </div>
-
   
-  <div class="form-group row">
    <div class="col-md-6 col-sm-12">
         <label>Status</label>
 
          <select class="form-control" aria-label="Default select example" name="status" id="status">
-          <option value="{{$subproject->status}}">{{$subproject->status}}</option>
+          <option value="{{$subproject->status}}" selected>{{$subproject->status}}</option>
   <option value="0"></option>
 <option value="Ongoing">Ongoing</option>
 <option value="Upcoming">Upcoming</option>

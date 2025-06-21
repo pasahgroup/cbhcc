@@ -148,21 +148,19 @@
         <input type="text" name="project_name" id="project_name" class="form-control" maxlength="14" value="{{$project->project_name}}" required>
 
   </div>
-   </div>
-          
- <div class="form-group row">
+
       <div class="col-md-6 col-sm-12">
         <label>Project code</label>
         <input type="text" name="project_code" id="project_code" class="form-control" maxlength="14" value="{{$project->project_code}}" required>    
   </div>
   </div>
+
   <div class="form-group row">
       <div class="col-md-6 col-sm-12">
         <label>region</label>
         <input type="text" name="region" id="region" class="form-control" maxlength="14" value="{{$project->region}}" required>    
   </div>
-  </div>
-  <div class="form-group row">
+
       <div class="col-md-6 col-sm-12">
         <label>district</label>
         <input type="text" name="district" id="district" class="form-control" maxlength="14" value="{{$project->district}}" required>    
@@ -173,10 +171,7 @@
         <label>start_date</label>
         <input type="date" name="start_date" id="start_date" class="form-control" maxlength="14" value="{{$project->start_date}}" required>    
   </div>
-  </div>
 
-
-  <div class="form-group row">
       <div class="col-md-6 col-sm-12">
         <label>Status</label>
 

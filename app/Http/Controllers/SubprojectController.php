@@ -72,9 +72,15 @@ class SubprojectController extends Controller
     public function edit(Request $request,$id)
     {
         //
-        $subproject=subproject::where('id',$id)->first();
+        // $subproject=subproject::where('id',$id)->first();
+ $subproject = subproject::join('projects','projects.id','subprojects.project_id')
+        ->select('subprojects.*','projects.project_name')
+        ->first();
+
            $projects=project::where('status','Active')
         ->get();
+
+
         //dd($subproject);
         return view('admin.subproject.editsubproject',compact('subproject','projects'));
     }
