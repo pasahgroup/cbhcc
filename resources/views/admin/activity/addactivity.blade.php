@@ -156,7 +156,7 @@
   <div class="form-group row">
       <div class="col-md-6 col-sm-12">
          <label>Activity percent</label>
-         <input type="text" name="activity_percent" placeholder="enter your activity percent" id="activity_percent" class="form-control" maxlength="64" required>   
+         <input type="number" name="activity_percent" placeholder="enter your activity percent" id="activity_percent" class="form-control" maxlength="2" required>   
   </div>
  
       <div class="col-md-6 col-sm-12">

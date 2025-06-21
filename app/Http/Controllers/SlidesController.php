@@ -89,7 +89,7 @@ public function slides()
                      $imageToStore = $filename.'_'.time().'.'.$extension;
                      //upload the image
                       //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $imageToStore);
-                    $path = $attached->storeAs('slides/', $imageToStore);
+                    $path = $attached->storeAs('public/slides/', $imageToStore);
                 }
             }
  
@@ -206,7 +206,7 @@ public function slides()
                      $slidephoto = $filename.'_'.time().'.'.$extension;
                      //upload the image
                       //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $missionphoto);
-                    $path = $attached->storeAs('slides/', $slidephoto);
+                    $path = $attached->storeAs('public/slides/', $slidephoto);
                 }
 
              $slideUpdate = slide::where('id',$id)
@@ -216,7 +216,7 @@ public function slides()
         ]);
 
 //dd($slides->photo);
-        Storage::delete('/slides/'.$slides->photo);   
+        Storage::delete('/public/slides/'.$slides->photo);   
             }
    
         return redirect('/slides');
@@ -231,7 +231,7 @@ public function slides()
       //dd($delete);
         if($delete->delete()){
              DB::statement("delete from slides where id=$id");
-             Storage::delete('/slides/'.$delete->photo);
+             Storage::delete('/public/slides/'.$delete->photo);
             
             return redirect()->route('slides.index')->with('info','The Slide deleted successfully');
         }

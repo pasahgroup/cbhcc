@@ -46,7 +46,6 @@ class SubprojectController extends Controller
         'project_id'=>request('project_id'),      
         'status'=>request('status'),
         'level'=>request('level'),
-
       
         ]);
          return redirect('/subproject');

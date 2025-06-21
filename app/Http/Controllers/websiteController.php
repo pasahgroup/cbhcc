@@ -31,7 +31,7 @@ class WebsiteController extends Controller
         ->get();
         //dd($slides);
 
-        return view('home.home',compact('donors','slides'));
+        return view('website.home.home',compact('donors','slides'));
     }
 
     public function form()
@@ -73,12 +73,12 @@ public function safari()
     
     public function drisela()
     {
-       return view('donate.drisela');    
+       return view('website.donate.drisela');    
     }
 
 public function project()
     {
-       return view('project.project');    
+       return view('website.project.project');    
     }
 
 public function subproject()
@@ -92,7 +92,7 @@ public function subproject()
     }
 public function aboutus()
     {
-       return view('aboutus.aboutus');    
+       return view('website.aboutus.aboutus');    
     }
 
     public function donate()
@@ -105,7 +105,7 @@ public function aboutus()
         ->get();
 
 //dd($banks);
-       return view('donate.donate',compact('banks','banksin'));
+       return view('website.donate.donate',compact('banks','banksin'));
     }
     /**
      * Store a newly created resource in storage.

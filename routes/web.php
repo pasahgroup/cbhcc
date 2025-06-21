@@ -16,9 +16,10 @@ use App\Http\Controllers\TourEquiryFormController;
 use App\Http\Controllers\SocialmediaController;
 use App\Http\Controllers\DeparturesController;
 use App\Http\Controllers\GrouptourController;
-use App\Http\Controllers\AddonsController;
-use App\Http\Controllers\BuyaddonsController;
-use App\Http\Controllers\addonshowController;
+
+use App\Http\Controllers\SubprojectController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\TitleController;
 

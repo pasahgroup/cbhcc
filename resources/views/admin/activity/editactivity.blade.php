@@ -155,7 +155,7 @@
 
       <div class="col-md-6 col-sm-12">
          <label>Activity percent</label>
-         <input type="text" name="activity_percent" id="activity_percent" class="form-control" value="{{$activity->activity_percent}}" required>   
+         <input type="number" name="activity_percent" id="activity_percent" class="form-control" value="{{$activity->activity_percent}}"  maxlength="2" required>   
   </div>
   
 
