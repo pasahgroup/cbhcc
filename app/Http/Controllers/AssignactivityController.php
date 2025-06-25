@@ -6,6 +6,7 @@ use App\Models\subproject;
 use App\Models\project;
 use Illuminate\Http\Request;
 use App\Models\assignactivity;
+use App\Models\activity;
 use App\Http\Requests\StoreassignactivityRequest;
 use App\Http\Requests\UpdateassignactivityRequest;
 use DB;
@@ -80,9 +81,10 @@ class AssignactivityController extends Controller
               ->select('id','project_name')
               ->get();
 
-//dd($projects['data']);
+ $activities = activity::where('status','Active')
+        ->get();
 
-              return view('admin.assignActivity.addAssignActivity',compact('projects'));
+              return view('admin.assignActivity.addAssignActivity',compact('projects','activities'));
     }
 
 

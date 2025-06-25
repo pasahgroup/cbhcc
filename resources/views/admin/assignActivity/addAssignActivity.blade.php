@@ -136,7 +136,7 @@
     <div class="col-md-12">
       <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('slides.store') }}" enctype="multipart/form-data">
         @csrf
-        <h3><i class="fa fa-calendar-check-o"></i>ACTIVITIES SUBPROJECT ASSIGNING FORM</h3>
+        <h3><i class="fa fa-calendar-check-o"></i>SUBPROJECT ACTIVITIES ASSIGNING FORM</h3>
         <fieldset class="active">
 
 
@@ -164,22 +164,17 @@
 
 
  <div class="form-group row"> 
+
+    @foreach($activities as $activity)
     <div class="col-md-6 col-sm-6">   
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="checkIndeterminateDisabled">
   <label class="form-check-label" for="checkIndeterminateDisabled">
-    Disabled indeterminate checkbox
+   {{$activity->activity_name}}
   </label>
 </div>
 </div>
-  <div class="col-md-6 col-sm-6">   
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="checkDisabled">
-  <label class="form-check-label" for="checkDisabled">
-    Disabled checkbox
-  </label>
-</div>
-</div>
+ @endforeach
 </div>
 
 <hr>
