@@ -136,14 +136,14 @@
     <div class="col-md-12">
       <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('slides.store') }}" enctype="multipart/form-data">
         @csrf
-        <h3><i class="fa fa-calendar-check-o"></i>ACTIVITIES SUBPROJECT ASSOGNING FORM</h3>
+        <h3><i class="fa fa-calendar-check-o"></i>ACTIVITIES SUBPROJECT ASSIGNING FORM</h3>
         <fieldset class="active">
 
 
  <div class="form-group row">                                          
               <div class="col-md-6 col-sm-6">   
               <label>Project name</label>
-              <select class="form-control" name="project_id" id="project_id">
+              <select class="form-control" name="project_id" id="project_id" required>
                 <option></option>
   @foreach($projects['data'] as $project)
                 <option value="{{$project->id}}">{{$project->project_name}}</option>
@@ -155,16 +155,36 @@
               <div class="col-md-6 col-sm-6">   
               <label>Sub project name</label>
 
-              <select id='subproject_id' name='subproject_id' class="form-control">
+              <select id='subproject_id' name='subproject_id' class="form-control" required>
         <option value='0'>-- Select subproject name --</option>
     </select>
           </div>
             </div>
 
 
+
+ <div class="form-group row"> 
+    <div class="col-md-6 col-sm-6">   
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkIndeterminateDisabled">
+  <label class="form-check-label" for="checkIndeterminateDisabled">
+    Disabled indeterminate checkbox
+  </label>
+</div>
+</div>
+  <div class="col-md-6 col-sm-6">   
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="checkDisabled">
+  <label class="form-check-label" for="checkDisabled">
+    Disabled checkbox
+  </label>
+</div>
+</div>
+</div>
+
 <hr>
           <div class="d-flex justify-content-between mt-3">
-             <a href="/assign-activity" role="button" class="btn-previous">Canceld</a>
+             <a href="/assign-activity" role="button" class="btn-previous">Cancel</a>
             <button type="submit" class="btn-gradient">Save</button>
           </div>
         </fieldset>

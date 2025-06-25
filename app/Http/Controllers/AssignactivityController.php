@@ -80,9 +80,11 @@ class AssignactivityController extends Controller
               ->select('id','project_name')
               ->get();
 
+//dd($projects['data']);
+
               return view('admin.assignActivity.addAssignActivity',compact('projects'));
     }
-    
+
 
       public function getAssignActivity($subprojectid=0){
 
