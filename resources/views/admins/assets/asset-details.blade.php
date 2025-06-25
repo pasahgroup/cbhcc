@@ -1,5 +1,4 @@
-
- @extends('admins.layouts.Apps.app')
+@extends('spa.app')
   @section('contents')
 
 

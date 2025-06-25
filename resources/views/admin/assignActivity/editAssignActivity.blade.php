@@ -134,116 +134,91 @@
 
 <div class="form-container">
     <div class="col-md-12">
-      <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('slides.store') }}" enctype="multipart/form-data">
+<form method="POST" id="post_form" role="form" class="registration-form" action="{{ route('subproject.update',$subproject->id) }}" enctype="multipart/form-data">
         @csrf
-        <h3><i class="fa fa-calendar-check-o"></i>SLIDE REGISTRATION FORM</h3>
+ <input type="hidden" name="_method" value="PUT">
+        <h3><i class="fa fa-calendar-check-o"></i>EDIT SUB PROJECT REGISTRATION FORM</h3>
+
         <fieldset class="active">
             <div class="form-group row">        
-           <div class="col-md-12 col-sm-12">
-        <label>Photo title</label>
-        <input type="text" name="photo_title" id="photo_title" class="form-control" maxlength="150" required>
-         
-  </div>
-   </div>
+           <div class="col-md-6 col-sm-12">
+        <label>Sub Project Name</label>
 
+        <input type="text" name="sub_project_name" id="sub_project_name" class="form-control" maxlength="14" value="{{$subproject->sub_project_name}}" required>
 
-      <div class="form-group row">
-            <div class="col-md-12 col-sm-12">
-              <label>Slide Photo</label>
-            </div>
-                 <div class="col-lg-4 col-md-12 col-sm-12">
-                                    <label for="password_confirmation" :value="('Image')" />
-                                    <div class="form-group">
-                                    <input type="file" name="slide_photo[]" onChange="displayImage(this)" id="slide_photo" accept="image/*" class="" style="display:block;" required>
-
-                                </div>
-                                </div>
-            <div class="col-lg-6 col-md-12 col-sm-12">
-            <span class="img-div">
-              <div class="text-center img-placeholder"  onClick="triggerClick()">
-              </div>
-              <img src="images/no.png" onClick="triggerClick()" id="profileDisplay">
-            </span>
-            </div>               
   </div>
 
-
-          
- <div class="form-group row">
-      <div class="col-md-12 col-sm-12">
-        <label>Sub project Description</label>
-            <textarea cols="30" rows="4" name="photo_description" class="form-control" id="photo_description" placeholder="photo description" maxlength="1200" required></textarea>
+      <div class="col-md-6 col-sm-12">
+        <label>Sub Project code</label>
+        <input type="text" name="sub_project_code" id="sub_project_code" class="form-control" maxlength="14" value="{{$subproject->sub_project_code}}" required>    
   </div>
   </div>
 
- <div class="form-group row">                                          
-              <div class="col-md-6 col-sm-6">   
-              <label>Project name</label>
-              <select class="form-control" name="project_id" id="project_id">
-                <option></option>
-  @foreach($projects['data'] as $project)
-                <option value="{{$project->id}}">{{$project->project_name}}</option>
-            @endforeach    
-              </select>
-          </div>
-                                                
-    
-              <div class="col-md-6 col-sm-6">   
-              <label>Sub project name</label>
 
-              <select id='subproject_id' name='subproject_id' class="form-control">
-        <option value='0'>-- Select subproject name --</option>
-    </select>
-          </div>
-            </div>
+    <div class="form-group row">
+   <div class="col-md-6 col-sm-12">
+        <label>Project name</label>
 
- <div class="form-group row">
-              <div class="col-md-6 col-sm-12">   
-              <label>Display</label>
-              <select class="form-control" name="display" id="display">
-                <option></option>
-                <option>Blog</option>
-                  <option>Footer</option>
-                <option>Slide</option>
-              </select>
-          </div>
+    <select class="form-control" aria-label="Default select example" name="project_id" id="project_id">  
+  <option value="{{$subproject->project_id}}" selected>{{$subproject->project_name}}</option>
 
-           <div class="col-md-6 col-sm-12">   
-              <label>Status</label>
-              <select class="form-control" name="status" id="status">
-                <option></option>
-                <option>Active</option>
-                <option>Inactive</option>
-              </select>
-          </div>
-            </div>
-<hr>
+
+@foreach($projects as $project)
+<option value="{{$project->id}}">{{$project->project_name}}</option>
+@endforeach
+
+</select>  
+  </div>
+  
+   <div class="col-md-6 col-sm-12">
+        <label>Status</label>
+
+         <select class="form-control" aria-label="Default select example" name="status" id="status">
+          <option value="{{$subproject->status}}" selected>{{$subproject->status}}</option>
+  <option value="0"></option>
+<option value="Ongoing">Ongoing</option>
+<option value="Upcoming">Upcoming</option>
+<option value="Completed">Completed</option>
+<option value="Suspended">Suspended</option>
+
+</select>
+  
+  </div>
+  </div>
+  <div class="form-group row">
+      <div class="col-md-6 col-sm-12">
+        <label>level</label>
+        <input type="text" name="start_date" id="level" class="form-control" maxlength="14" value="{{$subproject->level}}" required>    
+  </div>
+  </div>
+
+ <hr>
           <div class="d-flex justify-content-between mt-3">
-             <a href="/slides" role="button" class="btn-previous">Cancel</a>
-            <button type="submit" class="btn-gradient">Save</button>
+             <a href="/subproject" role="button" class="btn-previous">Back</a>
+            <button type="submit" class="btn-gradient">Update</button>
           </div>
         </fieldset>
       </form>
     </div>
   </div>
 
- <script src="../../admins/js/jquery360.js"></script>
-   
+
+
     <script type='text/javascript'>
     $(document).ready(function(){
 
         // Department Change
-        $('#project_id').change(function(){
+        $('#category').change(function(){
 
              // Department id
              var id = $(this).val();
 
              // Empty the dropdown
-             $('#subproject_id').find('option').not(':first').remove();
-
+             $('#subcategory').find('option').not(':first').remove();
+//alert(id);
              // AJAX request
              $.ajax({
-                 url: 'getSlides/'+id,
+                 url: 'getSubcategory/'+id,
                  type: 'get',
                  dataType: 'json',
                  success: function(response){
@@ -253,16 +228,17 @@
                           len = response['data'].length;
                      }
 
+//alert(len);
                      if(len > 0){
                           // Read data and create <option >
                           for(var i=0; i<len; i++){
 
-                               var id = response['data'][i].id;
-                               var name = response['data'][i].sub_project_name;
+                               var id = response['data'][i].category_id;
+                               var name = response['data'][i].subcategory;
 
-                               var option = "<option value='"+id+"'>"+name+"</option>";
+                               var option = "<option value='"+name+"'>"+name+"</option>";
 
-                               $("#subproject_id").append(option);
+                               $("#subcategory").append(option);
                           }
                      }
 
@@ -350,97 +326,5 @@
     });
   });
 </script>
-
-
-
-  <script type='text/javascript'>
-    $(document).ready(function(){
-
-        // Department Change
-        $('#project_name_po').change(function(){
-
-             // Department id
-             var id = $(this).val();
-
-             // Empty the dropdown
-             $('#sel_emp').find('option').not(':first').remove();
-//alert(id);
-             // AJAX request
-             $.ajax({
-                 url: 'getEmployees/'+id,
-                 type: 'get',
-                 dataType: 'json',
-                 success: function(response){
-
-                     var len = 0;
-                     if(response['data'] != null){
-                          len = response['data'].length;
-                     }
-
-                     alert(len);
-
-                     if(len > 0){
-                          // Read data and create <option >
-                          for(var i=0; i<len; i++){
-
-                               var id = response['data'][i].id;
-                               var name = response['data'][i].name;
-
-                               var option = "<option value='"+id+"'>"+name+"</option>";
-
-                               $("#sel_emp").append(option);
-                          }
-                     }
-
-                 }
-             });
-        });
-    });
-
-
-     $(document).ready(function(){
-
-        // Department Change
-        $('#sel_emp').change(function(){
-
-             // Department id
-             var id = $(this).val();
-
-
-             // Empty the dropdown
-             $('#sel_emp2').find('option').not(':first').remove();
-
-             // AJAX request
-             $.ajax({
-                 url: 'getEmp/'+id,
-                 type: 'get',
-                 dataType: 'json',
-                 success: function(response){
-
-                     var len = 0;
-                     if(response['data'] != null){
-                          len = response['data'].length;
-                     }
-
-
-
-                     if(len > 0){
-                          // Read data and create <option >
-                          for(var i=0; i<len; i++){
-
-                               var id = response['data'][i].id;
-                               var name = response['data'][i].name;
-
-                               var option = "<option value='"+id+"'>"+name+"</option>";
-
-                               $("#sel_emp2").append(option);
-                          }
-                     }
-
-                 }
-             });
-        });
-    });
-    </script>
 
 @endsection

@@ -1,4 +1,4 @@
-@extends('admins.layouts.Apps.app')
+@extends('spa.app')
 @section('contents')
 
 <script type="text/javascript" src="../js/jquery.js"></script>

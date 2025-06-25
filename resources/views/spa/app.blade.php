@@ -358,6 +358,13 @@
                 <p>Sub-projects</p>
               </a>
             </li>
+
+              <li class="nav-item">
+              <a href="/assign-activity" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Assign-activity</p>
+              </a>
+            </li>
           </ul>
         </li>
 

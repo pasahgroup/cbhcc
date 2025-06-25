@@ -136,45 +136,9 @@
     <div class="col-md-12">
       <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('slides.store') }}" enctype="multipart/form-data">
         @csrf
-        <h3><i class="fa fa-calendar-check-o"></i>SLIDE REGISTRATION FORM</h3>
+        <h3><i class="fa fa-calendar-check-o"></i>ACTIVITIES SUBPROJECT ASSOGNING FORM</h3>
         <fieldset class="active">
-            <div class="form-group row">        
-           <div class="col-md-12 col-sm-12">
-        <label>Photo title</label>
-        <input type="text" name="photo_title" id="photo_title" class="form-control" maxlength="150" required>
-         
-  </div>
-   </div>
 
-
-      <div class="form-group row">
-            <div class="col-md-12 col-sm-12">
-              <label>Slide Photo</label>
-            </div>
-                 <div class="col-lg-4 col-md-12 col-sm-12">
-                                    <label for="password_confirmation" :value="('Image')" />
-                                    <div class="form-group">
-                                    <input type="file" name="slide_photo[]" onChange="displayImage(this)" id="slide_photo" accept="image/*" class="" style="display:block;" required>
-
-                                </div>
-                                </div>
-            <div class="col-lg-6 col-md-12 col-sm-12">
-            <span class="img-div">
-              <div class="text-center img-placeholder"  onClick="triggerClick()">
-              </div>
-              <img src="images/no.png" onClick="triggerClick()" id="profileDisplay">
-            </span>
-            </div>               
-  </div>
-
-
-          
- <div class="form-group row">
-      <div class="col-md-12 col-sm-12">
-        <label>Sub project Description</label>
-            <textarea cols="30" rows="4" name="photo_description" class="form-control" id="photo_description" placeholder="photo description" maxlength="1200" required></textarea>
-  </div>
-  </div>
 
  <div class="form-group row">                                          
               <div class="col-md-6 col-sm-6">   
@@ -197,29 +161,10 @@
           </div>
             </div>
 
- <div class="form-group row">
-              <div class="col-md-6 col-sm-12">   
-              <label>Display</label>
-              <select class="form-control" name="display" id="display">
-                <option></option>
-                <option>Blog</option>
-                  <option>Footer</option>
-                <option>Slide</option>
-              </select>
-          </div>
 
-           <div class="col-md-6 col-sm-12">   
-              <label>Status</label>
-              <select class="form-control" name="status" id="status">
-                <option></option>
-                <option>Active</option>
-                <option>Inactive</option>
-              </select>
-          </div>
-            </div>
 <hr>
           <div class="d-flex justify-content-between mt-3">
-             <a href="/slides" role="button" class="btn-previous">Cancel</a>
+             <a href="/assign-activity" role="button" class="btn-previous">Canceld</a>
             <button type="submit" class="btn-gradient">Save</button>
           </div>
         </fieldset>
@@ -238,12 +183,13 @@
              // Department id
              var id = $(this).val();
 
+
              // Empty the dropdown
              $('#subproject_id').find('option').not(':first').remove();
 
              // AJAX request
              $.ajax({
-                 url: 'getSlides/'+id,
+                 url: 'getAssignActivity/'+id,
                  type: 'get',
                  dataType: 'json',
                  success: function(response){
@@ -253,6 +199,7 @@
                           len = response['data'].length;
                      }
 
+//alert(len);
                      if(len > 0){
                           // Read data and create <option >
                           for(var i=0; i<len; i++){
@@ -350,97 +297,4 @@
     });
   });
 </script>
-
-
-
-  <script type='text/javascript'>
-    $(document).ready(function(){
-
-        // Department Change
-        $('#project_name_po').change(function(){
-
-             // Department id
-             var id = $(this).val();
-
-             // Empty the dropdown
-             $('#sel_emp').find('option').not(':first').remove();
-//alert(id);
-             // AJAX request
-             $.ajax({
-                 url: 'getEmployees/'+id,
-                 type: 'get',
-                 dataType: 'json',
-                 success: function(response){
-
-                     var len = 0;
-                     if(response['data'] != null){
-                          len = response['data'].length;
-                     }
-
-                     alert(len);
-
-                     if(len > 0){
-                          // Read data and create <option >
-                          for(var i=0; i<len; i++){
-
-                               var id = response['data'][i].id;
-                               var name = response['data'][i].name;
-
-                               var option = "<option value='"+id+"'>"+name+"</option>";
-
-                               $("#sel_emp").append(option);
-                          }
-                     }
-
-                 }
-             });
-        });
-    });
-
-
-     $(document).ready(function(){
-
-        // Department Change
-        $('#sel_emp').change(function(){
-
-             // Department id
-             var id = $(this).val();
-
-
-             // Empty the dropdown
-             $('#sel_emp2').find('option').not(':first').remove();
-
-             // AJAX request
-             $.ajax({
-                 url: 'getEmp/'+id,
-                 type: 'get',
-                 dataType: 'json',
-                 success: function(response){
-
-                     var len = 0;
-                     if(response['data'] != null){
-                          len = response['data'].length;
-                     }
-
-
-
-                     if(len > 0){
-                          // Read data and create <option >
-                          for(var i=0; i<len; i++){
-
-                               var id = response['data'][i].id;
-                               var name = response['data'][i].name;
-
-                               var option = "<option value='"+id+"'>"+name+"</option>";
-
-                               $("#sel_emp2").append(option);
-                          }
-                     }
-
-                 }
-             });
-        });
-    });
-    </script>
-
 @endsection

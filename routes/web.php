@@ -70,6 +70,7 @@ use App\Http\Controllers\DonorController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\SubscribeController;
+use App\Http\Controllers\AssignactivityController;
 
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\Auth\AuthController;
@@ -137,6 +138,11 @@ Route::resource('/aboutus',AboutusController::class);
 
  Route::get('/bank-destroy/{x}', [BankController::class, 'destroy'])->name('destroy');
  Route::get('/donor-destroy/{x}', [DonorController::class, 'destroy'])->name('destroy');
+
+
+ Route::resource('/assign-activity',AssignactivityController::class);
+ Route::get('/assignActivity', [AssignactivityController::class,'show'])->name('assignActivity');
+ Route::get('/getAssignActivity/{id}', [AssignactivityController::class, 'getAssignActivity']);
 
 // End of Controllers
 

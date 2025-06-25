@@ -58,8 +58,6 @@ class SlidesController extends Controller
               ->where('department',$departmentid)
               ->get();
 
-
- //dd( $empData['data']);
          return response()->json($slideData);
 
     }
@@ -126,8 +124,6 @@ public function slides()
               ->select('id','project_name')
               ->get();
 
-//dd( $projects['data']);
-         // Load index view
         return view('admin.slides.addslide',compact('projects'));
     }
 

@@ -1,9 +1,6 @@
 @extends('spa.app')
 @section('contents')
 
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/jquery311.min.js"></script>
-
 <style type="text/css">
   body {
     font-family: "Calibri Light", Calibri, sans-serif;
@@ -88,7 +85,7 @@
 
   /* Top Header and Buttons */
   .content-header h4.asset {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     color: #4f46e5;
     text-shadow: 0 0 8px rgba(79, 70, 229, 0.5);
   }
@@ -260,62 +257,22 @@
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2 align-items-center">
-        <div class="col-sm-6">
-          <h4 class="asset">ASSETS LIST</h4>
+        <div class="col-sm-10">
+          <h4 class="asset">Subproject activities</h4>
         </div>
-        <div class="col-sm-6 d-flex justify-content-end gap-3">
-          @if(Auth::user()->role == 'Admin')
-          <a href="{{ route('addAsset.index') }}" class="btn btn-gradient">
-            <i class="fas fa-plus"></i> Asset
+
+        <div class="col-sm-2 d-flex justify-content-end gap-3">     
+       
+          <a href="{{ route('assignActivity') }}" class="btn btn-gradient">
+            <i class="fas fa-plus"></i>Assign Activities
           </a> 
-          <br>
-          <a href="{{ route('reassign-asset.index') }}" class="editbtn">
-            Reassign Asset
-          </a>
-          @endif
+      
         </div>
       </div>
     </div>
   </section>
 
   <section class="content">
-
- 
-<!--
-    <div class="card">
-      <div class="card-body">
-        <div class="table-container">
-<form method="post" id="post_form" role="form" class="registration-form" action="{{ route('research') }}" enctype="multipart/form-data">
-          @csrf
-          <input type="hidden" name="user_id" value="POST">
-          <div class="row align-items-end">
-            <div class="form-group col-md-2">
-              <label>Category</label>
-              <select class="form-control" name="classg" id="classg" required>
-                <option></option>
-                <option selected style="background-color:lightgreen;">{{$selected_class ?? ''}}</option>
-                @foreach ($categories as $category)
-                  <option value="{{$category->id}}">{{$category->category}}</option>
-                @endforeach
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <label>Sub category</label>
-              <select class="form-control" name="session" id="session" required>
-                <option></option>
-                <option selected style="background-color:lightgreen;">{{$selected_class ?? ''}}</option>
-                @foreach ($sessions as $session)
-                  <option value="{{$category->id}}">{{$session->session}}</option>
-                @endforeach
-              </select>
-            </div>
-            <div class="col-md-2">
-              <button type="submit" class="editbtn">Find</button>
-            </div>
-          </div>
-        </form>
-      </div>
--->
           <!-- Confirmation Box -->
           <div id="confirmBox" role="alert" aria-live="assertive" aria-atomic="true">
             <span id="confirmMessage" class="fw-bold"></span>
@@ -329,55 +286,34 @@
           <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>No.</th>
-                <th>Asset</th>
-                <th>Category</th>
-                <th>Subcategory</th>
-                <th>Serial No</th>
-                <th>Location</th>
-                <th>Photo</th>
-                <th>Assigned To</th>
-                <th>Assigned Date</th>
-                <th>Owner</th>
-                <th>Status</th>
+                <th>ID.</th>
+                <th>Project name</th>
+                <th>Sub project name</th>
+                <th>Activity name</th>
+                <th>Progress</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              @foreach ($assets as $data)
+              @foreach ($subprojects as $data)
               <tr>
                 <td>{{ $data->id }}</td>
-                <td>{{ $data->asset_name }}</td>
-                <td>{{ $data->category }}</td>
-                <td>{{ $data->subcategory }}</td>
-                <td>{{ $data->serial_no }}</td>
-                <td>{{ $data->location }}</td>
-                <td><img src="{{ URL::asset('/storage/photos/'.$data->photo) }}" alt="Asset Photo"></td>
-                <td>{{ $data->assigned_to }}</td>
-                <td>{{ $data->assigned_date }}</td>
-                <td>{{ $data->owned_by }}</td>
-                <td>{{ $data->status }}</td>
+                <td>{{ $data->sub_project_name }}</td>
+                 <td>{{ $data->sub_project_code }}</td>
+                 <td>{{ $data->project_name }}</td>         
+                <td>{{ $data->level }}</td>
                 <td>
-                  <a href="#" class="btn-gradient btn-sm mb-1 btn-history" data-url="/destroyf/{{$data->id}}" data-message="Go to Asset history?">
-                    History
-                  </a>
-
-                  @if(Auth::user()->role =='Admin')
-                  <form method="GET" action="{{ route('test') }}" class="d-inline">
+                
+                  <form method="GET" action="{{ route('assign-activity.edit',$data->id) }}" class="d-inline">
                     @csrf
                     <input type="hidden" name="user_id" value="PUT">
-                    <input type="hidden" name="asset_id" value="{{ $data->id }}">
-                    <input type="hidden" name="sessionf" value="{{ $data->session }}">
-                    <input type="hidden" name="searchf" value="{{ $search }}">
+                    <input type="hidden" name="asset_id" value="#">
+                    <input type="hidden" name="sessionf" value="#">
+                    <!-- <input type="hidden" name="searchf" value="Donata"> -->
                     <button type="submit" class="editbtn">
-                      <i class="fa fa-edit"></i> Edit
+                      <i class="fa fa-edit"></i> Update progress
                     </button>
                   </form>
-
-                  <a href="#" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/asset-destroy/{{$data->id}}" data-message="Are you sure you want to delete this asset?">
-                    <i class="fa fa-trash"></i> Delete
-                  </a>
-                  @endif
                 </td>
               </tr>
               @endforeach
@@ -501,5 +437,4 @@
     }
   });
 </script>
-
 @endsection
