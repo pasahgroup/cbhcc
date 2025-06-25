@@ -161,7 +161,9 @@
           </div>
             </div>
 
-
+ <div class="form-group row">
+  <strong>ACTIVE ACTIVITIES LIST</strong>
+ </div>
 
  <div class="form-group row"> 
 
