@@ -25,7 +25,8 @@
 
   <!-- custom css -->
    <link rel="stylesheet" href="../../admins/custom/css/bootstrap452.min.css">
-
+ <link rel="stylesheet" href="../../css/custom2.css">
+ 
   <style>
     /* Sidebar styles */
     .main-sidebar .nav-link {
