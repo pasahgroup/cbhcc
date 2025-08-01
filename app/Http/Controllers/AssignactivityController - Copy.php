@@ -5,20 +5,29 @@ namespace App\Http\Controllers;
 use App\Models\subproject;
 use App\Models\project;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoresubprojectRequest;
-use App\Http\Requests\UpdatesubprojectRequest;
+use App\Models\assignactivity;
+use App\Models\activity;
+use App\Http\Requests\StoreassignactivityRequest;
+use App\Http\Requests\UpdateassignactivityRequest;
 use DB;
 
-class SubprojectController extends Controller
+class AssignactivityController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {        
-     $subprojects=subproject::get();
-       //dd($subprojects);
-        return view('admin.subproject.subproject',compact('subprojects'));    
+     // $subprojects=subproject::join()
+     // ->get();
+       
+
+     $subprojects = subproject::join('projects','projects.id','subprojects.project_id')
+        ->select('subprojects.*','projects.project_name')
+        ->get();
+
+//dd($subprojects);
+        return view('admin.assignActivity.assignActivity',compact('subprojects'));    
     }
 
     /**
@@ -29,24 +38,23 @@ class SubprojectController extends Controller
          $subprojects=subproject::get();
         // return view('subproject.addsubproject',compact('subproject'));
         
-        $projects=project::where('status','Active')
-        ->get();
+         $projects['data'] = project::orderby("project_name","asc")
+              ->select('id','project_name')
+              ->get();
        //dd($projects);
-       return view('admin.subproject.addsubproject',compact('projects'));
+       return view('admin.assignActivity.addAssignActivity',compact('projects'));
 }
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
         $subproject = subproject::UpdateOrCreate([
         'sub_project_name'=>request('sub_project_name'),
         'sub_project_code'=>request('sub_project_code'),
         'project_id'=>request('project_id'),      
         'status'=>request('status'),
         'level'=>request('level'),
-
       
         ]);
          return redirect('/subproject');
@@ -55,9 +63,41 @@ class SubprojectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(subproject $subproject)
+ 
+
+     public function show_org(project $project)
     {
-        //
+         $projects['data'] = project::orderby("project_name","asc")
+              ->select('id','project_name')
+              ->get();
+
+        return view('admin.assignActivity.addAssignActivity',compact('projects'));
+    }
+
+
+       public function show(project $project)
+    {
+         $projects['data'] = project::orderby("project_name","asc")
+              ->select('id','project_name')
+              ->get();
+
+ $activities = activity::where('status','Active')
+        ->get();
+
+              return view('admin.assignActivity.addAssignActivity',compact('projects','activities'));
+    }
+
+
+      public function getAssignActivity($subprojectid=0){
+
+         // Fetch Employees by Departmentid
+         $empData['data'] = subproject::orderby("sub_project_name","asc")
+              ->select('id','sub_project_name')
+              ->where('project_id',$subprojectid)
+              ->get();
+
+         return response()->json($empData);
+
     }
 
     /**
@@ -66,9 +106,17 @@ class SubprojectController extends Controller
     public function edit(Request $request,$id)
     {
         //
-        $subproject=subproject::where('id',$id)->first();
+        // $subproject=subproject::where('id',$id)->first();
+ $subproject = subproject::join('projects','projects.id','subprojects.project_id')
+        ->select('subprojects.*','projects.project_name')
+        ->first();
+
+           $projects=project::where('status','Active')
+        ->get();
+
+
         //dd($subproject);
-        return view('admin.subproject.editsubproject',compact('subproject'));
+        return view('admin.assignActivity.editAssignActivity',compact('subproject','projects'));
     }
 
     /**

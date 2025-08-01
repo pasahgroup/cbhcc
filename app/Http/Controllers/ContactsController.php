@@ -17,7 +17,7 @@ class ContactsController extends Controller
      $contacts=contacts::where('status','Active')
      ->get();     
      $status=contacts::distinct()->get(['status']);
-     return view('admins.contacts.contactsComment',compact('contacts','status'));
+     return view('admin.contacts.contactsComment',compact('contacts','status'));
     }
 
     /**
