@@ -47,9 +47,9 @@
     <div class="header-1">
       <!-- == Contacts == -->
       <ul class="header-contacts">
-        <li><i class="fas fa-map-marker-alt"></i><span>Custom Woodwork Studio</span></li>
-        <li><i class="fas fa-phone"></i><span>+123-456-7890</span></li>
-        <li><i class="fas fa-envelope"></i><span class="gmail">info@customwoodwork.com</span></li>
+        <li><i class="fas fa-map-marker-alt"></i><span>CBHCC</span></li>
+        <li><i class="fas fa-phone"></i><span>+255-747-012-401</span></li>
+        <li><i class="fas fa-envelope"></i><span class="gmail">cbhcc.biharamulo@gmail.com</span></li>
       </ul>      
 
       <!-- == Social == -->
@@ -271,9 +271,9 @@
   
         <!-- Contact Information -->
         <div class="info connect">
-          <p><i class="fas fa-phone"></i><span>+123-456-7890</span></p>
-          <p><i class="fas fa-envelope"></i><span class="gmail">info@customwoodwork.com</span></p>
-          <p><i class="fas fa-map-marker-alt"></i><span>Custom Woodwork Studio</span></p>
+          <p><i class="fas fa-phone"></i><span>+255-747-012-401</span></p>
+          <p><i class="fas fa-envelope"></i><span class="gmail">cbhcc.biharamulo@gmail.com</span></p>
+          <p><i class="fas fa-map-marker-alt"></i><span>CBHCC</span></p>
         </div>
   
         <!-- Social Media Links -->
