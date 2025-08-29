@@ -122,24 +122,24 @@
   <!-- ==================== Count Area (Start) ==================== -->
   <div class="counting">
 
-    <!-- Statistic Box 1: CBHCC Projects -->
+    <!-- Statistic Box 1: Woodwork Projects -->
     <div class="box">
       <div class="info">
         <i class="fas fa-hammer"></i> <!-- Hammer icon -->
         <div class="content">
-          <h1 class="count" data-count="300">300+</h1> <!-- Count of CBHCC projects -->
-          <h3>CBHCC Projects</h3> <!-- Statistic description -->
+          <h1 class="count" data-count="20000">20,000+</h1> <!-- Count of woodwork projects -->
+          <h3>Woodwork Projects</h3> <!-- Statistic description -->
         </div>
       </div>
     </div>
   
-    <!-- Statistic Box 2: Happy Communities -->
+    <!-- Statistic Box 2: Happy Clients -->
     <div class="box">
       <div class="info">
         <i class="fas fa-heart"></i> <!-- Heart icon -->
         <div class="content">
-          <h1 class="count" data-count="1000">1,000+</h1> <!-- Count of happy communities -->
-          <h3>Happy Communities</h3> <!-- Statistic description -->
+          <h1 class="count" data-count="30000">30,000+</h1> <!-- Count of happy clients -->
+          <h3>Happy Clients</h3> <!-- Statistic description -->
         </div>
       </div>
     </div>

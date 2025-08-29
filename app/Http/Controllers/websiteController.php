@@ -27,7 +27,8 @@ class WebsiteController extends Controller
           $donors=donor::where('status','Active')
         ->get();
 
-          $slides=slide::where('status','Active')
+          $slides=slide::where('display','Slide')
+          ->where('status','Active')
         ->get();
         //dd($slides);
 
