@@ -88,7 +88,7 @@
       </div>
       <div class="sub-image last">
         <img src="./assets/images/About/About-3.jpg" alt="About-Image3">
-        <div class="experience"><span>25</span> years of experience</div>
+        <div class="experience"><span>33</span> years of experience</div>
       </div>
     </div>
   
@@ -97,19 +97,19 @@
   
       <div class="heading">
         <div class="sub"><span>About Us</span><i class="fas fa-hammer"></i></div> <!-- Sub Heading -->
-        <h2>Your Trusted Source for Quality Woodwork</h2> <!-- Main Heading -->
+        <h2>Ensured Access to Safe, Clean Water for Every Community</h2> <!-- Main Heading -->
       </div>
   
       <!-- Description -->
-      <p>Welcome to TimberCraft, your premier destination for high-quality woodwork solutions. We are dedicated to providing exceptional craftsmanship and services to enhance the beauty, functionality, and durability of your space. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem enim nobis ea quo sint vero laboriosam ex repellendus.</p>
+      <p>Community-Based Health Care Council(CBHCC) is a Tanzanian Non-Government Organization based in Arusha. Ww are a nationwide organization committed to improving wellbeing of people. We partner with individuals and groups from diverse background and values united by the belief that everyone deserves access to water, health, opportunity and hope.</p><p>Since 1992, we've been helping communities gain or improve access to safe, clean water and strengthened community-led sanitation practices. From construction of water supply structures to promoting water, sanitation and hygiene, our work is driven by collaboration, sustainability and dignity for all.</p>
   
       <!-- Key Features -->
       <ul class="about-features">
-        <li><i class="fas fa-hammer"></i><span>Custom Woodwork Creations</span></li> <!-- Feature 1 -->
-        <li><i class="fas fa-hammer"></i><span>Professional Carpentry Services</span></li> <!-- Feature 2 -->
-        <li><i class="fas fa-hammer"></i><span>Natural Wood Selections</span></li> <!-- Feature 3 -->
-        <li><i class="fas fa-hammer"></i><span>Precision Craftsmanship</span></li> <!-- Feature 4 -->
-        <li><i class="fas fa-hammer"></i><span>Expert Consultation & Support</span></li> <!-- Feature 5 -->
+        <li><i class="fas fa-hammer"></i><span>Install WASH infrastructure to underserved schools, health centres, and communities</span></li> <!-- Feature 1 -->
+        <li><i class="fas fa-hammer"></i><span>Community mobilization for clean water and sanitation solutions</span></li> <!-- Feature 2 -->
+        <li><i class="fas fa-hammer"></i><span>Form and train local communities on WASH projects for sustainability</span></li> <!-- Feature 3 -->
+        <li><i class="fas fa-hammer"></i><span>Monitoring and evaluation to ensure sustainability of implemented projects</span></li> <!-- Feature 4 -->
+        <li><i class="fas fa-hammer"></i><span>Assess WASH needs, implement recommended technologies, and build local technical capacity</span></li> <!-- Feature 5 -->
       </ul>
   
     </div>
@@ -149,7 +149,7 @@
       <div class="info">
         <i class="fas fa-calendar-alt"></i> <!-- Calendar icon -->
         <div class="content">
-          <h1 class="count" data-count="25">25+</h1> <!-- Count of years of experience -->
+          <h1 class="count" data-count="30">30+</h1> <!-- Count of years of experience -->
           <h3>Years of Experience</h3> <!-- Statistic description -->
         </div>
       </div>
@@ -414,15 +414,15 @@
     <!-- Section Heading -->
     <div class="heading">
       <div class="sub"><i class="fa-solid fa-hammer"></i><span>Explore Our Work</span><i class="fa-solid fa-hammer"></i></div>
-      <h2>our projects</h2>
+      <h2>Our Activities</h2>
     </div> 
 
     <!-- Projects Filter Buttons -->
     <ul class="tab-buttons">
       <li class="button active" data-filter="*">all</li> <!-- Display all services -->
-      <li class="button" data-filter=".craft">Custom Craft</li> <!-- Filter by lock installation -->
-      <li class="button" data-filter=".carpentry">Carpentry Work</li> <!-- Filter by emergency services -->
-      <li class="button" data-filter=".cabinet">Cabinet Design</li> <!-- Filter by security solutions -->
+      <li class="button" data-filter=".craft">Community Mobilization</li> <!-- Filter by lock installation -->
+      <li class="button" data-filter=".carpentry">Drilling</li> <!-- Filter by emergency services -->
+      <li class="button" data-filter=".cabinet">Chlorinator Units</li> <!-- Filter by security solutions -->
     </ul>
     
     <!-- Projects Container -->

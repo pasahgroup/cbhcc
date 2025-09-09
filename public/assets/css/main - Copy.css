@@ -131,19 +131,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&display=swap');
 
 :root{      
-    --main-color: #d5e612;
-    --secondary-color: #0b4deb; 
+    --main-color: #ab7442;
+    --secondary-color: #000000; 
     --accent-color: #3f220e;
     --black: #000; 
     --white: #fff;
     --light-grey: #E6E6E6;
     --grey: #666; 
-    --custom-bg: rgba(11, 77, 235, 0.8);
+    --custom-bg: rgba(0, 0, 0, 0.8);
     --border-radius-1: 0.5rem;
     --border-radius-2: 1rem;
-    --border: 0.1rem solid rgba(11, 77, 235, 0.1);
+    --border: 0.1rem solid rgba(0, 0, 0, 0.1);
     --custom-border: 0.5rem solid var(--main-color);
-    --box-shadow: 0 0.5rem 1rem rgba(11, 77, 235, 0.3);
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
     --custom-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
@@ -375,7 +375,7 @@ img{
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    background-color: #0b4deb;
+    background-color: var(--black);
     border-bottom: 0.2rem solid var(--main-color);
     padding-left: 5%;
 }
