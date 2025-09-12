@@ -330,59 +330,50 @@
           <div class="content">
             <h6>01</h6>
             <h3>Assessment</h3> <!-- Step Title -->
-            <p>Thorough evaluation of your woodworking needs and requirements to provide tailored solutions.</p> <!-- Step Description -->
+            <p>Includes baseline and technical surveys, community mobilization, resulting in effective project design.</p> <!-- Step Description -->
           </div>
         </div>
     
-        <!-- Step 2: Design -->
+        <!-- Step 2: Project Design -->
         <div class="swiper-slide process-item">
-          <img src="./assets/images/Process/Process-2.jpg" alt="Design"> <!-- Step Image -->
+          <img src="./assets/images/Process/Process-2.jpg" alt="Project Design"> <!-- Step Image -->
           <div class="content">
             <h6>02</h6>
-            <h3>Design</h3> <!-- Step Title -->
+            <h3>Project Design</h3> <!-- Step Title -->
             <p>Professional design and customization of woodworking projects to match your space's aesthetics and requirements.</p> <!-- Step Description -->
           </div>
         </div>
     
-        <!-- Step 3: Craftsmanship -->
+        <!-- Step 3: Implementation -->
         <div class="swiper-slide process-item">
-          <img src="./assets/images/Process/Process-3.jpg" alt="Craftsmanship"> <!-- Step Image -->
+          <img src="./assets/images/Process/Process-3.jpg" alt="Implementation"> <!-- Step Image -->
           <div class="content">
             <h6>03</h6>
-            <h3>Craftsmanship</h3> <!-- Step Title -->
-            <p>Expert craftsmanship in woodworking with precision and attention to detail to ensure optimal results.</p> <!-- Step Description -->
+            <h3>Implementation</h3> <!-- Step Title -->
+            <p>Entails procuring materials, constructing water points, conducting triggering activities, household registration and training water committees,CORPs and LGAs to ensure sustainable and community-owned WASH solutions</p> <!-- Step Description -->
           </div>
         </div>
     
-        <!-- Step 4: Quality Check -->
+        <!-- Step 4: Monitoring and Evaluation -->
         <div class="swiper-slide process-item">
-          <img src="./assets/images/Process/Process-4.jpg" alt="Quality Check"> <!-- Step Image -->
+          <img src="./assets/images/Process/Process-4.jpg" alt="Monitoring and Evaluation"> <!-- Step Image -->
           <div class="content">
             <h6>04</h6>
-            <h3>Quality Check</h3> <!-- Step Title -->
-            <p>Rigorous quality checks and inspections to verify the functionality and durability of crafted woodwork.</p> <!-- Step Description -->
+            <h3>Monitoring and Evaluation</h3> <!-- Step Title -->
+            <p>We conduct supervision visits, check functionality, plan maintenance, collect data, report progress and follow up with SWASH clubs to ensure our WASH projects stay effective and community-led.</p> <!-- Step Description -->
           </div>
         </div>
     
-        <!-- Step 5: Finishing -->
+        <!-- Step 5: Project Handover -->
         <div class="swiper-slide process-item">
-          <img src="./assets/images/Process/Process-5.jpg" alt="Finishing"> <!-- Step Image -->
+          <img src="./assets/images/Process/Process-5.jpg" alt="Project Handover"> <!-- Step Image -->
           <div class="content">
             <h6>05</h6>
-            <h3>Finishing</h3> <!-- Step Title -->
-            <p>Professional finishing services to enhance the appearance and longevity of your woodworking projects.</p> <!-- Step Description -->
+            <h3>Project Handover</h3> <!-- Step Title -->
+            <p>This involves handing over to the community, conducting final evaluations, documenting lessons learned and commissioning through capacity building efforts to ensure longterm sustainability and ownership.</p> <!-- Step Description -->
           </div>
         </div>
     
-        <!-- Step 6: Client Approval -->
-        <div class="swiper-slide process-item">
-          <img src="./assets/images/Process/Process-6.jpg" alt="Client Approval"> <!-- Step Image -->
-          <div class="content">
-            <h6>06</h6>
-            <h3>Client Approval</h3> <!-- Step Title -->
-            <p>Ensuring client satisfaction by delivering woodworking projects that meet or exceed expectations.</p> <!-- Step Description -->
-          </div>
-        </div>
 
       </div>
     </div>
