@@ -545,8 +545,8 @@
 
     <!-- Section Heading -->
     <div class="heading">
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>What Our Customers Say</span><i class="fa-solid fa-hammer"></i></div> <!-- Sub Heading -->
-      <h2>Customer Testimonials</h2> 
+      <div class="sub"><i class="fa-solid fa-hammer"></i><span>What Our Beneficiaries Say</span><i class="fa-solid fa-hammer"></i></div> <!-- Sub Heading -->
+      <h2>Beneficiaries Testimonials</h2> 
     </div>    
   
     <!-- Testimonial Slider -->
@@ -826,86 +826,15 @@
   <!-- ==================== Get A Quote Area (End) ==================== -->
     
 
-
-  <!-- ==================== Pricing Area (Start) ==================== -->
-  <section class="pricing">
-
-    <div class="heading">
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>Choose your plan</span><i class="fa-solid fa-hammer"></i></div>
-      <h2>Pricing Plans</h2>
-    </div>
-  
-    <!-- Pricing Plans -->
-    <div class="box-container">
-  
-      <!-- Pricing Plan 1 - Basic Plan -->
-      <div class="plan-item">
-        <div class="intro">
-          <img src="./assets/images/Pricing/Plan-1.jpg" alt="Basic Plan"> <!-- Plan Image -->
-          <div class="content">
-            <i class="icon fas fa-wrench"></i> <!-- Wrench Icon -->
-            <h3>Basic Plan</h3>
-            <div class="price">$49</div>
-          </div>
-        </div>
-        <ul> <!-- Plan Features -->
-          <li><i class="fa-solid fa-check"></i> Basic Wood Repair</li>
-          <li><i class="fa-solid fa-check"></i> Tool Rental</li>
-          <li><i class="fa-solid fa-check"></i> Safety Gear Included</li>
-          <li><i class="fa-solid fa-check"></i> 24/7 Support</li>
-          <li><i class="fa-solid fa-check"></i> Priority Service</li>
-        </ul>
-        <a href="#" class="btn">Select Package</a>
-      </div>
-  
-      <!-- Pricing Plan 2 - Standard Plan -->
-      <div class="plan-item">
-        <div class="intro">
-          <img src="./assets/images/Pricing/Plan-2.jpg" alt="Standard Plan"> <!-- Plan Image -->
-          <div class="content">
-            <i class="icon fas fa-hammer"></i> <!-- Hammer Icon -->
-            <h3>Standard Plan</h3>
-            <div class="price">$99</div>
-          </div>
-        </div>
-        <ul> <!-- Plan Features -->
-          <li><i class="fa-solid fa-check"></i> Advanced Wood Restoration</li>
-          <li><i class="fa-solid fa-check"></i> Premium Tool Set</li>
-          <li><i class="fa-solid fa-check"></i> Safety Gear Included</li>
-          <li><i class="fa-solid fa-check"></i> Expert Consultation</li>
-          <li><i class="fa-solid fa-check"></i> Priority Service</li>
-        </ul>
-        <a href="#" class="btn">Select Package</a>
-      </div>
-  
-      <!-- Pricing Plan 3 - Premium Plan -->
-      <div class="plan-item">
-        <div class="intro">
-          <img src="./assets/images/Pricing/Plan-3.jpg" alt="Premium Plan"> <!-- Plan Image -->
-          <div class="content">
-            <i class="icon fas fa-toolbox"></i> <!-- Toolbox Icon -->
-            <h3>Premium Plan</h3>
-            <div class="price">$149</div>
-          </div>
-        </div>
-        <ul> <!-- Plan Features -->
-          <li><i class="fa-solid fa-check"></i> Custom Woodwork Design</li>
-          <li><i class="fa-solid fa-check"></i> Deluxe Tool Set</li>
-          <li><i class="fa-solid fa-check"></i> Safety Gear Included</li>
-          <li><i class="fa-solid fa-check"></i> On-Site Assistance</li>
-          <li><i class="fa-solid fa-check"></i> Priority Service</li>
-        </ul>
-        <a href="#" class="btn">Select Package</a>
-      </div>
-  
-    </div>
-  
-  </section> 
-  <!-- ==================== Pricing Area (End) ==================== --> 
  
 
 
   <!-- ==================== Newsletter Area (Start) ==================== -->
+<div class="heading"> 
+      <div class="sub"><i class="fa-solid fa-hammer"></i><span>Newsletter</span><i class="fa-solid fa-hammer"></i></div> <!-- Sub Heading -->
+      <h2>Hear from us</h2> 
+    </div>
+
   <section class="newsletter-subscribe">
     <div class="content">
       <h2>Subscribe To Our Newsletter</h2> <!-- Newsletter Heading -->
