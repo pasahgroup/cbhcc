@@ -42,32 +42,32 @@
 
     <div class="box-container">
   
-      <!-- Feature 1 - Custom Woodwork -->
+      <!-- Feature 1 - Clean & Safe Water -->
       <div class="feature-item">
-        <i class="fas fa-hammer"></i>
-        <h3>Custom Woodwork</h3>
-        <p>Offering bespoke woodwork solutions crafted to perfection</p>
+        <i class="fas fa-droplet"></i>
+        <h3>Clean & Safe Water</h3>
+        <p>Building and rehabilitating boreholes, and community water points to ensure reliable access to safe drinking water.</p>
       </div>
   
-      <!-- Feature 2 - Precision Craftsmanship -->
+      <!-- Feature 2 - Training & Capacity Building -->
       <div class="feature-item">
-        <i class="fas fa-ruler-combined"></i>
-        <h3>Precision Craftsmanship</h3>
-        <p>Providing meticulous attention to detail for flawless results</p>
+        <i class="fas fa-users"></i>
+        <h3>Training & Capacity Building</h3>
+        <p>Equipping village leaders, CORPs, and CBWSOs with knowledge and tools to sustain WASH initiatives.</p>
       </div>
   
-      <!-- Feature 3 - Natural Materials -->
+      <!-- Feature 3 - Hygiene Promotion -->
       <div class="feature-item">
-        <i class="fas fa-tree"></i>
-        <h3>Natural Materials</h3>
-        <p>Using high-quality, sustainably sourced wood for timeless beauty</p>
+        <i class="fas fa-soap"></i>
+        <h3>Hygiene Promotion</h3>
+        <p>Delivering workshops and school programs to encourage handwashing, menstrual hygiene, and disease prevention.</p>
       </div>
   
-      <!-- Feature 4 - Customization Options -->
+      <!-- Feature 4 - Monitoring & Advocacy -->
       <div class="feature-item">
-        <i class="fas fa-paint-brush"></i>
-        <h3>Customization Options</h3>
-        <p>Offering a wide range of finishes and styles to suit your preferences</p>
+        <i class="fas fa-chart-line"></i>
+        <h3>Monitoring & Advocacy </h3>
+        <p>Using data, case studies, and success stories to ensure sustainability in WASH projects.</p>
       </div>
   
     </div>
@@ -96,7 +96,7 @@
     <div class="content">
   
       <div class="heading">
-        <div class="sub"><span>About Us</span><i class="fas fa-hammer"></i></div> <!-- Sub Heading -->
+        <div class="sub"><span>About Us</span></div> <!-- Sub Heading -->
         <h2>Ensured Access to Safe, Clean Water for Every Community</h2> <!-- Main Heading -->
       </div>
   
@@ -105,11 +105,11 @@
   
       <!-- Key Features -->
       <ul class="about-features">
-        <li><i class="fas fa-hammer"></i><span>Install WASH infrastructure to underserved schools, health centres, and communities</span></li> <!-- Feature 1 -->
-        <li><i class="fas fa-hammer"></i><span>Community mobilization for clean water and sanitation solutions</span></li> <!-- Feature 2 -->
-        <li><i class="fas fa-hammer"></i><span>Form and train local communities on WASH projects for sustainability</span></li> <!-- Feature 3 -->
-        <li><i class="fas fa-hammer"></i><span>Monitoring and evaluation to ensure sustainability of implemented projects</span></li> <!-- Feature 4 -->
-        <li><i class="fas fa-hammer"></i><span>Assess WASH needs, implement recommended technologies, and build local technical capacity</span></li> <!-- Feature 5 -->
+        <li><i class="fas fa-droplet"></i><span>Install WASH infrastructure to underserved schools, health centres, and communities</span></li> <!-- Feature 1 -->
+        <li><i class="fas fa-droplet"></i><span>Community mobilization for clean water and sanitation solutions</span></li> <!-- Feature 2 -->
+        <li><i class="fas fa-droplet"></i><span>Form and train local communities on WASH projects for sustainability</span></li> <!-- Feature 3 -->
+        <li><i class="fas fa-droplet"></i><span>Monitoring and evaluation to ensure sustainability of implemented projects</span></li> <!-- Feature 4 -->
+        <li><i class="fas fa-droplet"></i><span>Assess WASH needs, implement recommended technologies, and build local technical capacity</span></li> <!-- Feature 5 -->
       </ul>
   
     </div>
@@ -125,7 +125,7 @@
     <!-- Statistic Box 1: CBHCC Projects -->
     <div class="box">
       <div class="info">
-        <i class="fas fa-hammer"></i> <!-- Hammer icon -->
+        <i class="fas fa-hard-hat"></i> <!-- Hard hat icon -->
         <div class="content">
           <h1 class="count" data-count="300">300+</h1> <!-- Count of CBHCC projects -->
           <h3>CBHCC Projects</h3> <!-- Statistic description -->
@@ -176,7 +176,7 @@
 
     <!-- Section Heading -->
     <div class="heading">
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>What we offer</span><i class="fa-solid fa-hammer"></i></div>
+      <div class="sub"></i><span>What we offer</span></div>
       <h2>Our Services</h2>
     </div>  
 
@@ -545,7 +545,7 @@
 
     <!-- Section Heading -->
     <div class="heading">
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>What Our Beneficiaries Say</span><i class="fa-solid fa-hammer"></i></div> <!-- Sub Heading -->
+      <div class="sub"><i class="fa-solid fa-comment"></i><span>What Our Beneficiaries Say</span><i class="fa-solid fa-comment"></i></div> <!-- Sub Heading -->
       <h2>Beneficiaries Testimonials</h2> 
     </div>    
   
@@ -831,7 +831,7 @@
 
   <!-- ==================== Newsletter Area (Start) ==================== -->
 <div class="heading"> 
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>Newsletter</span><i class="fa-solid fa-hammer"></i></div> <!-- Sub Heading -->
+      <div class="sub"><i class="fa-solid fa-envelope-open-text"></i><span>Newsletter</span></div> <!-- Sub Heading -->
       <h2>Hear from us</h2> 
     </div>
 
