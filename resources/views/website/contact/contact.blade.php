@@ -52,7 +52,7 @@
         <div class="content">
           <h3>mail us</h3>
           <p class="gmail">cbhcc@habari.co.tz</p>
-          <p class="gmail">cbhcc.biharamulo@gmail.com</p>
+          <p class="gmail">info@cbhcc.or.tz</p>
         </div>
       </div>
 
@@ -62,7 +62,7 @@
         <div class="content">
           <h3>Opening Hours</h3>
           <p>Mon - Fri: 8 AM - 5 PM</p>
-          <p>Sat - Sun: 10 AM - 4 PM</p>
+          <p>Sat - Sun: Closed</p>
         </div>
       </div>
 

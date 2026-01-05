@@ -49,7 +49,7 @@
       <ul class="header-contacts">
         <li><i class="fas fa-map-marker-alt"></i><span>CBHCC</span></li>
         <li><i class="fas fa-phone"></i><span>+255-747-012-401</span></li>
-        <li><i class="fas fa-envelope"></i><span class="gmail">cbhcc.biharamulo@gmail.com</span></li>
+        <li><i class="fas fa-envelope"></i><span class="gmail">info@cbhcc.or.tz</span></li>
       </ul>      
 
       <!-- == Social == -->
@@ -258,21 +258,21 @@
 
     <div class="box-container">
   
-      <!-- Woodwork & Carpenter Company Information & Social Media Links -->
+      <!-- CBHCC Company Information & Social Media Links -->
       <div class="footer-item">
   
-        <!-- Woodwork & Carpenter Company Logo -->
+        <!-- CBHCC Company Logo -->
         <a class="logo" href="./index.html">
           <img src="./assets/images/Logo/Logo.png" alt="Woodwork & Carpenter Company Logo">
         </a>
   
         <!-- Description -->
-        <p>Crafting bespoke woodwork solutions for your home and business needs.</p>
+        <p>Healthy people, healthy communities.</p>
   
         <!-- Contact Information -->
         <div class="info connect">
           <p><i class="fas fa-phone"></i><span>+255-747-012-401</span></p>
-          <p><i class="fas fa-envelope"></i><span class="gmail">cbhcc.biharamulo@gmail.com</span></p>
+          <p><i class="fas fa-envelope"></i><span class="gmail">info@cbhcc.or.tz</span></p>
           <p><i class="fas fa-map-marker-alt"></i><span>CBHCC</span></p>
         </div>
   
@@ -286,7 +286,7 @@
   
       </div>
   
-      <!-- Woodwork & Carpenter Services -->
+      <!-- CBHCC Services -->
       <div class="footer-item">
         <h2>Our Services</h2>
         <div class="info links">
@@ -330,9 +330,9 @@
   
     </div>
   
-    <!-- Woodwork & Carpenter Company's Name and Copyright -->
+    <!-- CBHCC Company's Name and Copyright -->
     <div class="content">
-      <p>Designed By AS_Designs | All Rights Reserved</p>
+      <p>Designed By Giun&Co Designs | All Rights Reserved</p>
     </div>
   
   </footer>  

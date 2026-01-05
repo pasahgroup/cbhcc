@@ -387,9 +387,9 @@
     <div class="content">
   
       <div class="heading">
-        <div class="sub"><span>Elevate Your Home Interior</span><i class="fa-solid fa-hammer"></i></div>
+        <div class="sub"><span>Clean Water, Healthy Communities</span><i class="fa-solid fa-hammer"></i></div>
       </div>
-      <h2>Discover the Ideal Woodwork Solutions for Your Space</h2>
+      <h2>Discover sustainable WASH solutions that transform lives and protect futures</h2>
       <a href="./pages/Pages/Get-Quote.html" class="btn">Get a Quote</a>
   
     </div>
@@ -731,7 +731,7 @@
 
           <!-- Form Heading -->
           <div class="heading">
-            <div class="sub"><span>Custom Woodwork Solutions</span><i class="fa-solid fa-hammer"></i></div>
+            <div class="sub"><span>Clean Water, Healthy Communities</span><i class="fa-solid fa-hammer"></i></div>
             <h2>Request A Quote</h2>
           </div>
 
