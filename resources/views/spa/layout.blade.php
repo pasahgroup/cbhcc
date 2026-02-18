@@ -130,17 +130,6 @@
             </div>
           </div>
 
-          <div class="dropdown-menu">
-            <button class="nav-btn">shop</button>
-            <div class="dropdown-content">
-              <a href="./pages/Shop/Shop-Grid.html">shop grid</a>
-              <a href="./pages/Shop/Shop-List.html">shop list</a>
-              <a href="./pages/Shop/Product-Single.html">product Single</a>
-              <a href="./pages/Shop/Wishlist.html">wishlist</a>
-              <a href="./pages/Shop/Cart.html">cart</a>
-              <a href="./pages/Shop/Checkout.html">checkout</a>
-            </div>
-          </div>
 
           <a class="nav-btn" href="/get_contact">contact</a>
 
@@ -225,17 +214,6 @@
           </div>
         </div> 
 
-        <div class="nav-link">
-          <div class="main-nav-link"> <div class="nav-btn">Shop</div> <i class="fas fa-plus"></i> </div>
-          <div class="sub-nav-link">
-            <a href="./pages/Shop/Shop-Grid.html">shop grid</a>
-            <a href="./pages/Shop/Shop-List.html">shop list</a>
-            <a href="./pages/Shop/Product-Single.html">product Single</a>
-            <a href="./pages/Shop/Wishlist.html">wishlist</a>
-            <a href="./pages/Shop/Cart.html">cart</a>
-            <a href="./pages/Shop/Checkout.html">checkout</a>
-          </div>
-        </div> 
 
         <div class="nav-link">
           <div class="main-nav-link"> <a class="nav-btn" href="./pages/Contact/Contact.html">contact</a> </div>
@@ -286,29 +264,17 @@
   
       </div>
   
-      <!-- CBHCC Services -->
-      <div class="footer-item">
-        <h2>Our Services</h2>
-        <div class="info links">
-          <p><i class="fa-solid fa-hammer"></i><a href="./pages/Service/Service-Single.html">Custom Woodwork</a></p>
-          <p><i class="fa-solid fa-hammer"></i><a href="./pages/Service/Service-Single.html">Carpentry Services</a></p>
-          <p><i class="fa-solid fa-hammer"></i><a href="./pages/Service/Service-Single.html">Furniture Restoration</a></p>
-          <p><i class="fa-solid fa-hammer"></i><a href="./pages/Service/Service-Single.html">Cabinet Making</a></p>
-          <p><i class="fa-solid fa-hammer"></i><a href="./pages/Service/Service-Single.html">Floor Installation</a></p>
-          <p><i class="fa-solid fa-hammer"></i><a href="./pages/Service/Service-Single.html">Deck Construction</a></p>
-        </div>
-      </div>
+      
   
       <!-- Quick Links -->
       <div class="footer-item">
         <h2>Quick Links</h2>
         <div class="info links">
-          <p><i class="fa-solid fa-hammer"></i><a href="./pages/About/About.html">About Us</a></p>
+          <p><i class="fa-solid fa-hammer"></i><a href="/get_aboutusw">About Us</a></p>
           <p><i class="fa-solid fa-hammer"></i><a href="./pages/Service/Services.html">Services</a></p>
           <p><i class="fa-solid fa-hammer"></i><a href="./pages/Project/Projects.html">Projects</a></p>
           <p><i class="fa-solid fa-hammer"></i><a href="./pages/Blog/Blog-Grid.html">Blog</a></p>
-          <p><i class="fa-solid fa-hammer"></i><a href="./pages/Shop/Shop-Grid.html">Shop</a></p>
-          <p><i class="fa-solid fa-hammer"></i><a href="./pages/Contact/Contact.html">Contact Us</a></p>
+          <p><i class="fa-solid fa-hammer"></i><a href="/get_contact">Contact Us</a></p>
         </div>
       </div>
   

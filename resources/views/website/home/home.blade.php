@@ -411,16 +411,16 @@
     <!-- Projects Filter Buttons -->
     <ul class="tab-buttons">
       <li class="button active" data-filter="*">all</li> <!-- Display all services -->
-      <li class="button" data-filter=".craft">Community Mobilization</li> <!-- Filter by lock installation -->
-      <li class="button" data-filter=".carpentry">Drilling</li> <!-- Filter by emergency services -->
-      <li class="button" data-filter=".cabinet">Chlorinator Units</li> <!-- Filter by security solutions -->
+      <li class="button" data-filter=".social">Social Works</li> <!-- Filter by lock installation -->
+      <li class="button" data-filter=".technical">Technical Works</li> <!-- Filter by emergency services -->
+      <li class="button" data-filter=".monitoring">Monitoring and Evaluation</li> <!-- Filter by security solutions -->
     </ul>
     
     <!-- Projects Container -->
     <div class="box-container">
   
-      <!-- Project 1 - Custom Furniture -->
-      <div class="project-item craft">
+      <!-- Project 1 - Community Mobilization -->
+      <div class="project-item social">
         <div class="projects-content">
           <img src="./assets/images/Project/Projects/Project-1.jpg" alt="Custom Furniture"> <!-- Project Image -->
           <div class="content">
@@ -431,15 +431,15 @@
             </div>
             <!-- Text content -->
             <div class="text">
-              <p>Custom Craft</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Custom Furniture</h3></a> <!-- Project Title -->
+              <p>Social Works</p> <!-- Project Category -->
+              <a href="./pages/Project/Project-Single.html"><h3>Community Mobilization</h3></a> <!-- Project Title -->
             </div>
           </div>
         </div>
       </div>
   
-      <!-- Project 2 - Window Installations -->
-      <div class="project-item carpentry">
+      <!-- Project 2 - Drilling -->
+      <div class="project-item technical">
         <div class="projects-content">
           <img src="./assets/images/Project/Projects/Project-2.jpg" alt="Window Installations"> <!-- Project Image -->
           <div class="content">
@@ -450,15 +450,15 @@
             </div>
             <!-- Text content -->
             <div class="text">
-              <p>Carpentry Work</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Window Installations</h3></a> <!-- Project Title -->
+              <p>Technical Works</p> <!-- Project Category -->
+              <a href="./pages/Project/Project-Single.html"><h3>Drilling</h3></a> <!-- Project Title -->
             </div>
           </div>
         </div>
       </div>
   
-      <!-- Project 3 - Home Décor -->
-      <div class="project-item craft">
+      <!-- Project 3 - Triggering -->
+      <div class="project-item social">
         <div class="projects-content">
           <img src="./assets/images/Project/Projects/Project-3.jpg" alt="Home Décor"> <!-- Project Image -->
           <div class="content">
@@ -469,15 +469,15 @@
             </div>
             <!-- Text content -->
             <div class="text">
-              <p>Custom Craft</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Home Décor</h3></a> <!-- Project Title -->
+              <p>Social Works</p> <!-- Project Category -->
+              <a href="./pages/Project/Project-Single.html"><h3>Triggering</h3></a> <!-- Project Title -->
             </div>
           </div>
         </div>
       </div>
   
-      <!-- Project 4 - Kitchen Cabinets -->
-      <div class="project-item cabinet">
+      <!-- Project 4 - Water Quality -->
+      <div class="project-item monitoring">
         <div class="projects-content">
           <img src="./assets/images/Project/Projects/Project-4.jpg" alt="Kitchen Cabinets"> <!-- Project Image -->
           <div class="content">
@@ -488,15 +488,15 @@
             </div>
             <!-- Text content -->
             <div class="text">
-              <p>Cabinet Design</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Kitchen Cabinets</h3></a> <!-- Project Title -->
+              <p>Monitoring and Evaluation</p> <!-- Project Category -->
+              <a href="./pages/Project/Project-Single.html"><h3>Water Quality</h3></a> <!-- Project Title -->
             </div>
           </div>
         </div>
       </div>
   
-      <!-- Project 5 - Door Installations -->
-      <div class="project-item carpentry">
+      <!-- Project 5 - Solar Installations -->
+      <div class="project-item technical">
         <div class="projects-content">
           <img src="./assets/images/Project/Projects/Project-5.jpg" alt="Door Installations"> <!-- Project Image -->
           <div class="content">
@@ -507,15 +507,15 @@
             </div>
             <!-- Text content -->
             <div class="text">
-              <p>Carpentry Work</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Door Installations</h3></a> <!-- Project Title -->
+              <p>Technical Works</p> <!-- Project Category -->
+              <a href="./pages/Project/Project-Single.html"><h3>Solar Installations</h3></a> <!-- Project Title -->
             </div>
           </div>
         </div>
       </div>
   
-      <!-- Project 6 - Bathroom Cabinets -->
-      <div class="project-item cabinet">
+      <!-- Project 6 - Water Point Functionality -->
+      <div class="project-item monitoring">
         <div class="projects-content">
           <img src="./assets/images/Project/Projects/Project-6.jpg" alt="Bathroom Cabinets"> <!-- Project Image -->
           <div class="content">
@@ -526,8 +526,8 @@
             </div>
             <!-- Text content -->
             <div class="text">
-              <p>Cabinet Design</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Bathroom Cabinets</h3></a> <!-- Project Title -->
+              <p>Monitoring and Evaluation</p> <!-- Project Category -->
+              <a href="./pages/Project/Project-Single.html"><h3>Water Point Functionality</h3></a> <!-- Project Title -->
             </div>
           </div>
         </div>
