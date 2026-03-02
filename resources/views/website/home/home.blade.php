@@ -13,7 +13,7 @@
           <img src="{{ URL::asset('/storage/slides/'.$slide->photo) }}" alt="Home Image"> <!-- Slide Image -->
           <div class="content">
             <div class="text">
-              <h3>{{$slide->photo_title}} <i class="fas fa-hammer"></i></h3> <!-- Slide Subheading -->
+              <h3>{{$slide->photo_title}} </h3> <!-- Slide Subheading -->
               <p style="font-size:20px;color:#fff">{{$slide->photo_description}}</p>
               <a href="#" class="btn">Read more</a> <!-- Read more Page Button -->
             </div>
@@ -46,7 +46,7 @@
       <div class="feature-item">
         <i class="fas fa-droplet"></i>
         <h3>Clean & Safe Water</h3>
-        <p>Building and rehabilitating boreholes, and community water points to ensure reliable access to safe drinking water.</p>
+        <p>Drilling and development of boreholes, rehabilitation, construction of community water points to ensure reliable access to safe drinking water.</p>
       </div>
   
       <!-- Feature 2 - Training & Capacity Building -->
@@ -56,10 +56,10 @@
         <p>Equipping village leaders, CORPs, and CBWSOs with knowledge and tools to sustain WASH initiatives.</p>
       </div>
   
-      <!-- Feature 3 - Hygiene Promotion -->
+      <!-- Feature 3 - Sanitation and Hygiene Promotion -->
       <div class="feature-item">
         <i class="fas fa-soap"></i>
-        <h3>Hygiene Promotion</h3>
+        <h3>Sanitation and Hygiene Promotion</h3>
         <p>Delivering workshops and school programs to encourage handwashing, menstrual hygiene, and disease prevention.</p>
       </div>
   
@@ -88,7 +88,7 @@
       </div>
       <div class="sub-image last">
         <img src="./assets/images/About/About-3.jpg" alt="About-Image3">
-        <div class="experience"><span>33</span> years of experience</div>
+        <div class="experience"><span>34</span> years of experience</div>
       </div>
     </div>
   
@@ -101,13 +101,13 @@
       </div>
   
       <!-- Description -->
-      <p>Community-Based Health Care Council(CBHCC) is a Tanzanian Non-Government Organization based in Arusha. Ww are a nationwide organization committed to improving wellbeing of people. We partner with individuals and groups from diverse background and values united by the belief that everyone deserves access to water, health, opportunity and hope.</p><p>Since 1992, we've been helping communities gain or improve access to safe, clean water and strengthened community-led sanitation practices. From construction of water supply structures to promoting water, sanitation and hygiene, our work is driven by collaboration, sustainability and dignity for all.</p>
+      <p>Community-Based Health Care Council(CBHCC) is a Tanzanian Non-Government Organization based in Arusha. We are a nationwide organization committed to improving wellbeing of people. We partner with individuals and groups from diverse background and values united by the belief that everyone deserves access to water, health, opportunity and hope.</p><p>Since 1992, CBHCC has been helping communities gain or improve access to safe, clean water and strengthened community-led sanitation practices. From construction of water supply structures to promoting water, sanitation and hygiene, our work is driven by collaboration, sustainability and dignity for all.</p>
   
       <!-- Key Features -->
       <ul class="about-features">
-        <li><i class="fas fa-droplet"></i><span>Install WASH infrastructure to underserved schools, health centres, and communities</span></li> <!-- Feature 1 -->
+        <li><i class="fas fa-droplet"></i><span>Install WASH infrastructure to underserved communities, schools and health centres</span></li> <!-- Feature 1 -->
         <li><i class="fas fa-droplet"></i><span>Community mobilization for clean water and sanitation solutions</span></li> <!-- Feature 2 -->
-        <li><i class="fas fa-droplet"></i><span>Form and train local communities on WASH projects for sustainability</span></li> <!-- Feature 3 -->
+        <li><i class="fas fa-droplet"></i><span>Training to local leaders and CORPs on WASH projects for sustainability</span></li> <!-- Feature 3 -->
         <li><i class="fas fa-droplet"></i><span>Monitoring and evaluation to ensure sustainability of implemented projects</span></li> <!-- Feature 4 -->
         <li><i class="fas fa-droplet"></i><span>Assess WASH needs, implement recommended technologies, and build local technical capacity</span></li> <!-- Feature 5 -->
       </ul>
@@ -171,93 +171,6 @@
 
 
 
-  <!-- ==================== Service Slider Area (Start) ==================== -->
-  <section class="services">
-
-    <!-- Section Heading -->
-    <div class="heading">
-      <div class="sub"></i><span>What we offer</span></div>
-      <h2>Our Services</h2>
-    </div>  
-
-    <!-- Service Slider -->
-    <div class="swiper-container service-slider">
-      <div class="swiper-wrapper">
-
-        <!-- Service 1: Custom Woodworking -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-1.jpg" alt="Custom Woodworking"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-hammer"></i> <!-- Hammer Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Custom Craft</h3></a> <!-- Service Title -->
-            <p>Crafting custom-made furniture, cabinets, and other wooden items tailored to clients' needs.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-    
-        <!-- Service 2: Carpentry Services -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-2.jpg" alt="Carpentry Services"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-wrench"></i> <!-- Wrench Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Carpentry Work</h3></a> <!-- Service Title -->
-            <p>General carpentry work including framing, trim work, and finishing carpentry.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-    
-        <!-- Service 3: Furniture Restoration -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-3.jpg" alt="Furniture Restoration"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-tools"></i> <!-- Tools Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Furniture Repair</h3></a> <!-- Service Title -->
-            <p>Repairing and restoring antique or damaged wooden furniture to its former glory.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-  
-        <!-- Service 4: Cabinet Making -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-4.jpg" alt="Cabinet Making"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-box-open"></i> <!-- Box Open Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Cabinet Design</h3></a> <!-- Service Title -->
-            <p>Designing, building, and installing custom cabinets for kitchens, bathrooms, and other spaces.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-    
-        <!-- Service 5: Wood Flooring Installation -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-5.jpg" alt="Wood Flooring Installation and Refinishing"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-screwdriver"></i> <!-- Screwdriver Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Flooring Installation</h3></a> <!-- Service Title -->
-            <p>Installing new hardwood floors or refinishing existing ones to revitalize their appearance.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-    
-        <!-- Service 6: Deck Building -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-6.jpg" alt="Deck Building"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-house"></i> <!-- House Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Deck Construction</h3></a> <!-- Service Title -->
-            <p>Designing and constructing wooden decks for residential or commercial properties.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-  <!-- ==================== Service Slider Area (End) ==================== -->
-
-
-
   <!-- ==================== Why Choose Us Area (Start) ==================== -->
   <section class="whyUs linear-bg">
 
@@ -269,12 +182,12 @@
 
           <!-- Section Heading -->
           <div class="heading">  
-            <div class="sub"><span>Why Choose Us</span><i class="fa-solid fa-hammer"></i></div> <!-- Sub Heading -->
-            <h2>Exquisite Woodwork Craftsmanship to Elevate Your Space</h2>
+            <div class="sub"><span>Why Choose Us</span></div> <!-- Sub Heading -->
+            <h2>CBHCC programs are taken place around the country</h2>
           </div>
 
           <!-- Main Heading -->
-          <p>At WoodCrafters, we're dedicated to enhancing the aesthetics and security of your home with our artisanal windows and doors.</p>
+          <p>At CBHCC, we're dedicated to enhancing the aesthetics and security of your home with our artisanal windows and doors.</p>
           
           <!-- Mission Points -->
           <ul class="whyUs-points">
@@ -293,7 +206,7 @@
               </div>
             </li>
             <li>
-              <i class="fas fa-hammer"></i> <!-- Hammer icon -->
+              <i class="fas fa-droplet"></i> <!-- Hammer icon -->
               <div class="text">
                 <h5>Professional Craftsmanship</h5>
                 <p>Our skilled artisans ensure meticulous installation of your windows and doors, ensuring superior performance and longevity.</p>
@@ -316,7 +229,7 @@
 
     <!-- Section Heading -->
     <div class="heading">
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>how we work</span><i class="fa-solid fa-hammer"></i></div>
+      <div class="sub"><span>how we work</span></div>
       <h2>Our Process</h2>
     </div>   
 
@@ -339,8 +252,8 @@
           <img src="./assets/images/Process/Process-2.jpg" alt="Project Design"> <!-- Step Image -->
           <div class="content">
             <h6>02</h6>
-            <h3>Project Design</h3> <!-- Step Title -->
-            <p>Professional design and customization of woodworking projects to match your space's aesthetics and requirements.</p> <!-- Step Description -->
+            <h3>Project Planning</h3> <!-- Step Title -->
+            <p>It includes resource planning, stakeholder engagement and technical aspects ensuring WASH projects are practical and sustainable.</p> <!-- Step Description -->
           </div>
         </div>
     
@@ -370,7 +283,7 @@
           <div class="content">
             <h6>05</h6>
             <h3>Project Handover</h3> <!-- Step Title -->
-            <p>This involves handing over to the community, conducting final evaluations, documenting lessons learned and commissioning through capacity building efforts to ensure longterm sustainability and ownership.</p> <!-- Step Description -->
+            <p>This involves handing over to the government and community, conducting final evaluations and documenting lessons learned to ensure longterm sustainability and ownership.</p> <!-- Step Description -->
           </div>
         </div>
     
@@ -387,7 +300,7 @@
     <div class="content">
   
       <div class="heading">
-        <div class="sub"><span>Clean Water, Healthy Communities</span><i class="fa-solid fa-hammer"></i></div>
+        <div class="sub"><span>Clean Water, Healthy Communities</span></div>
       </div>
       <h2>Discover sustainable WASH solutions that transform lives and protect futures</h2>
       <a href="./pages/Pages/Get-Quote.html" class="btn">Get a Quote</a>
@@ -404,15 +317,15 @@
 
     <!-- Section Heading -->
     <div class="heading">
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>Explore Our Work</span><i class="fa-solid fa-hammer"></i></div>
+      <div class="sub"><span>Explore Our Work</span></div>
       <h2>Our Activities</h2>
     </div> 
 
     <!-- Projects Filter Buttons -->
     <ul class="tab-buttons">
-      <li class="button active" data-filter="*">all</li> <!-- Display all services -->
+      <li class="button active" data-filter="*">all</li> <!-- Display all activities -->
       <li class="button" data-filter=".social">Social Works</li> <!-- Filter by lock installation -->
-      <li class="button" data-filter=".technical">Technical Works</li> <!-- Filter by emergency services -->
+      <li class="button" data-filter=".technical">Technical Works</li> <!-- Filter by emergency activities -->
       <li class="button" data-filter=".monitoring">Monitoring and Evaluation</li> <!-- Filter by security solutions -->
     </ul>
     
@@ -422,7 +335,7 @@
       <!-- Project 1 - Community Mobilization -->
       <div class="project-item social">
         <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-1.jpg" alt="Custom Furniture"> <!-- Project Image -->
+          <img src="./assets/images/Project/Projects/Project-1.jpg" alt="Community Mobilization"> <!-- Project Image -->
           <div class="content">
             <!-- Buttons container -->
             <div class="btn-container">
@@ -441,7 +354,7 @@
       <!-- Project 2 - Drilling -->
       <div class="project-item technical">
         <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-2.jpg" alt="Window Installations"> <!-- Project Image -->
+          <img src="./assets/images/Project/Projects/Project-2.jpg" alt="Drilling"> <!-- Project Image -->
           <div class="content">
             <!-- Buttons container -->
             <div class="btn-container">
@@ -460,7 +373,7 @@
       <!-- Project 3 - Triggering -->
       <div class="project-item social">
         <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-3.jpg" alt="Home Décor"> <!-- Project Image -->
+          <img src="./assets/images/Project/Projects/Project-3.jpg" alt="Triggering"> <!-- Project Image -->
           <div class="content">
             <!-- Buttons container -->
             <div class="btn-container">
@@ -479,7 +392,7 @@
       <!-- Project 4 - Water Quality -->
       <div class="project-item monitoring">
         <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-4.jpg" alt="Kitchen Cabinets"> <!-- Project Image -->
+          <img src="./assets/images/Project/Projects/Project-4.jpg" alt="Water Quality"> <!-- Project Image -->
           <div class="content">
             <!-- Buttons container -->
             <div class="btn-container">
@@ -498,7 +411,7 @@
       <!-- Project 5 - Solar Installations -->
       <div class="project-item technical">
         <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-5.jpg" alt="Door Installations"> <!-- Project Image -->
+          <img src="./assets/images/Project/Projects/Project-5.jpg" alt="Solar Installations"> <!-- Project Image -->
           <div class="content">
             <!-- Buttons container -->
             <div class="btn-container">
@@ -517,7 +430,7 @@
       <!-- Project 6 - Water Point Functionality -->
       <div class="project-item monitoring">
         <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-6.jpg" alt="Bathroom Cabinets"> <!-- Project Image -->
+          <img src="./assets/images/Project/Projects/Project-6.jpg" alt="Water Point Functionality"> <!-- Project Image -->
           <div class="content">
             <!-- Buttons container -->
             <div class="btn-container">
@@ -638,86 +551,6 @@
 
 
 
-  <!-- ==================== Team Area (Start) ==================== -->
-  <section class="team">
-
-    <!-- Section Heading -->
-    <div class="heading">
-      <div class="sub"><i class="fas fa-hammer"></i><span>Meet Our Team</span><i class="fas fa-hammer"></i></div> <!-- Sub Heading -->
-      <h2>our team</h2>
-    </div>
-  
-    <div class="box-container">
-  
-      <!-- Team Member 1 -->
-      <div class="team-item">
-        <img src="./assets/images/Team/Team-1.jpg" alt="Team-Image"> <!-- Team Member Image -->
-        <div class="content">
-          <div class="icon-container">
-            <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Facebook Icon -->
-            <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn Icon -->
-            <a href="#"><i class="fab fa-instagram"></i></a> <!-- Instagram Icon -->
-          </div>
-          <div class="intro">
-            <a href="./pages/About/Team-Single.html"><h3>David Smith</h3></a> <!-- Team Member Name -->
-            <p>Master Carpenter</p> <!-- Team Member Designation -->
-          </div>
-        </div>
-      </div>
-  
-      <!-- Team Member 2 -->
-      <div class="team-item">
-        <img src="./assets/images/Team/Team-2.jpg" alt="Team-Image"> <!-- Team Member Image -->
-        <div class="content">
-          <div class="icon-container">
-            <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Facebook Icon -->
-            <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn Icon -->
-            <a href="#"><i class="fab fa-instagram"></i></a> <!-- Instagram Icon -->
-          </div>
-          <div class="intro">
-            <a href="./pages/About/Team-Single.html"><h3>Emma Johnson</h3></a> <!-- Team Member Name -->
-            <p>Woodwork Specialist</p> <!-- Team Member Designation -->
-          </div>
-        </div>
-      </div>
-  
-      <!-- Team Member 3 -->
-      <div class="team-item">
-        <img src="./assets/images/Team/Team-3.jpg" alt="Team-Image"> <!-- Team Member Image -->
-        <div class="content">
-          <div class="icon-container">
-            <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Facebook Icon -->
-            <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn Icon -->
-            <a href="#"><i class="fab fa-instagram"></i></a> <!-- Instagram Icon -->
-          </div>
-          <div class="intro">
-            <a href="./pages/About/Team-Single.html"><h3>Matthew Anderson</h3></a> <!-- Team Member Name -->
-            <p>Custom Furniture Maker</p> <!-- Team Member Designation -->
-          </div>
-        </div>
-      </div>
-  
-      <!-- Team Member 4 -->
-      <div class="team-item">
-        <img src="./assets/images/Team/Team-4.jpg" alt="Team-Image"> <!-- Team Member Image -->
-        <div class="content">
-          <div class="icon-container">
-            <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Facebook Icon -->
-            <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn Icon -->
-            <a href="#"><i class="fab fa-instagram"></i></a> <!-- Instagram Icon -->
-          </div>
-          <div class="intro">
-            <a href="./pages/About/Team-Single.html"><h3>Olivia Brown</h3></a> <!-- Team Member Name -->
-            <p>Master Woodcarver</p> <!-- Team Member Designation -->
-          </div>
-        </div>
-      </div>
-  
-    </div>
-  
-  </section>  
-  <!-- ==================== Team Area (End) ==================== -->
-
 
 
   <!-- ==================== Get A Quote Area (Start) ==================== -->
@@ -731,7 +564,7 @@
 
           <!-- Form Heading -->
           <div class="heading">
-            <div class="sub"><span>Clean Water, Healthy Communities</span><i class="fa-solid fa-hammer"></i></div>
+            <div class="sub"><span>Clean Water, Healthy Communities</span></div>
             <h2>Request A Quote</h2>
           </div>
 
@@ -759,44 +592,10 @@
               <input type="number" name="number" class="box" id="number" placeholder="Phone Number" required>
             </div>
 
-            <!-- Service Select Field -->
-            <div class="select">
-              <div class="select-container">
-                <label for="service" class="fa-solid fa-hammer"></label>
-                <select class="select-box" id="service" name="service" required>
-                  <option value="">Services</option>
-                  <option value="custom-craft">Custom Craft</option>
-                  <option value="carpentry-work">Carpentry Work</option>
-                  <option value="furniture-repair">Furniture Repair</option>
-                  <option value="cabinet-design">Cabinet Design</option>
-                  <option value="flooring-installation">Flooring Installation</option>
-                  <option value="deck-construction">Deck Construction</option>
-                </select>
-                <div class="icon-container">
-                  <i class="fas fa-angle-down"></i>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="input-box">
-            
-            <!-- Address Input Field -->
-            <div class="input-field">
-              <label for="address" class="fa-solid fa-location-dot"></label>
-              <input type="text" name="address" class="box" id="address" placeholder="Address" required>
-            </div>
-
-          </div>
+          
 
           <div class="input-box">
 
-            <!-- Budget Input Field -->
-            <div class="input-field">
-              <label for="budget" class="fa-solid fa-dollar-sign"></label>
-              <input type="number" name="budget" class="box" id="budget" placeholder="Budget" required>
-            </div>
                         
             <!-- Date Input Field -->
             <div class="input-field">
@@ -806,11 +605,6 @@
 
           </div>
 
-          <!-- Comment Text Area -->
-          <div class="input-field text-area">
-            <label for="comment" class="fa-solid fa-comment"></label>
-            <textarea cols="30" rows="10" name="comment" class="box" id="comment" placeholder="Message" required></textarea>
-          </div>
 
           <!-- Submit Button for Booking Confirmation -->
           <button type="submit" class="btn" name="submit" id="submit">submit</button>
@@ -838,7 +632,7 @@
   <section class="newsletter-subscribe">
     <div class="content">
       <h2>Subscribe To Our Newsletter</h2> <!-- Newsletter Heading -->
-      <p>Stay informed about the latest trends in woodworking, new projects, and special promotions.</p> <!-- Newsletter Description -->
+      <p>Stay informed about the latest project in WASH, new projects, and special promotions.</p> <!-- Newsletter Description -->
       <!-- Newsletter Description -->
       <form class="newsletter-form" method="post" id="newsletter-form-1">
         <div class="box-container">
@@ -860,7 +654,7 @@
 
     <!-- Section Heading -->
     <div class="heading"> 
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>our recent articles</span><i class="fa-solid fa-hammer"></i></div> <!-- Sub Heading -->
+      <div class="sub"><span>our recent articles</span></div> <!-- Sub Heading -->
       <h2>our blogs</h2> 
     </div>
   

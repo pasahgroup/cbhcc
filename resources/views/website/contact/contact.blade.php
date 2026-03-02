@@ -41,6 +41,7 @@
         <i class="fas fa-phone"></i>
         <div class="content">
           <h3>call us</h3>
+          <p>+255-767-456-698</p>
           <p>+255-747-012-401</p>
          
         </div>

@@ -48,16 +48,16 @@
       <!-- == Contacts == -->
       <ul class="header-contacts">
         <li><i class="fas fa-map-marker-alt"></i><span>CBHCC</span></li>
-        <li><i class="fas fa-phone"></i><span>+255-747-012-401</span></li>
+        <li><i class="fas fa-phone"></i><span>+255-767-456-698</span></li>
         <li><i class="fas fa-envelope"></i><span class="gmail">info@cbhcc.or.tz</span></li>
       </ul>      
 
       <!-- == Social == -->
       <ul class="social-contacts">
-        <li><a href="#" class="fab fa-facebook-f"></a></li>
+        <li><a href="https://www.facebook.com/share/1CbXJJRxgk/" class="fab fa-facebook-f"></a></li>
         <li><a href="#" class="fa-brands fa-x-twitter"></a></li>
-        <li><a href="#" class="fab fa-instagram"></a></li>
-        <li><a href="#" class="fab fa-linkedin"></a></li>
+        <li><a href="https://www.instagram.com/cbhc.council?igsh=MW55YWpramtlMGl3NA%3D%3D" class="fab fa-instagram"></a></li>
+        <li><a href="https://www.linkedin.com/company/cbhcc/?lipi=urn%3Ali%3Apage%3Ad_flagship3_messaging_conversation_detail%3BWI8HqEVXQReR0bABnF0lrA%3D%3D" class="fab fa-linkedin"></a></li>
       </ul>
 
     </div>
@@ -82,8 +82,6 @@
             <button class="nav-btn">about</button>
             <div class="dropdown-content">
               <a href="/get_aboutusw">About Us</a>
-              <a href="./pages/About/Team.html">Team</a>
-              <a href="./pages/About/Team-Single.html">Team Single</a>
               <a href="./pages/About/Testimonials.html">testimonials</a>
               <a href="./pages/About/FAQs.html">FAQs</a>
             </div>
@@ -93,26 +91,12 @@
             <button class="nav-btn">Pages</button>
             <div class="dropdown-content">
               <a href="./pages/Pages/Gallery.html">Gallery</a>
-              <a href="./pages/Pages/Pricing.html">Pricing</a>
               <a href="./pages/Pages/Process.html">work process</a>
-              <a href="./pages/Pages/Careers.html">Careers</a>
-              <a href="./pages/Pages/Career-Single.html">Career Single</a>
               <a href="./pages/Pages/Get-Quote.html">get a quote</a>
-              <a href="./pages/Pages/Clients.html">clients</a>
-              <a href="./pages/Pages/Login.html">login</a>
               <a href="./pages/Pages/Register.html">register</a>
-              <a href="./pages/Pages/Reset-Password.html">forgot Password</a>
             </div>
           </div>
  
-          <div class="dropdown-menu">
-            <button class="nav-btn">Service</button>
-            <div class="dropdown-content">
-              <a href="./pages/Service/Services.html">Services</a>
-              <a href="./pages/Service/Service-Single.html">Service Single</a>
-            </div>
-          </div>
-
           <div class="dropdown-menu">
             <button class="nav-btn">Project</button>
             <div class="dropdown-content">
@@ -165,9 +149,7 @@
         <div class="nav-link">
           <div class="main-nav-link"> <div class="nav-btn">about</div> <i class="fas fa-plus"></i> </div>
           <div class="sub-nav-link">
-            <a href="./pages/About/About.html">about us</a>
-            <a href="./pages/About/Team.html">Team</a>
-            <a href="./pages/About/Team-Single.html">Team Single</a>
+            <a href="./pages/About/About.html">about us</a>>
             <a href="./pages/About/Testimonials.html">testimonials</a>
             <a href="./pages/About/FAQs.html">fAQs</a>
           </div>
@@ -177,23 +159,9 @@
           <div class="main-nav-link"> <div class="nav-btn">pages</div> <i class="fas fa-plus"></i> </div>
           <div class="sub-nav-link">
             <a href="./pages/Pages/Gallery.html">Gallery</a>
-            <a href="./pages/Pages/Pricing.html">Pricing</a>
             <a href="./pages/Pages/Process.html">work process</a>
-            <a href="./pages/Pages/Careers.html">Careers</a>
-            <a href="./pages/Pages/Career-Single.html">Career Single</a>
             <a href="./pages/Pages/Get-Quote.html">get a quote</a>
-            <a href="./pages/Pages/Clients.html">clients</a>
-            <a href="./pages/Pages/Login.html">login</a>
             <a href="./pages/Pages/Register.html">register</a>
-            <a href="./pages/Pages/Reset-Password.html">forgot Password</a>
-          </div>
-        </div> 
-
-        <div class="nav-link">
-          <div class="main-nav-link"> <div class="nav-btn">Service</div> <i class="fas fa-plus"></i> </div>
-          <div class="sub-nav-link">
-            <a href="./pages/Service/Services.html">Services</a>
-            <a href="./pages/Service/Service-Single.html">Service Single</a>
           </div>
         </div> 
 
@@ -241,7 +209,7 @@
   
         <!-- CBHCC Company Logo -->
         <a class="logo" href="./index.html">
-          <img src="./assets/images/Logo/Logo.png" alt="Woodwork & Carpenter Company Logo">
+          <img src="./assets/images/Logo/Logo.png" alt="CBHCC Company Logo">
         </a>
   
         <!-- Description -->
@@ -249,17 +217,17 @@
   
         <!-- Contact Information -->
         <div class="info connect">
-          <p><i class="fas fa-phone"></i><span>+255-747-012-401</span></p>
+          <p><i class="fas fa-phone"></i><span>+255-767-456-698</span></p>
           <p><i class="fas fa-envelope"></i><span class="gmail">info@cbhcc.or.tz</span></p>
           <p><i class="fas fa-map-marker-alt"></i><span>CBHCC</span></p>
         </div>
   
         <!-- Social Media Links -->
         <div class="social">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.facebook.com/share/1CbXJJRxgk/"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/cbhc.council?igsh=MW55YWpramtlMGl3NA%3D%3D"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/cbhcc/?lipi=urn%3Ali%3Apage%3Ad_flagship3_messaging_conversation_detail%3BWI8HqEVXQReR0bABnF0lrA%3D%3D"><i class="fab fa-linkedin"></i></a>
         </div>
   
       </div>
@@ -271,7 +239,6 @@
         <h2>Quick Links</h2>
         <div class="info links">
           <p><i class="fa-solid fa-hammer"></i><a href="/get_aboutusw">About Us</a></p>
-          <p><i class="fa-solid fa-hammer"></i><a href="./pages/Service/Services.html">Services</a></p>
           <p><i class="fa-solid fa-hammer"></i><a href="./pages/Project/Projects.html">Projects</a></p>
           <p><i class="fa-solid fa-hammer"></i><a href="./pages/Blog/Blog-Grid.html">Blog</a></p>
           <p><i class="fa-solid fa-hammer"></i><a href="/get_contact">Contact Us</a></p>
@@ -282,7 +249,7 @@
       <div class="footer-item">
   
         <h2>Newsletter</h2>
-        <p>Stay informed and up-to-date with the latest trends, insightful articles, helpful tips, and exclusive special offers tailored to the world of woodwork and carpentry.</p>
+        <p>Stay connected with our WASH journey on our latest project and be part of the change for clean water, safe sanitation and healthier communities!</p>
         <form class="dark-form" method="post" id="newsletter-form-2">
           <div class="input-field">
             <label for="news-email-2" class="fas fa-envelope"></label>
@@ -298,7 +265,7 @@
   
     <!-- CBHCC Company's Name and Copyright -->
     <div class="content">
-      <p>Designed By Giun&Co Designs | All Rights Reserved</p>
+      <p>Designed By Donatha K | All Rights Reserved</p>
     </div>
   
   </footer>  
