@@ -1725,8 +1725,8 @@ input:-webkit-autofill:active {
 
 /*----- 8- Testimonials -----*/
 .testimonial-bg{
-    background: -webkit-linear-gradient(rgba(11, 77, 235, 0.6), rgba(11, 77, 235, 0.4)), url("../../assets/images/Background/Testimonials.jpg");
-    background:         linear-gradient(rgba(11, 77, 235, 0.6), rgba(11, 77, 235, 0.4)), url("../../assets/images/Background/Testimonials.jpg");
+    background: -webkit-linear-gradient(rgba(11, 77, 235, 0.2), rgba(11, 77, 235, 0.1)), url("../../assets/images/Background/Testimonials.jpg");
+    background:         linear-gradient(rgba(11, 77, 235, 0.2), rgba(11, 77, 235, 0.1)), url("../../assets/images/Background/Testimonials.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;

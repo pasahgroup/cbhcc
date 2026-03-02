@@ -101,7 +101,7 @@
       </div>
   
       <!-- Description -->
-      <p>Community-Based Health Care Council(CBHCC) is a Tanzanian Non-Government Organization based in Arusha. We are a nationwide organization committed to improving wellbeing of people. We partner with individuals and groups from diverse background and values united by the belief that everyone deserves access to water, health, opportunity and hope.</p><p>Since 1992, CBHCC has been helping communities gain or improve access to safe, clean water and strengthened community-led sanitation practices. From construction of water supply structures to promoting water, sanitation and hygiene, our work is driven by collaboration, sustainability and dignity for all.</p>
+      <p>Community-Based Health Care Council(CBHCC) is a Tanzanian Non-Government Organization based in Arusha. We are a nationwide organization committed to improving wellbeing of people. We partner with individuals and groups from diverse background and values united by the belief that everyone deserves access to water, health, opportunity and hope.</p><p>Since 1992, CBHCC has been helping communities gain or improve access to clean, safe water and strengthened community-led sanitation practices. From construction of water supply structures to promoting water, sanitation and hygiene, our work is driven by collaboration, sustainability and dignity for all.</p>
   
       <!-- Key Features -->
       <ul class="about-features">
@@ -470,72 +470,44 @@
         <!-- Testimonial Slide 1 -->
         <div class="swiper-slide testi-item">
           <i class="fas fa-quote-right"></i>
-          <p>"WoodCraft's team provided excellent service! Their attention to detail and quality craftsmanship exceeded my expectations."</p>
-          <img src="./assets/images/Testimonials/Pic-1.jpg" alt="Author-Pic">
+          <p>"Nimetembelea mradi wa maji LUBILIZI hakika mmewatua ndoo wanajamii. Naweza kusema "USHUHUDA WA JAMII MAJI YANATIRIRIKA KIBALE" Charity water & CBHCC Shukrani kwa utendaji wenu daima JAMII hii itakumbuka Mchango wenu"</p>
+          <img src="./assets/images/Testimonials/Pic-1.jpg" alt="Beneficiary-Pic">
           <div class="text">
-            <h4>John Doe</h4>
-            <h6>Homeowner</h6>
-          </div>
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+            <h4>Antidius Bruno</h4>
+            <h6>Diwani Teule</h6>
           </div>
         </div>
     
         <!-- Testimonial Slide 2 -->
         <div class="swiper-slide testi-item">
           <i class="fas fa-quote-right"></i>
-          <p>"I am extremely satisfied with the woodwork installed by WoodCraft. The whole process was seamless and hassle-free."</p>
-          <img src="./assets/images/Testimonials/Pic-2.jpg" alt="Author-Pic">
+          <p>"Mradi huu umenirahisishia kazi yangu ya kupika uji shuleni. Maji nachotea palepale shuleni, wanafunzi wanakunywa kwa wakati, napata muda wa kupumzika na kufanya mambo mengine."</p>
+          <img src="./assets/images/Testimonials/Pic-2.jpg" alt="Beneficiary-Pic">
           <div class="text">
-            <h4>Jane Smith</h4>
-            <h6>Homeowner</h6>
-          </div>
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+            <h4>Magdalena Isdory</h4>
+            <h6>Mpishi wa Shule-Nyakasenga</h6>
           </div>
         </div>
     
         <!-- Testimonial Slide 3 -->
         <div class="swiper-slide testi-item">
           <i class="fas fa-quote-right"></i>
-          <p>"The team at WoodCraft is professional and knowledgeable. I highly recommend their services to anyone looking for quality woodwork."</p>
-          <img src="./assets/images/Testimonials/Pic-3.jpg" alt="Author-Pic">
+          <p>"Sikujua kuwa kutunza mazingira kungeepusha familia yangu na magonjwa. Elimu niliyopewa kuhusu choo bora na ufuatiliaji wa CBHCC umenisaidia kwa kiwango kikubwa."</p>
+          <img src="./assets/images/Testimonials/Pic-3.jpg" alt="Beneficiary-Pic">
           <div class="text">
             <h4>Michael Thompson</h4>
-            <h6>Builder</h6>
-          </div>
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+            <h6>Mkazi wa Kisuma</h6>
           </div>
         </div>
     
         <!-- Testimonial Slide 4 -->
         <div class="swiper-slide testi-item">
           <i class="fas fa-quote-right"></i>
-          <p>"WoodCraft's commitment to quality and customer satisfaction is commendable. I am delighted with the results!"</p>
-          <img src="./assets/images/Testimonials/Pic-4.jpg" alt="Author-Pic">
+          <p>"Huu mradi wa CBHCC na charity:water umenipa nafasi ya kulipa jamii kwa kunitunza, kupitia jukumu la usimamizi wa kituo cha maji."</p>
+          <img src="./assets/images/Testimonials/Pic-4.jpg" alt="Beneficiary-Pic">
           <div class="text">
             <h4>Emily Johnson</h4>
-            <h6>Architect</h6>
-          </div>
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+            <h6>Msimamizi</h6>
           </div>
         </div>
     
