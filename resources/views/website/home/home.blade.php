@@ -46,21 +46,21 @@
       <div class="feature-item">
         <i class="fas fa-droplet"></i>
         <h3>Clean & Safe Water</h3>
-        <p>Drilling and development of boreholes, rehabilitation, construction of community water points to ensure reliable access to safe drinking water.</p>
+        <p>Drilling and development of boreholes, construction of community water points and rehabilitation to ensure reliable access to safe drinking water.</p>
       </div>
   
       <!-- Feature 2 - Training & Capacity Building -->
       <div class="feature-item">
         <i class="fas fa-users"></i>
         <h3>Training & Capacity Building</h3>
-        <p>Equipping village leaders, CORPs, and CBWSOs with knowledge and tools to sustain WASH initiatives.</p>
+        <p>Equipping village leaders, CORPs and CBWSOs with skills, knowledge and tools to sustain WASH initiatives.</p>
       </div>
   
       <!-- Feature 3 - Sanitation and Hygiene Promotion -->
       <div class="feature-item">
         <i class="fas fa-soap"></i>
         <h3>Sanitation and Hygiene Promotion</h3>
-        <p>Delivering workshops and school programs to encourage handwashing, menstrual hygiene, and disease prevention.</p>
+        <p>Delivering interactive sessions and school programs to encourage disease prevention, handwashing and menstrual hygiene.</p>
       </div>
   
       <!-- Feature 4 - Monitoring & Advocacy -->
@@ -182,34 +182,34 @@
 
           <!-- Section Heading -->
           <div class="heading">  
-            <div class="sub"><span>Why Choose Us</span></div> <!-- Sub Heading -->
+            <div class="sub"><span>Our Expertise</span></div> <!-- Sub Heading -->
             <h2>CBHCC programs are taken place around the country</h2>
           </div>
 
           <!-- Main Heading -->
-          <p>At CBHCC, we're dedicated to enhancing the aesthetics and security of your home with our artisanal windows and doors.</p>
+          <p>CBHCC is dedicated to transforming lives through providing clean and safe drinking water, sanitation and hygiene promotion</p>
           
           <!-- Mission Points -->
           <ul class="whyUs-points">
             <li>
-              <i class="fas fa-tools"></i> <!-- Tools icon -->
+              <i class="fas fa-droplet"></i> <!-- Droplet icon -->
               <div class="text">
-                <h5>Bespoke Solutions</h5>
-                <p>We offer tailored window and door solutions to meet your unique needs, ensuring seamless integration with your home's style.</p>
+                <h5>Community Centered Impact</h5>
+                <p>We ground our expertise by involving community participation in project implementation. Every initiative begins with people, ensuring dignity, ownership and lasting impact.</p>
               </div>
             </li>
             <li>
-              <i class="fas fa-shield-alt"></i> <!-- Shield icon -->
+              <i class="fas fa-droplet"></i> <!-- Droplet icon -->
               <div class="text">
-                <h5>Enhanced Security</h5>
-                <p>With our top-of-the-line security features, we provide unparalleled protection for your home, ensuring your peace of mind.</p>
+                <h5>Sustainable Solutions</h5>
+                <p> We create solutions that endure beyond the project cycle by enhancing technical capacities, building water infrastructures that are cost-effective for community and capacitating WASH stakeholders.</p>
               </div>
             </li>
             <li>
-              <i class="fas fa-droplet"></i> <!-- Hammer icon -->
+              <i class="fas fa-droplet"></i> <!-- Droplet icon -->
               <div class="text">
-                <h5>Professional Craftsmanship</h5>
-                <p>Our skilled artisans ensure meticulous installation of your windows and doors, ensuring superior performance and longevity.</p>
+                <h5>Intergrated Excellence</h5>
+                <p>Our team brings extensive experience in Technical, Social, Monitoring & Evaluation and Logistics. Together, these departments ensure that projects are well-designed, socially responsive and rigorously assessed for impact and sustainability.</p>
               </div>
             </li>
           </ul>
@@ -470,7 +470,7 @@
         <!-- Testimonial Slide 1 -->
         <div class="swiper-slide testi-item">
           <i class="fas fa-quote-right"></i>
-          <p>"Nimetembelea mradi wa maji LUBILIZI hakika mmewatua ndoo wanajamii. Naweza kusema "USHUHUDA WA JAMII MAJI YANATIRIRIKA KIBALE" Charity water & CBHCC Shukrani kwa utendaji wenu daima JAMII hii itakumbuka Mchango wenu"</p>
+          <p>"Nimetembelea mradi wa maji LUBILIZI hakika mmewatua ndoo wanajamii. "USHUHUDA WA JAMII MAJI YANATIRIRIKA KIBALE" Charity water & CBHCC Shukrani kwa utendaji wenu daima JAMII hii itakumbuka Mchango wenu"</p>
           <img src="./assets/images/Testimonials/Pic-1.jpg" alt="Beneficiary-Pic">
           <div class="text">
             <h4>Antidius Bruno</h4>
@@ -495,7 +495,7 @@
           <p>"Sikujua kuwa kutunza mazingira kungeepusha familia yangu na magonjwa. Elimu niliyopewa kuhusu choo bora na ufuatiliaji wa CBHCC umenisaidia kwa kiwango kikubwa."</p>
           <img src="./assets/images/Testimonials/Pic-3.jpg" alt="Beneficiary-Pic">
           <div class="text">
-            <h4>Michael Thompson</h4>
+            <h4>Felix Rutashobya</h4>
             <h6>Mkazi wa Kisuma</h6>
           </div>
         </div>
@@ -506,8 +506,8 @@
           <p>"Huu mradi wa CBHCC na charity:water umenipa nafasi ya kulipa jamii kwa kunitunza, kupitia jukumu la usimamizi wa kituo cha maji."</p>
           <img src="./assets/images/Testimonials/Pic-4.jpg" alt="Beneficiary-Pic">
           <div class="text">
-            <h4>Emily Johnson</h4>
-            <h6>Msimamizi</h6>
+            <h4>Rajab Muhama</h4>
+            <h6>Caretaker- Mwanga</h6>
           </div>
         </div>
     
